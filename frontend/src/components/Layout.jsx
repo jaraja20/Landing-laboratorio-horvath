@@ -40,13 +40,14 @@ function useScrollAnimations(dep) {
       const animateCount = (el) => {
         const target = parseFloat(el.dataset.count);
         const suffix = el.dataset.suffix || "";
+        const prefix = el.dataset.prefix || "";
         const start = performance.now();
         const tick = (now) => {
           const p = Math.min((now - start) / 1500, 1);
           const eased = 1 - Math.pow(1 - p, 3);
-          el.textContent = Math.round(target * eased) + suffix;
+          el.textContent = prefix + Math.round(target * eased) + suffix;
           if (p < 1) requestAnimationFrame(tick);
-          else { el.textContent = target + suffix; el.classList.add("done"); }
+          else { el.textContent = prefix + target + suffix; el.classList.add("done"); }
         };
         requestAnimationFrame(tick);
       };

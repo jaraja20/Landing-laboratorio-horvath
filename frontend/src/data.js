@@ -19,15 +19,14 @@ export const FACEBOOK_URL = "https://www.facebook.com/laboratorioshorvath";
 // Imagen de la fachada (instalaciones) para el bloque "Nuestra historia"
 export const HISTORY_IMG = "https://laboratoriohorvath.com/wp-content/uploads/2026/03/WhatsApp-Image-2026-02-14-at-12.19.36-1.jpeg";
 
-// Íconos 3D de principios (generados)
-const IMG = "https://static.prod-images.emergentagent.com/jobs/06dc2e2a-b742-4325-aa5b-0d12d5275e88/images/";
+// Íconos 3D de principios (PNG transparente, auto-alojados)
 export const PRINCIPLE_ICONS = {
-  layers: `${IMG}d4ef25c3f76c8af3b620cef1f57943f0b83c877b79f3148e135edccad9f75d0a.jpeg`,
-  shield: `${IMG}e74c4e7d385a8dcf6a4fedd5f51fa6d3d42aa6800b085a9e4b2993955504fcc3.jpeg`,
-  arrowup: `${IMG}14a71909d23ceb306a9b209a250cc617e6e6b861a2a905d0ddb6227718c935a0.jpeg`,
-  refresh: `${IMG}5d86fb6c266a367e55a4dfbf67d21b3c8222c1cb7c719b18d058e0b67b887deb.jpeg`,
-  heart: `${IMG}e0b9a621674107f19a3e5745eb9d93341f81d95a0312efbf4aa9d7d646b1c644.jpeg`,
-  flask: `${IMG}3602bf050dd493a853c2919b81ef8a82694750658fddfcdca9e65c475ba01957.jpeg`,
+  layers: "/assets/icons3d/dignidad.png",
+  shield: "/assets/icons3d/integridad.png",
+  arrowup: "/assets/icons3d/proactividad.png",
+  refresh: "/assets/icons3d/mejora.png",
+  heart: "/assets/icons3d/responsabilidad.png",
+  flask: "/assets/icons3d/pasion.png",
 };
 
 // Fondos decorativos de laboratorio por vista

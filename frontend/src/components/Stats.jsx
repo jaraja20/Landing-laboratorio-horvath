@@ -9,7 +9,7 @@ export default function Stats() {
         <div className="stats-grid reveal-stagger reveal">
           {t.stats.map((s, i) => (
             <div className="stat-item" key={i}>
-              <div className="stat-num"><span data-count={s.count} data-suffix={s.suffix}>0</span></div>
+              <div className="stat-num"><span data-count={s.count} data-prefix={s.prefix || ""} data-suffix={s.suffix}>0</span></div>
               <div className="stat-label">{s.label}</div>
             </div>
           ))}

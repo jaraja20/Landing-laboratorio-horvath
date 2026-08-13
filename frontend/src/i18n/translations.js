@@ -38,7 +38,7 @@ export const translations = {
     },
     stats: [
       { count: 40, suffix: "+", label: "Años de trayectoria" },
-      { count: 80, suffix: "°C", label: "Ultracongelación de muestras" },
+      { count: 80, prefix: "-", suffix: "°C", label: "Ultracongelación de muestras" },
       { count: 4, suffix: "", label: "Continentes de conexión científica" },
       { count: 15, suffix: "+", label: "Instituciones y seguros aliados" },
     ],
@@ -170,7 +170,7 @@ export const translations = {
     },
     stats: [
       { count: 40, suffix: "+", label: "Years of experience" },
-      { count: 80, suffix: "°C", label: "Sample ultra-freezing" },
+      { count: 80, prefix: "-", suffix: "°C", label: "Sample ultra-freezing" },
       { count: 4, suffix: "", label: "Continents of scientific connection" },
       { count: 15, suffix: "+", label: "Partner institutions & insurers" },
     ],
