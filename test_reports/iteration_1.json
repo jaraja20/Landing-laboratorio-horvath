@@ -1,0 +1,33 @@
+{
+  "summary": "Full backend + frontend testing of Laboratorios Horvath landing. Backend: 5/5 pytest cases pass (health, POST /api/leads whatsapp+email, GET /api/leads sorted desc + persistence, missing-name validation). Frontend: all sections render, header scroll state works, nav anchors scroll, gallery tabs filter (21/7/8/6), lightbox opens/closes, animated counters reach final values (40+, 80°C, 4, 15+), contact form POSTs a lead to /api/leads for both channels and shows form-success, whatsapp channel opens api.whatsapp.com in new tab, mobile menu toggle + close work, zero console errors/warnings.",
+  "backend_issues": {
+    "critical": [],
+    "minor": [
+      {"endpoint": "POST /api/leads", "issue": "Originally returned '_id' (Mongo alias) instead of 'id' due to Pydantic v2 alias serialization. Fixed by using validation_alias='_id' + serialization_alias='id' and populate_by_name=True in Lead model."}
+    ]
+  },
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": []
+  },
+  "test_report_links": [
+    "/app/backend/tests/test_horvath_api.py",
+    "/app/test_reports/pytest/pytest_results.xml"
+  ],
+  "action_items": [],
+  "critical_code_review_comments": [
+    "server.py Lead model previously exposed Mongo alias '_id' in API response — fixed to serialize as 'id' as expected by clients/contract.",
+    "Contact.jsx POSTs lead but silently swallows errors (only console.error). Acceptable for landing lead capture but consider showing a subtle inline warning if backend save fails.",
+    "server.py: CORS is added AFTER include_router; works in FastAPI because middleware is registered on app, but conventionally add middleware before including routers for clarity.",
+    "Lead list endpoint returns up to 500 records without pagination — fine for MVP but should paginate for growth."
+  ],
+  "updated_files": ["/app/backend/server.py", "/app/backend/tests/test_horvath_api.py"],
+  "success_rate": {"backend": "100%", "frontend": "100%"},
+  "test_credentials": "N/A - public landing",
+  "seed_data_creation": "A few TEST_-prefixed leads created via API during tests; not cleaned up (no delete endpoint exists).",
+  "retest_needed": false,
+  "should_main_agent_self_test": false,
+  "context_for_next_testing_agent": "Backend server.py Lead model now returns 'id'. Test file at /app/backend/tests/test_horvath_api.py. All flows verified end-to-end against public REACT_APP_BACKEND_URL.",
+  "rca of the issue": "Pydantic v2 alias behavior: Field(alias='_id') is used for BOTH validation and serialization by default, and FastAPI's response_model dumps with by_alias=True, causing '_id' to be exposed. Fix: split into validation_alias/serialization_alias and enable populate_by_name."
+}
