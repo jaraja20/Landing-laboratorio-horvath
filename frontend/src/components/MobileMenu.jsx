@@ -18,8 +18,9 @@ export default function MobileMenu({ open, onClose }) {
     <div className={`mobile-menu${open ? " open" : ""}`} aria-hidden={!open} data-testid="mobile-menu">
       <div className="mobile-menu-top">
         <span className="logo">
-          <span className="lab-name">Laboratorios HORVATH</span>
-          <span className="lab-tag">Advanced Science Hub</span>
+          <span className="logo-top">Laboratorios</span>
+          <span className="logo-main">HORVATH</span>
+          <span className="logo-sub">Advanced Science Hub</span>
         </span>
         <button className="menu-toggle mobile-menu-close" aria-label="Cerrar menú" onClick={onClose} data-testid="mobile-menu-close">
           <IconClose />

@@ -20,8 +20,9 @@ export default function Footer() {
         <div className="footer-grid">
           <div className="footer-brand">
             <span className="logo">
-              <span className="lab-name">Laboratorios HORVATH</span>
-              <span className="lab-tag">Advanced Science Hub</span>
+              <span className="logo-top">Laboratorios</span>
+              <span className="logo-main">HORVATH</span>
+              <span className="logo-sub">Advanced Science Hub</span>
             </span>
             <p>{t.footer.brandDesc}</p>
             <div className="footer-social">

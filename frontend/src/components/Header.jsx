@@ -18,8 +18,9 @@ export default function Header({ onOpenMenu }) {
     <header className="site-header" id="site-header" data-testid="site-header">
       <div className="container">
         <Link to="/" className="logo" aria-label="Laboratorios Horvath, inicio" data-testid="logo-link">
-          <span className="lab-name">Laboratorios HORVATH</span>
-          <span className="lab-tag">Advanced Science Hub</span>
+          <span className="logo-top">Laboratorios</span>
+          <span className="logo-main">HORVATH</span>
+          <span className="logo-sub">Advanced Science Hub</span>
         </Link>
 
         <nav className="main-nav" aria-label="Navegación principal">
