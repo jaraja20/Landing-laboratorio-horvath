@@ -578,14 +578,38 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .history-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 56px; align-items: start; }
 .history-copy p { color: var(--grey); font-size: 16.5px; margin-bottom: 16px; }
 .history-copy blockquote { border-left: 4px solid var(--cyan); padding: 6px 0 6px 20px; margin-top: 22px; font-style: italic; color: var(--navy-deep); font-size: 16px; }
-.team-col { display: flex; flex-direction: column; gap: 20px; }
-.team-card { border-radius: var(--radius-card); overflow: hidden; box-shadow: var(--shadow-card); background: var(--white); position: relative; }
-.team-card img { width: 100%; height: 300px; object-fit: cover; object-position: top center; }
-.team-card figcaption { padding: 16px 18px; }
-.team-card figcaption strong { display: block; color: var(--navy-deep); font-size: 16px; }
+.history-copy.narrow { max-width: 840px; margin: 0 auto; }
+
+.team-section { background: var(--white); }
+.team-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; max-width: 860px; margin: 0 auto; }
+.team-card { border-radius: var(--radius-card); overflow: hidden; box-shadow: var(--shadow-card); background: var(--white); }
+.team-photo { width: 100%; aspect-ratio: 4 / 5; overflow: hidden; background: var(--light); }
+.team-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 18%; }
+.team-card figcaption { padding: 18px 20px; }
+.team-card figcaption strong { display: block; color: var(--navy-deep); font-size: 17px; }
 .team-card figcaption span { font-size: 13px; color: var(--grey); }
-@media (max-width: 900px) { .history-grid { grid-template-columns: 1fr; gap: 34px; } .team-col { flex-direction: row; } .team-card img { height: 240px; } }
-@media (max-width: 560px) { .team-col { flex-direction: column; } }
+@media (max-width: 640px) { .team-grid { grid-template-columns: 1fr; max-width: 420px; } .team-photo { aspect-ratio: 4 / 4; } }
+
+/* Experiencia (Nosotros) */
+.exp-section { background: var(--white); padding-top: 0; }
+.exp-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.exp-card { background: var(--light); border-radius: 18px; padding: 30px 22px; text-align: center; transition: transform 0.3s ease, background 0.3s ease; }
+.exp-card:hover { transform: translateY(-6px); background: #e8eefc; }
+.exp-num { display: block; font-family: var(--font-display); font-weight: 800; font-size: clamp(30px, 3.6vw, 42px); color: var(--violet); margin-bottom: 6px; }
+.exp-card strong { display: block; color: var(--navy-deep); font-size: 14.5px; margin-bottom: 8px; }
+.exp-card p { color: var(--grey); font-size: 13.5px; }
+@media (max-width: 900px) { .exp-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 520px) { .exp-grid { grid-template-columns: 1fr; } }
+
+/* Hitos e innovación (Nosotros) */
+.milestones-section { background: var(--light); }
+.milestones-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.milestone-card { background: var(--white); border-radius: var(--radius-card); padding: 30px 28px; box-shadow: var(--shadow-card); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.milestone-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-card-hover); }
+.milestone-index { display: block; font-family: var(--font-display); font-weight: 800; font-size: 32px; color: var(--cyan); }
+.milestone-card h3 { font-size: 18px; margin: 4px 0 8px; }
+.milestone-card p { color: var(--grey); font-size: 14.5px; }
+@media (max-width: 720px) { .milestones-grid { grid-template-columns: 1fr; } }
 
 .values-section { background: var(--light); }
 
@@ -610,3 +634,37 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 /* Contact hours icon */
 .contact-hours h4 { display: flex; align-items: center; gap: 8px; }
 .contact-hours h4 svg { width: 18px; height: 18px; color: var(--cyan); }
+
+/* Page hero action alignment */
+.page-hero-actions { justify-content: center; }
+
+/* =========================================================
+   FIXES MÓVIL v2.1
+   ========================================================= */
+@media (max-width: 768px) {
+  /* Hero: evitar solape del texto de confianza con el indicador de scroll */
+  .hero { min-height: auto; padding-top: calc(var(--header-h) + 12px); padding-bottom: 44px; }
+  .hero .container { padding-top: 30px; padding-bottom: 10px; }
+  .scroll-cue { display: none; }
+  .hero-trust { gap: 12px 16px; }
+  .hero-trust span { justify-content: center; text-align: center; width: 100%; }
+}
+
+@media (max-width: 560px) {
+  /* Header: liberar espacio, botones sin desbordar */
+  .site-header .container { gap: 10px; }
+  .header-actions { gap: 8px; }
+  .header-actions .icon-link { display: none; } /* llamar disponible en el menú móvil */
+  .lang-toggle { padding: 0 10px; height: 40px; gap: 4px; font-size: 12px; }
+
+  /* Botones de páginas: centrados y a lo ancho */
+  .page-hero-actions { flex-direction: column; width: 100%; align-items: stretch; }
+  .page-hero-actions .btn { width: 100%; }
+  .home-contact-actions { flex-direction: column; }
+  .home-contact-actions .btn { width: 100%; }
+  .cta-band-inner { padding: 40px 22px; }
+  .menu-card { padding: 30px 24px; text-align: center; justify-content: center; }
+  .menu-card .btn { width: 100%; }
+  .segment-banner { flex-direction: column; }
+  .segment-banner .btn { width: 100%; }
+}

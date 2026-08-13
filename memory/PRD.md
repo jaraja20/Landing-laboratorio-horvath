@@ -20,8 +20,9 @@ Sitio para Laboratorios Horvath según documentación técnica (Tekoha). Premium
 - Feed de Instagram provisto quedó en `/tmp/feedrar` (no incorporado a la web; la galería usa fotos reales del sitio vía CDN).
 
 ## Implementado
-- v1 (2026-08-13): one-page completa (hero, servicios, nosotros, metodología, alianzas, galería, ubicación, contacto). Testing 100%.
-- v2 (2026-08-13): refactor multi-vista + i18n ES/EN + back-to-top + framer-motion + páginas dedicadas Personas/Empresas con contenido diferenciado + galería movida a Nosotros + menú digital PDF por idioma. Testing agent iteration_2: **100% backend y frontend**.
+- v1 (2026-08-13): one-page completa. Testing 100%.
+- v2 (2026-08-13): refactor multi-vista + i18n ES/EN + back-to-top + framer-motion + páginas Personas/Empresas diferenciadas + galería en Nosotros + menú digital PDF por idioma. Testing iteration_2: 100%.
+- v2.1 (2026-08-13): detalle COMPLETO de servicios (bullets ampliados, 4 personas + 3 empresas); Nosotros enriquecido con "Nuestra experiencia" (4) + "Hitos e innovación" (COVID aeropuerto, Fase III con Taiwán, exportación criogénica, peritos Corte Suprema); rediseño de fotos del equipo (2 tarjetas iguales); fixes móvil (scroll-cue oculto, botones centrados/full-width, header sin desbordar); Empresas hero: botón WhatsApp reemplazado por "Ver menú" (ES/EN). Testing iteration_3: **100% backend y frontend (incl. móvil 390x844 sin overflow)**.
 
 ## Notas / pendientes del cliente
 - Correo de contacto PLACEHOLDER (`info@laboratoriohorvath.com`) — confirmar el real.

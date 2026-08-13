@@ -2,9 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import PageFade from "../components/PageFade";
-import { IconArrowRight, IconArrowUpRight, IconCheck, IconWhatsApp, IconShield, IconSparkle, IconBuilding } from "../components/icons";
+import { IconArrowRight, IconArrowUpRight, IconCheck, IconWhatsApp, IconShield, IconSparkle, IconBuilding, IconFileText } from "../components/icons";
 import { ICON_MAP } from "../components/iconMap";
-import { waLink } from "../data";
+import { waLink, MENU_PDF } from "../data";
 import { useLang } from "../i18n/LanguageContext";
 
 const stagger = { show: { transition: { staggerChildren: 0.1 } } };
@@ -12,7 +12,7 @@ const item = { hidden: { opacity: 0, y: 26 }, show: { opacity: 1, y: 0, transiti
 const BENEFIT_ICON = { shield: <IconShield />, sparkle: <IconSparkle />, building: <IconBuilding /> };
 
 export default function Empresas() {
-  const { t } = useLang();
+  const { t, lang } = useLang();
   const e = t.empresas;
 
   return (
@@ -25,7 +25,7 @@ export default function Empresas() {
             <motion.h1 variants={item}>{e.hero.title}</motion.h1>
             <motion.p variants={item} className="hero-sub">{e.hero.sub}</motion.p>
             <motion.div variants={item} className="page-hero-actions">
-              <a href={waLink(`${e.hero.title}. ${e.intro}`)} target="_blank" rel="noopener noreferrer" className="btn btn-cyan"><IconWhatsApp /> {t.cta.quote}</a>
+              <a href={MENU_PDF[lang]} target="_blank" rel="noopener noreferrer" className="btn btn-cyan"><IconFileText /> {t.cta.viewMenu}</a>
               <Link to="/contacto" className="btn btn-outline">{t.cta.contactUs} <IconArrowUpRight /></Link>
             </motion.div>
           </motion.div>
