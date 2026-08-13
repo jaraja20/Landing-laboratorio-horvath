@@ -1,36 +1,37 @@
-# PRD — Laboratorios Horvath · Advanced Science Hub (Landing)
+# PRD — Laboratorios Horvath · Advanced Science Hub (Landing/Sitio)
 
 ## Problema / objetivo
-Landing one-page (scroll vertical) para Laboratorios Horvath según documentación técnica (Tekoha Systems).
-Objetivo: premium, completa, dinámica, usable para edades 15–80, regla de 2 clics, separación clara Personas vs Empresas, WhatsApp siempre visible.
+Sitio para Laboratorios Horvath según documentación técnica (Tekoha). Premium, dinámico, usable 15–80 años, regla de 2 clics, separación clara Personas vs Empresas, WhatsApp siempre visible. Evolucionó de one-page a **sistema multi-vista**.
 
 ## Decisiones (confirmadas con el usuario)
-- Stack: **React** (frontend) + **FastAPI + MongoDB** (backend). El proyecto original venía en HTML/CSS/JS vanilla; se reconstruyó fielmente en React sobre la estructura de la plataforma (supervisor: frontend :3000, backend :8001).
-- Formulario de contacto: opción **WhatsApp** o **correo** (mailto). Todos los leads se guardan en MongoDB.
-- Mapa: Av. Aviadores del Chaco N° 2530, Asunción.
-- Logos de aliados: assets reales ya incluidos (15 logos).
+- Stack: **React (react-router) + FastAPI + MongoDB**. Supervisor: frontend :3000, backend :8001.
+- **Vistas separadas**: Home (resumen), /personas, /empresas, /nosotros (historia completa + galería), /contacto.
+- **Idioma ES/EN** con toggle global (afecta textos, labels de nav, mensajes de WhatsApp y el PDF de menú digital ES/EN). Persiste en localStorage.
+- Formulario de contacto: WhatsApp o correo (mailto); leads en MongoDB.
+- Botón flotante "volver arriba" + WhatsApp flotante.
+- Más dinamismo: contadores animados, reveal on scroll, transiciones de página (framer-motion), blobs/animaciones en hero.
 
 ## Arquitectura
-- Frontend `/app/frontend` (CRA). Componentes por sección en `src/components/`, datos/constantes en `src/data.js`, íconos SVG en `src/components/icons.jsx`. Estilos en `src/index.css` (paleta brandbook, tipografía Onest, animaciones reveal/counters).
-- Assets en `/app/frontend/public/assets/img` (favicon monograma H, fotos, logos).
-- Backend `/app/backend/server.py`: `/api/health`, `POST /api/leads`, `GET /api/leads` (MongoDB, patrón PyObjectId).
-- El proyecto vanilla original permanece en `/app` (index.html, css/, js/) como referencia.
+- `/app/frontend/src/i18n/` (LanguageContext + translations.js ES/EN).
+- `/app/frontend/src/pages/` (Home, Personas, Empresas, Nosotros, Contacto).
+- `/app/frontend/src/components/` (Layout, Header, MobileMenu, Footer, WhatsAppFloat, BackToTop, Stats, Partners, Gallery, PageFade, icons, iconMap).
+- Assets: `/app/frontend/public/assets/img` (fotos, 15 logos, favicon) y `/app/frontend/public/assets/menus/` (menu-es.pdf, menu-en.pdf ~33MB c/u).
+- Backend `/app/backend/server.py`: `/api/health`, `POST /api/leads`, `GET /api/leads` (MongoDB, PyObjectId).
+- Feed de Instagram provisto quedó en `/tmp/feedrar` (no incorporado a la web; la galería usa fotos reales del sitio vía CDN).
 
-## Implementado (2026-08-13)
-- Header sticky + nav ancla + botón WhatsApp permanente; menú móvil overlay.
-- Hero con bifurcación Personas/Empresas + línea de confianza + stats animados.
-- Nosotros (historia, misión, 6 valores), Servicios Personas (4) y Empresas (3) con CTA WhatsApp.
-- Metodología (3 pasos), Alianzas (marquee de logos), Galería (tabs + lightbox), Ubicación (mapa + cómo llegar), Contacto (acciones + formulario WhatsApp/correo), Footer, botón flotante WhatsApp.
-- Backend de captura de leads (WhatsApp/email). Testing agent: 100% backend y frontend.
+## Implementado
+- v1 (2026-08-13): one-page completa (hero, servicios, nosotros, metodología, alianzas, galería, ubicación, contacto). Testing 100%.
+- v2 (2026-08-13): refactor multi-vista + i18n ES/EN + back-to-top + framer-motion + páginas dedicadas Personas/Empresas con contenido diferenciado + galería movida a Nosotros + menú digital PDF por idioma. Testing agent iteration_2: **100% backend y frontend**.
 
 ## Notas / pendientes del cliente
-- Correo de contacto es PLACEHOLDER (`info@laboratoriohorvath.com`) — confirmar el real.
-- Envío de correo usa **mailto** (abre app del usuario). Para envío server-side (SendGrid/Resend) se requieren claves.
-- Confirmar posible sucursal adicional (Eligio Ayala) antes de publicarla.
-- Reemplazar fotos por fotografía profesional dedicada cuando esté disponible.
+- Correo de contacto PLACEHOLDER (`info@laboratoriohorvath.com`) — confirmar el real.
+- Envío por correo usa **mailto** (abre app del usuario); envío server-side (SendGrid/Resend) requiere claves.
+- PDFs de menú pesan ~33MB c/u; ideal optimizarlos/hostear en CDN antes del lanzamiento.
+- Confirmar posible sucursal adicional (Eligio Ayala).
 
-## Backlog / próximos (P1/P2)
-- Panel admin para ver leads guardados.
-- Envío real de correo por servidor (integración SendGrid/Resend).
-- SEO avanzado / Open Graph con imagen, sitemap.
-- Menú digital (PDF ES/EN) enlazado como en el sitio original.
+## Backlog (P1/P2)
+- Optimizar/comprimir PDFs de menú.
+- Envío real de correo por servidor (SendGrid/Resend).
+- Panel admin de leads + paginación/anti-spam en /api/leads.
+- Incorporar selección curada del feed de Instagram si el cliente lo desea.
+- SEO/OG por vista, sitemap, hreflang ES/EN.

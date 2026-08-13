@@ -1,7 +1,9 @@
 import React from "react";
 import { PARTNERS } from "../data";
+import { useLang } from "../i18n/LanguageContext";
 
 export default function Partners() {
+  const { t } = useLang();
   const set = PARTNERS.map(([file, name]) => (
     <div className="partner-logo" key={file}>
       <img src={`/assets/img/logos/${file}.png`} alt={name} loading="lazy" />
@@ -9,11 +11,11 @@ export default function Partners() {
   ));
 
   return (
-    <section className="partners section-pad" id="alianzas" data-testid="partners">
+    <section className="partners section-pad" data-testid="partners">
       <div className="container">
         <div className="section-head center reveal">
-          <p className="eyebrow">Confianza</p>
-          <h2>Trabajamos junto a las instituciones en las que ya confiás</h2>
+          <p className="eyebrow">{t.alianzas.eyebrow}</p>
+          <h2>{t.alianzas.title}</h2>
         </div>
       </div>
       <div className="partners-marquee reveal">

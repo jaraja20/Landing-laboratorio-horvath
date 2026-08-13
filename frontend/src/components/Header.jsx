@@ -1,40 +1,47 @@
 import React from "react";
-import { IconPhone, IconWhatsApp, IconMenu } from "./icons";
+import { NavLink, Link } from "react-router-dom";
+import { IconPhone, IconWhatsApp, IconMenu, IconGlobe } from "./icons";
 import { PHONE_TEL, PHONE_DISPLAY, waLink } from "../data";
-
-const NAV = [
-  ["#nosotros", "Nosotros"],
-  ["#servicios-personas", "Servicios"],
-  ["#metodologia", "Metodología"],
-  ["#galeria", "Galería"],
-  ["#ubicacion", "Ubicación"],
-  ["#contacto", "Contacto"],
-];
+import { useLang } from "../i18n/LanguageContext";
 
 export default function Header({ onOpenMenu }) {
+  const { t, lang, toggle } = useLang();
+  const links = [
+    ["/", t.nav.inicio],
+    ["/personas", t.nav.personas],
+    ["/empresas", t.nav.empresas],
+    ["/nosotros", t.nav.nosotros],
+    ["/contacto", t.nav.contacto],
+  ];
+
   return (
     <header className="site-header" id="site-header" data-testid="site-header">
       <div className="container">
-        <a href="#inicio" className="logo" aria-label="Laboratorios Horvath, inicio" data-testid="logo-link">
+        <Link to="/" className="logo" aria-label="Laboratorios Horvath, inicio" data-testid="logo-link">
           <span className="lab-name">Laboratorios HORVATH</span>
           <span className="lab-tag">Advanced Science Hub</span>
-        </a>
+        </Link>
 
         <nav className="main-nav" aria-label="Navegación principal">
-          {NAV.map(([href, label]) => (
-            <a key={href} href={href} data-testid={`nav-${href.slice(1)}`}>{label}</a>
+          {links.map(([to, label]) => (
+            <NavLink key={to} to={to} end={to === "/"} className={({ isActive }) => (isActive ? "active" : "")} data-testid={`nav-${to === "/" ? "inicio" : to.slice(1)}`}>
+              {label}
+            </NavLink>
           ))}
         </nav>
 
         <div className="header-actions">
-          <a href={`tel:${PHONE_TEL}`} className="icon-link" aria-label={`Llamar al ${PHONE_DISPLAY}`} data-testid="header-call">
+          <button className="lang-toggle" onClick={toggle} aria-label="Cambiar idioma / Change language" data-testid="lang-toggle">
+            <IconGlobe />
+            <span className={lang === "es" ? "on" : ""}>ES</span>
+            <span className="sep">/</span>
+            <span className={lang === "en" ? "on" : ""}>EN</span>
+          </button>
+          <a href={`tel:${PHONE_TEL}`} className="icon-link" aria-label={`${t.cta.call} ${PHONE_DISPLAY}`} data-testid="header-call">
             <IconPhone />
           </a>
-          <a
-            href={waLink("Hola, quiero más información sobre los servicios de Laboratorios Horvath.")}
-            target="_blank" rel="noopener noreferrer" className="header-whatsapp" data-testid="header-whatsapp"
-          >
-            <IconWhatsApp /><span>WhatsApp</span>
+          <a href={waLink(t.wa.general)} target="_blank" rel="noopener noreferrer" className="header-whatsapp" data-testid="header-whatsapp">
+            <IconWhatsApp /><span>{t.cta.whatsapp}</span>
           </a>
           <button className="menu-toggle" aria-label="Abrir menú" aria-expanded="false" onClick={onOpenMenu} data-testid="menu-toggle">
             <IconMenu />

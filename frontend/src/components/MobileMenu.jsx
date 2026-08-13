@@ -1,18 +1,19 @@
 import React from "react";
-import { IconClose } from "./icons";
+import { NavLink } from "react-router-dom";
+import { IconClose, IconGlobe } from "./icons";
 import { PHONE_TEL, PHONE_DISPLAY, waLink } from "../data";
-
-const LINKS = [
-  ["#nosotros", "Nosotros"],
-  ["#servicios-personas", "Para vos"],
-  ["#servicios-empresas", "Para tu empresa"],
-  ["#metodologia", "Metodología"],
-  ["#galeria", "Galería"],
-  ["#ubicacion", "Ubicación"],
-  ["#contacto", "Contacto"],
-];
+import { useLang } from "../i18n/LanguageContext";
 
 export default function MobileMenu({ open, onClose }) {
+  const { t, lang, toggle } = useLang();
+  const links = [
+    ["/", t.nav.inicio],
+    ["/personas", t.nav.personas],
+    ["/empresas", t.nav.empresas],
+    ["/nosotros", t.nav.nosotros],
+    ["/contacto", t.nav.contacto],
+  ];
+
   return (
     <div className={`mobile-menu${open ? " open" : ""}`} aria-hidden={!open} data-testid="mobile-menu">
       <div className="mobile-menu-top">
@@ -25,14 +26,22 @@ export default function MobileMenu({ open, onClose }) {
         </button>
       </div>
       <nav>
-        {LINKS.map(([href, label]) => (
-          <a key={href} href={href} onClick={onClose} data-testid={`mobile-nav-${href.slice(1)}`}>{label}</a>
+        {links.map(([to, label]) => (
+          <NavLink key={to} to={to} end={to === "/"} onClick={onClose} className={({ isActive }) => (isActive ? "active" : "")} data-testid={`mobile-nav-${to === "/" ? "inicio" : to.slice(1)}`}>
+            {label}
+          </NavLink>
         ))}
       </nav>
       <div className="mobile-menu-footer">
+        <button className="lang-toggle dark" onClick={toggle} aria-label="Cambiar idioma / Change language">
+          <IconGlobe />
+          <span className={lang === "es" ? "on" : ""}>ES</span>
+          <span className="sep">/</span>
+          <span className={lang === "en" ? "on" : ""}>EN</span>
+        </button>
         <a className="tel-link" href={`tel:${PHONE_TEL}`}>📞 {PHONE_DISPLAY}</a>
-        <a className="btn btn-cyan btn-block" href={waLink("Hola, quiero más información sobre los servicios de Laboratorios Horvath.")} target="_blank" rel="noopener noreferrer">
-          Escribir por WhatsApp
+        <a className="btn btn-cyan btn-block" href={waLink(t.wa.general)} target="_blank" rel="noopener noreferrer">
+          {t.cta.writeWa}
         </a>
       </div>
     </div>

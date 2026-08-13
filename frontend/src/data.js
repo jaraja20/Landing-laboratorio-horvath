@@ -12,6 +12,10 @@ export const MAPS_EMBED =
 export const MAPS_DIR =
   "https://www.google.com/maps/dir/?api=1&destination=Av.+Aviadores+del+Chaco+2530,+Asunci%C3%B3n,+Paraguay";
 
+export const MENU_PDF = { es: "/assets/menus/menu-es.pdf", en: "/assets/menus/menu-en.pdf" };
+export const INSTAGRAM_URL = "https://www.instagram.com/laboratorioshorvath/";
+export const FACEBOOK_URL = "https://www.facebook.com/laboratorioshorvath";
+
 export const waLink = (text) =>
   `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(text)}`;
 

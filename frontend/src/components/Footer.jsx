@@ -1,18 +1,19 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { IconFacebook, IconInstagram } from "./icons";
-import { PHONE_TEL, PHONE_DISPLAY, WHATSAPP_DISPLAY, WA_NUMBER } from "../data";
-
-const NAV = [
-  ["#nosotros", "Nosotros"],
-  ["#servicios-personas", "Para vos"],
-  ["#servicios-empresas", "Para tu empresa"],
-  ["#metodologia", "Metodología"],
-  ["#galeria", "Galería"],
-  ["#ubicacion", "Ubicación"],
-  ["#contacto", "Contacto"],
-];
+import { PHONE_TEL, PHONE_DISPLAY, WHATSAPP_DISPLAY, WA_NUMBER, FACEBOOK_URL, INSTAGRAM_URL } from "../data";
+import { useLang } from "../i18n/LanguageContext";
 
 export default function Footer() {
+  const { t } = useLang();
+  const nav = [
+    ["/", t.nav.inicio],
+    ["/personas", t.nav.personas],
+    ["/empresas", t.nav.empresas],
+    ["/nosotros", t.nav.nosotros],
+    ["/contacto", t.nav.contacto],
+  ];
+
   return (
     <footer className="site-footer" data-testid="footer">
       <div className="container">
@@ -22,20 +23,20 @@ export default function Footer() {
               <span className="lab-name">Laboratorios HORVATH</span>
               <span className="lab-tag">Advanced Science Hub</span>
             </span>
-            <p>Más de 40 años acompañando la salud de personas y empresas en Paraguay, con ciencia de vanguardia y trato humano.</p>
+            <p>{t.footer.brandDesc}</p>
             <div className="footer-social">
-              <a href="https://www.facebook.com/laboratorioshorvath" target="_blank" rel="noopener noreferrer" aria-label="Facebook de Laboratorios Horvath"><IconFacebook /></a>
-              <a href="https://www.instagram.com/laboratorioshorvath" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Laboratorios Horvath"><IconInstagram /></a>
+              <a href={FACEBOOK_URL} target="_blank" rel="noopener noreferrer" aria-label="Facebook"><IconFacebook /></a>
+              <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" aria-label="Instagram"><IconInstagram /></a>
             </div>
           </div>
 
           <div className="footer-col">
-            <h4>Navegación</h4>
-            <ul>{NAV.map(([href, label]) => <li key={href}><a href={href}>{label}</a></li>)}</ul>
+            <h4>{t.footer.navTitle}</h4>
+            <ul>{nav.map(([to, label]) => <li key={to}><Link to={to}>{label}</Link></li>)}</ul>
           </div>
 
           <div className="footer-col">
-            <h4>Contacto</h4>
+            <h4>{t.footer.contactTitle}</h4>
             <ul>
               <li><p>Av. Aviadores del Chaco N° 2530, Asunción</p></li>
               <li><a href={`tel:${PHONE_TEL}`}>{PHONE_DISPLAY}</a></li>
@@ -46,8 +47,8 @@ export default function Footer() {
         </div>
 
         <div className="footer-bottom">
-          <span>© {new Date().getFullYear()} Laboratorios Horvath. Todos los derechos reservados.</span>
-          <span>Diseño y desarrollo — Tekoha Systems</span>
+          <span>© {new Date().getFullYear()} Laboratorios Horvath. {t.footer.rights}</span>
+          <span>{t.footer.credit}</span>
         </div>
       </div>
     </footer>
