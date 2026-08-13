@@ -5,7 +5,7 @@ import PageFade from "../components/PageFade";
 import Stats from "../components/Stats";
 import Partners from "../components/Partners";
 import { IconUser, IconBuilding, IconArrowRight, IconLayers, IconShield, IconSparkle, IconPhone, IconWhatsApp, IconArrowUpRight } from "../components/icons";
-import { waLink, PHONE_TEL, PHONE_DISPLAY, MAPS_DIR } from "../data";
+import { waLink, PHONE_TEL, PHONE_DISPLAY, MAPS_DIR, HERO_BG, HISTORY_IMG } from "../data";
 import { useLang } from "../i18n/LanguageContext";
 
 const stagger = { show: { transition: { staggerChildren: 0.12 } } };
@@ -18,6 +18,7 @@ export default function Home() {
   return (
     <PageFade>
       <section className="hero" id="inicio" data-testid="hero">
+        <div className="hero-photo" style={{ backgroundImage: `url(${HERO_BG.home})` }} />
         <div className="hero-blob b1" />
         <div className="hero-blob b2" />
         <div className="hero-grid-overlay" />
@@ -58,18 +59,18 @@ export default function Home() {
       <section className="about section-pad">
         <div className="container">
           <div className="about-grid">
-            <div className="about-photo reveal">
-              <img src="/assets/img/photos/dra-horvath.jpg" alt="Dra. Gabriela Horvath" loading="lazy" />
-              <div className="caption">
-                <strong>Dra. Gabriela Horvath</strong>
-                <span>Máster en Toxicología · Perito de la Corte Suprema</span>
-              </div>
-            </div>
             <div className="about-copy reveal">
               <p className="eyebrow">{t.homeAbout.eyebrow}</p>
               <h2>{t.homeAbout.title}</h2>
               <p>{t.homeAbout.text}</p>
               <Link to="/nosotros" className="btn btn-navy">{t.homeAbout.cta} <IconArrowRight /></Link>
+            </div>
+            <div className="about-photo framed reveal">
+              <img src={HISTORY_IMG} alt="Fachada de Laboratorios Horvath" loading="lazy" />
+              <div className="caption">
+                <strong>Laboratorio Horvath</strong>
+                <span>Av. Aviadores del Chaco N° 2530 · Asunción</span>
+              </div>
             </div>
           </div>
         </div>

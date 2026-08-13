@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import PageFade from "../components/PageFade";
 import { IconPhone, IconWhatsApp, IconMapPin, IconMail, IconCheck, IconClock, IconArrowUpRight } from "../components/icons";
-import { PHONE_TEL, PHONE_DISPLAY, WHATSAPP_DISPLAY, MAPS_DIR, MAPS_EMBED, ADDRESS, CONTACT_EMAIL, waLink } from "../data";
+import { PHONE_TEL, PHONE_DISPLAY, WHATSAPP_DISPLAY, MAPS_DIR, MAPS_EMBED, ADDRESS, CONTACT_EMAIL, waLink, HERO_BG } from "../data";
 import { useLang } from "../i18n/LanguageContext";
 
 const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
@@ -49,6 +49,7 @@ export default function Contacto() {
   return (
     <PageFade>
       <section className="page-hero contacto-hero" data-testid="contacto-hero">
+        <div className="hero-photo" style={{ backgroundImage: `url(${HERO_BG.contacto})` }} />
         <div className="hero-blob b1" />
         <div className="container">
           <p className="hero-eyebrow">{t.nav.contacto}</p>

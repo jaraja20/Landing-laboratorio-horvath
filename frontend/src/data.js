@@ -16,6 +16,29 @@ export const MENU_PDF = { es: "/assets/menus/menu-es.pdf", en: "/assets/menus/me
 export const INSTAGRAM_URL = "https://www.instagram.com/laboratorioshorvath/";
 export const FACEBOOK_URL = "https://www.facebook.com/laboratorioshorvath";
 
+// Imagen de la fachada (instalaciones) para el bloque "Nuestra historia"
+export const HISTORY_IMG = "https://laboratoriohorvath.com/wp-content/uploads/2026/03/WhatsApp-Image-2026-02-14-at-12.19.36-1.jpeg";
+
+// Íconos 3D de principios (generados)
+const IMG = "https://static.prod-images.emergentagent.com/jobs/06dc2e2a-b742-4325-aa5b-0d12d5275e88/images/";
+export const PRINCIPLE_ICONS = {
+  layers: `${IMG}d4ef25c3f76c8af3b620cef1f57943f0b83c877b79f3148e135edccad9f75d0a.jpeg`,
+  shield: `${IMG}e74c4e7d385a8dcf6a4fedd5f51fa6d3d42aa6800b085a9e4b2993955504fcc3.jpeg`,
+  arrowup: `${IMG}14a71909d23ceb306a9b209a250cc617e6e6b861a2a905d0ddb6227718c935a0.jpeg`,
+  refresh: `${IMG}5d86fb6c266a367e55a4dfbf67d21b3c8222c1cb7c719b18d058e0b67b887deb.jpeg`,
+  heart: `${IMG}e0b9a621674107f19a3e5745eb9d93341f81d95a0312efbf4aa9d7d646b1c644.jpeg`,
+  flask: `${IMG}3602bf050dd493a853c2919b81ef8a82694750658fddfcdca9e65c475ba01957.jpeg`,
+};
+
+// Fondos decorativos de laboratorio por vista
+export const HERO_BG = {
+  home: "https://images.unsplash.com/photo-1630959305606-3123a081dada?crop=entropy&cs=srgb&fm=jpg&q=85&w=1600",
+  personas: "https://images.unsplash.com/photo-1582560475093-ba66accbc424?crop=entropy&cs=srgb&fm=jpg&q=85&w=1600",
+  empresas: "https://images.unsplash.com/photo-1582719471384-894fbb16e074?crop=entropy&cs=srgb&fm=jpg&q=85&w=1600",
+  nosotros: "https://images.unsplash.com/photo-1614308459036-779d0dfe51ff?crop=entropy&cs=srgb&fm=jpg&q=85&w=1600",
+  contacto: "https://images.unsplash.com/photo-1614935151651-0bea6508db6b?crop=entropy&cs=srgb&fm=jpg&q=85&w=1600",
+};
+
 export const waLink = (text) =>
   `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(text)}`;
 

@@ -5,8 +5,7 @@ import Stats from "../components/Stats";
 import Gallery from "../components/Gallery";
 import Partners from "../components/Partners";
 import { IconInstagram } from "../components/icons";
-import { ICON_MAP } from "../components/iconMap";
-import { INSTAGRAM_URL } from "../data";
+import { INSTAGRAM_URL, PRINCIPLE_ICONS, HERO_BG } from "../data";
 import { useLang } from "../i18n/LanguageContext";
 
 const stagger = { show: { transition: { staggerChildren: 0.1 } } };
@@ -19,6 +18,7 @@ export default function Nosotros() {
   return (
     <PageFade>
       <section className="page-hero nosotros-hero" data-testid="nosotros-hero">
+        <div className="hero-photo" style={{ backgroundImage: `url(${HERO_BG.nosotros})` }} />
         <div className="hero-blob b1" />
         <div className="container">
           <motion.div variants={stagger} initial="hidden" animate="show">
@@ -35,6 +35,24 @@ export default function Nosotros() {
           <div className="history-copy narrow reveal">
             {n.history.map((para, i) => <p key={i}>{para}</p>)}
             <blockquote>{n.quote}</blockquote>
+          </div>
+        </div>
+      </section>
+
+      {/* Dirección científica */}
+      <section className="team-section section-pad">
+        <div className="container">
+          <div className="section-head center reveal"><h2>{n.teamTitle}</h2></div>
+          <div className="team-grid reveal-stagger reveal">
+            {n.team.map((m) => (
+              <figure className="team-card" key={m.name}>
+                <div className="team-photo"><img src={m.img} alt={m.name} loading="lazy" /></div>
+                <figcaption>
+                  <strong>{m.name}</strong>
+                  <span>{m.role}</span>
+                </figcaption>
+              </figure>
+            ))}
           </div>
         </div>
       </section>
@@ -71,38 +89,18 @@ export default function Nosotros() {
         </div>
       </section>
 
-      {/* Dirección científica */}
-      <section className="team-section section-pad">
-        <div className="container">
-          <div className="section-head center reveal"><h2>{n.teamTitle}</h2></div>
-          <div className="team-grid reveal-stagger reveal">
-            {n.team.map((m) => (
-              <figure className="team-card" key={m.name}>
-                <div className="team-photo"><img src={m.img} alt={m.name} loading="lazy" /></div>
-                <figcaption>
-                  <strong>{m.name}</strong>
-                  <span>{m.role}</span>
-                </figcaption>
-              </figure>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Valores */}
+      {/* Principios */}
       <section className="values-section section-pad">
         <div className="container">
           <div className="section-head center reveal"><h2>{n.valuesTitle}</h2></div>
-          <div className="values-grid reveal-stagger reveal">
-            {n.values.map(({ icon, label }) => {
-              const Ico = ICON_MAP[icon];
-              return (
-                <div className="value-card" key={label}>
-                  <span className="value-icon"><Ico /></span>
-                  <span>{label}</span>
-                </div>
-              );
-            })}
+          <div className="principles-grid reveal-stagger reveal">
+            {n.values.map((v) => (
+              <div className="principle-card" key={v.label} data-testid={`principle-${v.icon}`}>
+                <div className="principle-icon"><img src={PRINCIPLE_ICONS[v.icon]} alt={v.label} loading="lazy" /></div>
+                <h3>{v.label}</h3>
+                <p>{v.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -113,7 +111,6 @@ export default function Nosotros() {
       <section className="gallery section-pad" id="galeria" data-testid="gallery">
         <div className="container">
           <div className="section-head center reveal">
-            <p className="eyebrow">{n.galleryTitle}</p>
             <h2>{n.galleryTitle}</h2>
             <p>{n.gallerySub}</p>
           </div>

@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import PageFade from "../components/PageFade";
 import { IconArrowRight, IconArrowUpRight, IconCheck, IconWhatsApp, IconFileText, IconCalendar } from "../components/icons";
 import { ICON_MAP } from "../components/iconMap";
-import { waLink, MENU_PDF } from "../data";
+import { waLink, MENU_PDF, HERO_BG } from "../data";
 import { useLang } from "../i18n/LanguageContext";
 
 const stagger = { show: { transition: { staggerChildren: 0.1 } } };
@@ -17,6 +17,7 @@ export default function Personas() {
   return (
     <PageFade>
       <section className="page-hero personas-hero" data-testid="personas-hero">
+        <div className="hero-photo" style={{ backgroundImage: `url(${HERO_BG.personas})` }} />
         <div className="hero-blob b1" />
         <div className="container">
           <motion.div variants={stagger} initial="hidden" animate="show">
