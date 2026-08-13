@@ -5,7 +5,7 @@ import { IconPhone, IconWhatsApp, IconMapPin, IconMail, IconCheck, IconClock, Ic
 import { PHONE_TEL, PHONE_DISPLAY, WHATSAPP_DISPLAY, MAPS_DIR, MAPS_EMBED, ADDRESS, CONTACT_EMAIL, waLink, HERO_BG } from "../data";
 import { useLang } from "../i18n/LanguageContext";
 
-const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
+const BACKEND = process.env.REACT_APP_BACKEND_URL;
 const empty = { name: "", phone: "", email: "", service: "", message: "" };
 
 export default function Contacto() {
@@ -27,8 +27,11 @@ export default function Contacto() {
   };
 
   const saveLead = async (channel) => {
-    try { await axios.post(`${API}/leads`, { ...form, channel }); }
-    catch (e) { console.error("No se pudo guardar el lead:", e?.message); }
+    // Guardado opcional: solo si hay backend configurado. El sitio funciona
+    // igual sin backend (WhatsApp/correo son del lado del navegador).
+    if (!BACKEND) return;
+    try { await axios.post(`${BACKEND}/api/leads`, { ...form, channel }); }
+    catch (e) { /* no bloquea el contacto */ }
   };
 
   const submit = async (e, channel) => {
