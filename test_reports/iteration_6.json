@@ -1,0 +1,22 @@
+{
+  "summary": "Validated SPA rewrite fix for Vercel deploy and full regression on Horvath multi-view SPA. Confirmed vercel.json rewrite config (/(.*) -> /index.html) exists in both /app/frontend/vercel.json and /app/vercel.json. On preview base URL, all 5 routes render correctly on direct/fresh navigation with the expected data-testid heroes and no console/page errors. Backend API tests (5/5) pass. All regression flows (nav + active link, ES/EN toggle + persistence, back-to-top, contact form success, logo three-tier in header/footer) work.",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {"ui_bugs": [], "integration_issues": [], "design_issues": []},
+  "test_report_links": [
+    "/app/backend/tests/test_horvath_api.py",
+    "/app/test_reports/pytest/pytest_results.xml"
+  ],
+  "action_items": [],
+  "critical_code_review_comments": [
+    "SPA rewrite correctly configured in both /app/frontend/vercel.json and root /app/vercel.json. Since outputDirectory=frontend/build is set at the root vercel.json (monorepo build), the root file's rewrites govern the deployment; the frontend/vercel.json acts as a redundant safety net. Both are safe (filesystem checks run before rewrites, so static assets under /static/* are unaffected).",
+    "Consider adding a cache-control header for /index.html to no-store to avoid stale SPA shells after deploy (nice-to-have)."
+  ],
+  "updated_files": [],
+  "success_rate": {"backend": "100%", "frontend": "100%"},
+  "test_credentials": "None - public landing, no auth",
+  "seed_data_creation": "Created TEST_-prefixed leads via API + contact form during testing",
+  "retest_needed": false,
+  "main_agent_can_self_test": true,
+  "context_for_next_testing_agent": "Deep-link routing works on preview (CRA dev server historyApiFallback). The Vercel-side fix cannot be verified from here; user must push to GitHub and redeploy for actual Vercel validation. Backend + frontend regression is green.",
+  "rca of the issue": "Original 404 on Vercel refresh for /personas /empresas /nosotros /contacto was caused by absence of SPA fallback rewrite on Vercel static hosting. Fix: added { source: '/(.*)', destination: '/index.html' } in vercel.json. Vercel rewrites execute after filesystem checks so static assets remain served directly; SPA routes now return index.html and react-router resolves the deep link client-side."
+}
