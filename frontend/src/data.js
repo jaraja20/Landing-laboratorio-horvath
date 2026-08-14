@@ -36,7 +36,18 @@ export const HERO_BG = {
   empresas: "https://images.unsplash.com/photo-1582719471384-894fbb16e074?crop=entropy&cs=srgb&fm=jpg&q=85&w=1600",
   nosotros: "https://images.unsplash.com/photo-1614308459036-779d0dfe51ff?crop=entropy&cs=srgb&fm=jpg&q=85&w=1600",
   contacto: "https://images.unsplash.com/photo-1614935151651-0bea6508db6b?crop=entropy&cs=srgb&fm=jpg&q=85&w=1600",
+  ash: "https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?crop=entropy&cs=srgb&fm=jpg&q=85&w=1600",
+  convenios: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?crop=entropy&cs=srgb&fm=jpg&q=85&w=1600",
 };
+
+// Empresas que ya confían en Horvath (Salud Laboral)
+export const LABORAL_CLIENTS = [
+  "Localiza", "Deuce", "IPALE", "Interexpress", "Comdetur", "KOSTAS", "Britimp",
+  "Hospicenter", "Promed", "EBSA", "Sheraton", "Aloft", "Club Libertad",
+  "Termo Industrial", "Triple C Cambios", "Tecno Ambiental", "Impackta", "Medoc",
+  "KMC", "Las Olivas", "Venezia", "La Misión", "Serviplus", "Bagual", "Amanecer",
+  "Ingraf", "Viscount", "Gráfica Mayo",
+];
 
 export const waLink = (text) =>
   `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(text)}`;

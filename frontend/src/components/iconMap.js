@@ -1,6 +1,8 @@
 import {
   IconBeaker, IconMolecule, IconDNA, IconShieldCheck, IconBuilding, IconGear,
   IconFlask, IconLayers, IconShield, IconArrowUp, IconRefresh, IconHeart,
+  IconVenus, IconDroplet, IconLeaf, IconActivity, IconRun, IconClipboard,
+  IconUtensils, IconHandshake, IconCard, IconCalendar, IconSearch, IconTestTube, IconSparkle,
 } from "./icons";
 
 export const ICON_MAP = {
@@ -16,4 +18,17 @@ export const ICON_MAP = {
   arrowup: IconArrowUp,
   refresh: IconRefresh,
   heart: IconHeart,
+  venus: IconVenus,
+  droplet: IconDroplet,
+  leaf: IconLeaf,
+  activity: IconActivity,
+  run: IconRun,
+  clipboard: IconClipboard,
+  utensils: IconUtensils,
+  handshake: IconHandshake,
+  card: IconCard,
+  calendar: IconCalendar,
+  search: IconSearch,
+  testtube: IconTestTube,
+  sparkle: IconSparkle,
 };

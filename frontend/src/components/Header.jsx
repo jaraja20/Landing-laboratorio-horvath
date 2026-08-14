@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink, Link } from "react-router-dom";
-import { IconPhone, IconWhatsApp, IconMenu, IconGlobe } from "./icons";
+import { IconPhone, IconWhatsApp, IconMenu, IconGlobe, IconChevronDown } from "./icons";
 import { PHONE_TEL, PHONE_DISPLAY, waLink } from "../data";
 import { useLang } from "../i18n/LanguageContext";
 
@@ -8,10 +8,14 @@ export default function Header({ onOpenMenu }) {
   const { t, lang, toggle } = useLang();
   const links = [
     ["/", t.nav.inicio],
-    ["/personas", t.nav.personas],
+    ["/pacientes", t.nav.pacientes],
     ["/empresas", t.nav.empresas],
     ["/nosotros", t.nav.nosotros],
     ["/contacto", t.nav.contacto],
+  ];
+  const moreLinks = [
+    ["/advanced-science-hub", t.nav.ash],
+    ["/convenios", t.nav.convenios],
   ];
 
   return (
@@ -29,6 +33,18 @@ export default function Header({ onOpenMenu }) {
               {label}
             </NavLink>
           ))}
+          <div className="nav-more" data-testid="nav-more">
+            <button type="button" className="nav-more-trigger" aria-haspopup="true">
+              {t.nav.mas || "Más"} <IconChevronDown />
+            </button>
+            <div className="nav-more-panel">
+              {moreLinks.map(([to, label]) => (
+                <NavLink key={to} to={to} className={({ isActive }) => (isActive ? "active" : "")} data-testid={`nav-${to.slice(1)}`}>
+                  {label}
+                </NavLink>
+              ))}
+            </div>
+          </div>
         </nav>
 
         <div className="header-actions">

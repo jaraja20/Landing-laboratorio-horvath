@@ -8,8 +8,10 @@ export default function MobileMenu({ open, onClose }) {
   const { t, lang, toggle } = useLang();
   const links = [
     ["/", t.nav.inicio],
-    ["/personas", t.nav.personas],
+    ["/pacientes", t.nav.pacientes],
     ["/empresas", t.nav.empresas],
+    ["/advanced-science-hub", t.nav.ash],
+    ["/convenios", t.nav.convenios],
     ["/nosotros", t.nav.nosotros],
     ["/contacto", t.nav.contacto],
   ];

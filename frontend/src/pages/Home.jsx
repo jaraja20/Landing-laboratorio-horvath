@@ -29,7 +29,7 @@ export default function Home() {
             <motion.p variants={item} className="hero-sub">{t.hero.sub}</motion.p>
 
             <motion.div variants={item} className="hero-split">
-              <Link to="/personas" className="split-card persona" data-testid="hero-persona">
+              <Link to="/pacientes" className="split-card persona" data-testid="hero-persona">
                 <span className="split-icon"><IconUser /></span>
                 <h3>{t.paths.persona.title}</h3>
                 <p>{t.paths.persona.desc}</p>

@@ -98,9 +98,46 @@ export const IconGlobe = (p) => (
 export const IconChevronUp = (p) => (
   <S {...p}><polyline points="18 15 12 9 6 15"/></S>
 );
+export const IconChevronDown = (p) => (
+  <S {...p}><polyline points="6 9 12 15 18 9"/></S>
+);
+
 export const IconFileText = (p) => (
   <S {...p}><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><line x1="10" y1="9" x2="8" y2="9"/></S>
 );
 export const IconCalendar = (p) => (
   <S {...p}><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></S>
+);
+export const IconVenus = (p) => (
+  <S {...p}><circle cx="12" cy="9" r="6"/><line x1="12" y1="15" x2="12" y2="22"/><line x1="9" y1="19" x2="15" y2="19"/></S>
+);
+export const IconDroplet = (p) => (
+  <S {...p}><path d="M12 2.5S5.5 9 5.5 14a6.5 6.5 0 0 0 13 0C18.5 9 12 2.5 12 2.5z"/></S>
+);
+export const IconLeaf = (p) => (
+  <S {...p}><path d="M11 20A7 7 0 0 1 4 13c0-5 4-9 16-9 0 10-6 16-9 16z"/><path d="M4 20c4-6 8-8 12-9"/></S>
+);
+export const IconActivity = (p) => (
+  <S {...p}><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></S>
+);
+export const IconRun = (p) => (
+  <S {...p}><circle cx="16" cy="5" r="2"/><path d="M6 20l3-5 3 2 2-5"/><path d="M8 10l4-2 3 3 3 1"/></S>
+);
+export const IconClipboard = (p) => (
+  <S {...p}><rect x="8" y="3" width="8" height="4" rx="1"/><path d="M16 5h2a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h2"/><path d="M9 12h6M9 16h4"/></S>
+);
+export const IconUtensils = (p) => (
+  <S {...p}><path d="M4 2v7a2 2 0 0 0 2 2h0a2 2 0 0 0 2-2V2"/><path d="M6 11v11"/><path d="M18 2v20"/><path d="M18 8c1.7 0 3-1.8 3-4s-1.3-2-3-2"/></S>
+);
+export const IconHandshake = (p) => (
+  <S {...p}><path d="M8 12l3 3 2-2 4 4"/><path d="M2 12l4-4 4 2"/><path d="M22 12l-4-4-3 1"/><path d="M11 15l-2 2a1.5 1.5 0 0 1-2-2l2-2"/></S>
+);
+export const IconCard = (p) => (
+  <S {...p}><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/><line x1="6" y1="15" x2="10" y2="15"/></S>
+);
+export const IconSearch = (p) => (
+  <S {...p}><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></S>
+);
+export const IconTestTube = (p) => (
+  <S {...p}><path d="M9 2v16a3 3 0 0 0 6 0V2"/><path d="M8 2h8"/><path d="M9 12h6"/></S>
 );

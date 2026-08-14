@@ -1,0 +1,24 @@
+{
+  "summary": "Frontend-only testing post-refactor of navigation (Pacientes/Empresas/ASH/Convenios). All routes navigate correctly, /personas redirects to /pacientes, dropdown 'Más' shows ASH+Convenios on hover, active class is applied, ES/EN toggle switches labels (Pacientes<->Patients, Empresas<->Companies, Más<->More, Convenios<->Coverage) and persists across navigation. All page content renders (paciente-action-* x3, profile-* x8, laboral-* x4, ash-* x4). WhatsApp float and header-whatsapp point to valid wa.me URLs. Fixed one CSS bug that prevented interaction on mobile due to the closed mobile-menu overlay intercepting pointer events; retest passed. No horizontal overflow on /pacientes, /empresas, /convenios in 390x844.",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [
+      {"component": "MobileMenu / index.css", "issue": "When closed, .mobile-menu (position:fixed inset:0 translateY(-100%)) still intercepted pointer events at the top of the viewport because its overflowing content (footer WhatsApp button) rendered above the viewport. Any click on menu-toggle or elements at top of page was intercepted by the hidden menu. Fixed by adding visibility:hidden; pointer-events:none when not .open, and overflow-y:auto.", "selector": ".mobile-menu", "priority": "HIGH"}
+    ],
+    "integration_issues": [],
+    "design_issues": []
+  },
+  "test_report_links": [],
+  "action_items": [],
+  "critical_code_review_comments": [
+    "MobileMenu overlay had no visibility/pointer-events hiding when closed - fixed by testing agent in /app/frontend/src/index.css",
+    "Header dropdown 'Más' is hover-only (no click/keyboard support) - potential a11y concern for touch/keyboard users on tablet-desktop breakpoints, though acceptable on mobile since MobileMenu is used."
+  ],
+  "updated_files": ["/app/frontend/src/index.css"],
+  "success_rate": {"backend": "N/A", "frontend": "100%"},
+  "seed_data_creation": "None",
+  "retest_needed": false,
+  "should_main_agent_self_test": true,
+  "context_for_next_testing_agent": "Site is 100% frontend, no backend. Base URL https://doc-setup-lab.preview.emergentagent.com. Verified all 7 nav routes, /personas->/pacientes redirect, i18n toggle persistence, WhatsApp hrefs. Fixed mobile-menu pointer-events bug. Header dropdown 'Más' uses CSS :hover, not click - keep in mind for future automation (use page.hover before clicking sub-items).",
+  "rca of the issue": "Bug: mobile-menu blocked clicks. RCA: .mobile-menu had position:fixed inset:0 with transform:translateY(-100%) as its 'closed' state. Because the internal flex content (top logo, 7 nav items, footer with WA button) exceeded the 100vh box, part of it rendered below the box; translateY(-100%) moves only the box, so overflow content remained visible near the top of the viewport and captured pointer events (aria-hidden does not disable pointer events). Fix: add visibility:hidden; pointer-events:none by default, toggle to visible/auto on .open. Also added overflow-y:auto for long content on small screens. Retested: menu-toggle click works, all 7 mobile nav links visible and href-correct."
+}
