@@ -3,6 +3,7 @@ import {
   IconFlask, IconLayers, IconShield, IconArrowUp, IconRefresh, IconHeart,
   IconVenus, IconDroplet, IconLeaf, IconActivity, IconRun, IconClipboard,
   IconUtensils, IconHandshake, IconCard, IconCalendar, IconSearch, IconTestTube, IconSparkle,
+  IconPos, IconBank, IconCash,
 } from "./icons";
 
 export const ICON_MAP = {
@@ -31,4 +32,7 @@ export const ICON_MAP = {
   search: IconSearch,
   testtube: IconTestTube,
   sparkle: IconSparkle,
+  pos: IconPos,
+  bank: IconBank,
+  cash: IconCash,
 };

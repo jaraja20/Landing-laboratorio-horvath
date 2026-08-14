@@ -141,3 +141,13 @@ export const IconSearch = (p) => (
 export const IconTestTube = (p) => (
   <S {...p}><path d="M9 2v16a3 3 0 0 0 6 0V2"/><path d="M8 2h8"/><path d="M9 12h6"/></S>
 );
+export const IconPos = (p) => (
+  <S {...p}><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="4" y1="8" x2="20" y2="8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="13" y2="17"/></S>
+);
+export const IconBank = (p) => (
+  <S {...p}><path d="M3 10 12 4l9 6"/><line x1="4" y1="10" x2="4" y2="20"/><line x1="20" y1="10" x2="20" y2="20"/><line x1="9" y1="10" x2="9" y2="20"/><line x1="15" y1="10" x2="15" y2="20"/><line x1="2" y1="20" x2="22" y2="20"/></S>
+);
+export const IconCash = (p) => (
+  <S {...p}><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/><line x1="6" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="18" y2="12"/></S>
+);
+
