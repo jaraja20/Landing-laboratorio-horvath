@@ -49,6 +49,12 @@ export const LABORAL_CLIENTS = [
   "Ingraf", "Viscount", "Gráfica Mayo",
 ];
 
+// Logos reales de empresas que confían en Salud Laboral Horvath (imágenes)
+export const LABORAL_LOGOS = Array.from(
+  { length: 26 },
+  (_, i) => `/assets/laboral/laboral-${String(i + 1).padStart(2, "0")}.jpg`
+);
+
 export const waLink = (text) =>
   `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(text)}`;
 

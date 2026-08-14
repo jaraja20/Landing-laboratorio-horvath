@@ -2,18 +2,18 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import PageFade from "../components/PageFade";
-import { IconArrowUpRight, IconCheck, IconWhatsApp, IconHandshake, IconMapPin } from "../components/icons";
+import { IconArrowUpRight, IconCheck, IconWhatsApp, IconHandshake, IconMapPin, IconFileText } from "../components/icons";
 import { ICON_MAP } from "../components/iconMap";
-import { waLink, HERO_BG, LABORAL_CLIENTS } from "../data";
+import { waLink, HERO_BG, LABORAL_LOGOS, MENU_PDF } from "../data";
 import { useLang } from "../i18n/LanguageContext";
 
 const stagger = { show: { transition: { staggerChildren: 0.08 } } };
 const item = { hidden: { opacity: 0, y: 24 }, show: { opacity: 1, y: 0, transition: { duration: 0.5 } } };
 
 export default function Empresas() {
-  const { t } = useLang();
+  const { t, lang } = useLang();
   const e = t.empresas;
-  const chips = [...LABORAL_CLIENTS, ...LABORAL_CLIENTS];
+  const logos = [...LABORAL_LOGOS, ...LABORAL_LOGOS];
 
   return (
     <PageFade>
@@ -108,11 +108,28 @@ export default function Empresas() {
       {/* Empresas que confían */}
       <section className="clients section-pad">
         <div className="container">
-          <div className="section-head center reveal"><h2>{e.clientsTitle}</h2></div>
+          <div className="section-head center reveal"><h2>{e.clientsTitle}</h2><p>{e.clientsSub}</p></div>
         </div>
         <div className="clients-marquee reveal">
-          <div className="clients-track">
-            {chips.map((c, i) => <span className="client-chip" key={i}>{c}</span>)}
+          <div className="clients-logos-track">
+            {logos.map((src, i) => (
+              <div className="client-logo" key={i}>
+                <img src={src} alt="Empresa cliente de Salud Laboral Horvath" loading="lazy" />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Menú de estudios */}
+      <section className="menu-block section-pad">
+        <div className="container">
+          <div className="menu-card reveal">
+            <div>
+              <p className="eyebrow">{e.menuTitle}</p>
+              <h2>{e.menuDesc}</h2>
+            </div>
+            <a href={MENU_PDF[lang]} target="_blank" rel="noopener noreferrer" className="btn btn-navy" data-testid="empresas-menu-btn"><IconFileText /> {t.cta.viewMenu}</a>
           </div>
         </div>
       </section>

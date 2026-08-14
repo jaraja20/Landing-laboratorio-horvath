@@ -41,6 +41,16 @@ export default function Pacientes() {
                 );
               })}
             </motion.div>
+            <motion.div variants={item} className="wa-helper" data-testid="paciente-wa-helper">
+              <div className="wa-helper-text">
+                <span className="wa-helper-icon"><IconWhatsApp /></span>
+                <div>
+                  <strong>{p.waHelper.title}</strong>
+                  <p>{p.waHelper.text}</p>
+                </div>
+              </div>
+              <a href={waLink(t.wa.general)} target="_blank" rel="noopener noreferrer" className="btn btn-cyan wa-helper-btn">{p.waHelper.btn}</a>
+            </motion.div>
           </motion.div>
         </div>
       </section>
@@ -65,6 +75,9 @@ export default function Pacientes() {
                 </a>
               );
             })}
+          </div>
+          <div className="profiles-cta reveal">
+            <a href={MENU_PDF[lang]} target="_blank" rel="noopener noreferrer" className="btn btn-navy" data-testid="pacientes-ver-menu"><IconFileText /> {t.cta.viewMenu}</a>
           </div>
         </div>
       </section>
