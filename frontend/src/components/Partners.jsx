@@ -1,12 +1,12 @@
 import React from "react";
-import { PARTNERS } from "../data";
+import { ALIANZA_LOGOS } from "../data";
 import { useLang } from "../i18n/LanguageContext";
 
 export default function Partners() {
   const { t } = useLang();
-  const set = PARTNERS.map(([file, name]) => (
-    <div className="partner-logo" key={file}>
-      <img src={`/assets/img/logos/${file}.png`} alt={name} loading="lazy" />
+  const set = ALIANZA_LOGOS.map((src, i) => (
+    <div className="partner-logo" key={i}>
+      <img src={src} alt="Institución aliada de Laboratorios Horvath" loading="lazy" />
     </div>
   ));
 

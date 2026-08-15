@@ -89,6 +89,41 @@ export default function Empresas() {
         </div>
       </section>
 
+      {/* Gancho: por qué aliarte con Horvath */}
+      <section className="porque section-pad" data-testid="porque-aliarse">
+        <div className="container">
+          <div className="section-head center reveal">
+            <p className="eyebrow pink">{e.porque.eyebrow}</p>
+            <h2>{e.porque.title}</h2>
+            <p>{e.porque.sub}</p>
+          </div>
+          <div className="porque-grid reveal-stagger reveal">
+            {e.porque.reasons.map((r) => {
+              const Ico = ICON_MAP[r.icon];
+              return (
+                <div className="porque-card" key={r.title}>
+                  <span className="porque-icon">{Ico ? <Ico /> : null}</span>
+                  <h3>{r.title}</h3>
+                  <p>{r.text}</p>
+                </div>
+              );
+            })}
+          </div>
+          <div className="benefit-highlight reveal">
+            <div className="benefit-highlight-body">
+              <p className="eyebrow">{e.porque.benefitEyebrow}</p>
+              <h3>{e.porque.benefitTitle}</h3>
+              <p>{e.porque.benefitText}</p>
+              <div className="page-hero-actions">
+                <a href={waLink(t.wa.asesor)} target="_blank" rel="noopener noreferrer" className="btn btn-cyan" data-testid="porque-asesor"><IconHandshake /> {t.cta.hablarAsesor}</a>
+                <a href={waLink(t.wa.propuesta)} target="_blank" rel="noopener noreferrer" className="btn btn-outline">{t.cta.solicitarPropuesta} <IconArrowUpRight /></a>
+              </div>
+            </div>
+            <div className="benefit-highlight-badge"><span>15%</span><small>{e.porque.benefitEyebrow}</small></div>
+          </div>
+        </div>
+      </section>
+
       {/* Cómo funciona empresas */}
       <section className="como section-pad" style={{ background: "var(--light)" }}>
         <div className="container">

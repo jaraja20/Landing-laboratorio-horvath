@@ -55,6 +55,12 @@ export const LABORAL_LOGOS = Array.from(
   (_, i) => `/assets/laboral/laboral-${String(i + 1).padStart(2, "0")}.jpg`
 );
 
+// Logos de instituciones / medicinas prepagas aliadas (marquesina de confianza)
+export const ALIANZA_LOGOS = Array.from(
+  { length: 15 },
+  (_, i) => `/assets/alianzas/alianza-${String(i + 1).padStart(2, "0")}.jpg`
+);
+
 export const waLink = (text) =>
   `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(text)}`;
 
@@ -77,6 +83,7 @@ export const PATIENT_PROFILES = [
   },
   {
     id: "salud-femenina-premium",
+    image: "/assets/perfiles/salud-femenina-premium.jpg",
     accent: "pink",
     tag: "Mujeres",
     title: "Salud femenina premium",
@@ -92,6 +99,7 @@ export const PATIENT_PROFILES = [
   },
   {
     id: "chequeo-salud-express",
+    image: "/assets/perfiles/chequeo-salud-express.jpg",
     accent: "cyan",
     tag: "Prevención",
     title: "Chequeo de salud express",
@@ -103,6 +111,7 @@ export const PATIENT_PROFILES = [
   },
   {
     id: "balance-hormonal-femenino",
+    image: "/assets/perfiles/balance-hormonal-femenino.jpg",
     accent: "violet",
     tag: "Hormonas",
     title: "Balance hormonal femenino",
@@ -116,6 +125,7 @@ export const PATIENT_PROFILES = [
   },
   {
     id: "vitaminico-nutricional",
+    image: "/assets/perfiles/vitaminico-nutricional.jpg",
     accent: "green",
     tag: "Nutrición",
     title: "Perfil vitamínico y nutricional",
@@ -129,6 +139,7 @@ export const PATIENT_PROFILES = [
   },
   {
     id: "perfil-deportista",
+    image: "/assets/perfiles/perfil-deportista.jpg",
     accent: "cyan",
     tag: "Deporte",
     title: "Perfil deportista",
@@ -145,6 +156,7 @@ export const PATIENT_PROFILES = [
   },
   {
     id: "stress-control",
+    image: "/assets/perfiles/stress-control.jpg",
     accent: "violet",
     tag: "Bienestar",
     title: "Perfil Stress control",
@@ -156,6 +168,7 @@ export const PATIENT_PROFILES = [
   },
   {
     id: "its-basico",
+    image: "/assets/perfiles/its-basico.jpg",
     accent: "cyan",
     tag: "ITS",
     title: "Perfil ITS básico",
@@ -167,6 +180,7 @@ export const PATIENT_PROFILES = [
   },
   {
     id: "its-femenino-extendido",
+    image: "/assets/perfiles/its-femenino-extendido.jpg",
     accent: "pink",
     tag: "ITS",
     title: "Perfil ITS femenino extendido",
@@ -179,6 +193,7 @@ export const PATIENT_PROFILES = [
   },
   {
     id: "its-masculino-extendido",
+    image: "/assets/perfiles/its-masculino-extendido.jpg",
     accent: "blue",
     tag: "ITS",
     title: "Perfil ITS masculino extendido",
@@ -191,6 +206,7 @@ export const PATIENT_PROFILES = [
   },
   {
     id: "pre-natal-completo",
+    image: "/assets/perfiles/pre-natal-completo.jpg",
     accent: "pink",
     tag: "Embarazo",
     title: "Perfil pre natal completo",
@@ -203,6 +219,7 @@ export const PATIENT_PROFILES = [
   },
   {
     id: "pre-quirurgico",
+    image: "/assets/perfiles/pre-quirurgico.jpg",
     accent: "navy",
     tag: "Prequirúrgico",
     title: "Control pre quirúrgico",

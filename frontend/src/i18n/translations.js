@@ -101,6 +101,20 @@ export const translations = {
       coverage: "Atendemos Asunción y Gran Asunción · Operativos en el interior desde 50 personas",
       differentialTitle: "Un encargado exclusivo para tu empresa",
       differentialText: "Cada empresa cuenta con un encargado específico de Horvath como único punto de contacto, para centralizar la coordinación y el seguimiento. Acompañamiento clínico real y respuestas rápidas.",
+      porque: {
+        eyebrow: "Aliate a Horvath",
+        title: "Sumate a las empresas líderes que ya confían en nosotros",
+        sub: "Diseñamos un programa de salud laboral a medida, con respaldo científico y un acompañamiento que le simplifica la vida a tu equipo de RRHH.",
+        reasons: [
+          { icon: "handshake", title: "Un solo punto de contacto", text: "Un encargado exclusivo coordina todo: agenda, operativos y seguimiento." },
+          { icon: "building", title: "Vamos a tu empresa", text: "Operativos in company en Asunción, Gran Asunción e interior (desde 50 personas)." },
+          { icon: "filetext", title: "Resultados digitales y trazables", text: "Reportes claros y rápidos, listos para auditorías y cumplimiento normativo." },
+          { icon: "flask", title: "Respaldo científico Horvath", text: "Tecnología de vanguardia y el aval del Advanced Science Hub." },
+        ],
+        benefitEyebrow: "Beneficio para tu equipo",
+        benefitTitle: "Un plus que tus colaboradores valoran",
+        benefitText: "15% de descuento permanente en estudios para tus colaboradores, y tarifas preferenciales para su familia directa. Cuidar al equipo también fideliza.",
+      },
       studiesTitle: "Nuestros servicios de Salud Laboral",
       studies: [
         { icon: "clipboard", title: "Estudios Admisionales", desc: "Evaluación completa de ingreso con certificado de apto por médico laboral." },
@@ -305,6 +319,20 @@ export const translations = {
       coverage: "We serve Asunción & Greater Asunción · On-site in the interior from 50 people",
       differentialTitle: "A dedicated manager for your company",
       differentialText: "Every company gets a specific Horvath manager as the single point of contact, centralizing coordination and follow-up. Real clinical support and fast responses.",
+      porque: {
+        eyebrow: "Partner with Horvath",
+        title: "Join the leading companies that already trust us",
+        sub: "We design a tailored occupational health program, backed by science and support that makes your HR team's life easier.",
+        reasons: [
+          { icon: "handshake", title: "A single point of contact", text: "A dedicated manager coordinates everything: scheduling, on-site visits and follow-up." },
+          { icon: "building", title: "We come to your company", text: "On-site operations in Asunción, Greater Asunción and the interior (from 50 people)." },
+          { icon: "filetext", title: "Digital, traceable results", text: "Clear, fast reports ready for audits and regulatory compliance." },
+          { icon: "flask", title: "Horvath scientific backing", text: "Cutting-edge technology and the endorsement of our Advanced Science Hub." },
+        ],
+        benefitEyebrow: "A perk for your team",
+        benefitTitle: "A plus your employees value",
+        benefitText: "A permanent 15% discount on tests for your employees, and preferential rates for their immediate family. Caring for your team builds loyalty.",
+      },
       studiesTitle: "Our Occupational Health services",
       studies: [
         { icon: "clipboard", title: "Pre-employment exams", desc: "Complete onboarding assessment with medical fitness certificate." },

@@ -86,10 +86,8 @@ export default function Home() {
             <p>{t.homeContact.sub}</p>
           </div>
           <div className="home-contact-actions reveal">
-            <a href={`tel:${PHONE_TEL}`} className="btn btn-navy"><IconPhone /> {PHONE_DISPLAY}</a>
-            <a href={waLink(t.wa.general)} target="_blank" rel="noopener noreferrer" className="btn btn-cyan"><IconWhatsApp /> {t.cta.whatsapp}</a>
-            <a href={MAPS_DIR} target="_blank" rel="noopener noreferrer" className="btn btn-violet"><IconArrowUpRight /> {t.cta.directions}</a>
-            <Link to="/contacto" className="btn btn-ghost">{t.cta.contactUs} <IconArrowRight /></Link>
+            <a href={waLink(t.wa.general)} target="_blank" rel="noopener noreferrer" className="btn btn-cyan" data-testid="home-wa-btn"><IconWhatsApp /> {t.cta.whatsapp}</a>
+            <Link to="/contacto" className="btn btn-ghost" data-testid="home-contact-btn">{t.cta.contactUs} <IconArrowRight /></Link>
           </div>
         </div>
       </section>
