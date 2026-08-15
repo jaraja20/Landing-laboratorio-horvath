@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import PageFade from "../components/PageFade";
+import ProfileExplorer from "../components/ProfileExplorer";
 import { IconArrowRight, IconArrowUpRight, IconWhatsApp, IconFileText, IconCalendar, IconCard, IconCheck } from "../components/icons";
 import { ICON_MAP } from "../components/iconMap";
 import { waLink, MENU_PDF, HERO_BG } from "../data";
@@ -41,16 +42,6 @@ export default function Pacientes() {
                 );
               })}
             </motion.div>
-            <motion.div variants={item} className="wa-helper" data-testid="paciente-wa-helper">
-              <div className="wa-helper-text">
-                <span className="wa-helper-icon"><IconWhatsApp /></span>
-                <div>
-                  <strong>{p.waHelper.title}</strong>
-                  <p>{p.waHelper.text}</p>
-                </div>
-              </div>
-              <a href={waLink(t.wa.general)} target="_blank" rel="noopener noreferrer" className="btn btn-cyan wa-helper-btn">{p.waHelper.btn}</a>
-            </motion.div>
           </motion.div>
         </div>
       </section>
@@ -63,19 +54,7 @@ export default function Pacientes() {
             <h2>{p.profilesTitle}</h2>
             <p>{p.profilesSub}</p>
           </div>
-          <div className="profiles-grid reveal-stagger reveal">
-            {p.profiles.map((s) => {
-              const Ico = ICON_MAP[s.icon];
-              return (
-                <a key={s.title} className="profile-card" href={waLink(`${t.wa.servicePrefix} ${s.title}.`)} target="_blank" rel="noopener noreferrer" data-testid={`profile-${s.icon}`}>
-                  <span className="profile-icon"><Ico /></span>
-                  <h3>{s.title}</h3>
-                  <p>{s.desc}</p>
-                  <span className="card-cta">{t.cta.consult} <IconArrowRight /></span>
-                </a>
-              );
-            })}
-          </div>
+          <ProfileExplorer />
           <div className="profiles-cta reveal">
             <a href={MENU_PDF[lang]} target="_blank" rel="noopener noreferrer" className="btn btn-navy" data-testid="pacientes-ver-menu"><IconFileText /> {t.cta.viewMenu}</a>
           </div>
@@ -86,14 +65,20 @@ export default function Pacientes() {
       <section className="como section-pad">
         <div className="container">
           <div className="section-head center reveal"><h2>{p.comoTitle}</h2><p>{p.comoSub}</p></div>
-          <div className="como-grid reveal-stagger reveal">
-            {p.como.map((c, i) => (
-              <div className="como-step" key={i}>
-                <span className="como-num">{i + 1}</span>
-                <h3>{c.title}</h3>
-                <p>{c.text}</p>
-              </div>
-            ))}
+          <div className="como-flow reveal-stagger reveal">
+            {p.como.map((c, i) => {
+              const Ico = ICON_MAP[c.icon];
+              return (
+                <div className="como-step" key={i}>
+                  <div className="como-badge">
+                    <span className="como-icon">{Ico ? <Ico /> : null}</span>
+                    <span className="como-num">{i + 1}</span>
+                  </div>
+                  <h3>{c.title}</h3>
+                  <p>{c.text}</p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>

@@ -93,14 +93,20 @@ export default function Empresas() {
       <section className="como section-pad" style={{ background: "var(--light)" }}>
         <div className="container">
           <div className="section-head center reveal"><h2>{e.comoTitle}</h2></div>
-          <div className="como-grid reveal-stagger reveal">
-            {e.como.map((c, i) => (
-              <div className="como-step" key={i}>
-                <span className="como-num">{i + 1}</span>
-                <h3>{c.title}</h3>
-                <p>{c.text}</p>
-              </div>
-            ))}
+          <div className="como-flow reveal-stagger reveal">
+            {e.como.map((c, i) => {
+              const Ico = ICON_MAP[c.icon];
+              return (
+                <div className="como-step" key={i}>
+                  <div className="como-badge">
+                    <span className="como-icon">{Ico ? <Ico /> : null}</span>
+                    <span className="como-num">{i + 1}</span>
+                  </div>
+                  <h3>{c.title}</h3>
+                  <p>{c.text}</p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>

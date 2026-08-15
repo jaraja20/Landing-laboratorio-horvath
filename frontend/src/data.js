@@ -58,6 +58,163 @@ export const LABORAL_LOGOS = Array.from(
 export const waLink = (text) =>
   `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(text)}`;
 
+// Perfiles y chequeos reales del sanatorio (Horvath Health Profiles)
+// accent: blue | pink | violet | cyan | green | navy
+export const PATIENT_PROFILES = [
+  {
+    id: "bienestar-masculino-elite",
+    accent: "blue",
+    tag: "Hombres",
+    image: "/assets/perfiles/bienestar-masculino.jpg",
+    title: "Bienestar masculino elite",
+    summary: "Evaluación integral masculina para prevención cardiovascular, metabólica, hormonal y prostática.",
+    groups: [
+      { label: "Evaluación hematológica y metabólica", items: ["Hemograma", "VSG", "Perfil lipídico", "Ácido úrico", "Perfil renal", "Perfil hepático – GGT", "Glucosa", "HbA1c"] },
+      { label: "Marcadores tumorales", items: ["CEA", "CA 19.9"] },
+      { label: "Evaluación hormonal y prostática", items: ["Vitamina D", "ANA HEP 2", "Testosterona total", "Testosterona libre", "PSA total", "PSA libre", "Orina simple"] },
+    ],
+    orientedTo: "Hombres que buscan control preventivo integral, optimizar energía, rendimiento y salud prostática.",
+  },
+  {
+    id: "salud-femenina-premium",
+    accent: "pink",
+    tag: "Mujeres",
+    title: "Salud femenina premium",
+    summary: "Evaluación integral avanzada para el monitoreo completo de la salud femenina.",
+    groups: [
+      { label: "Evaluación general y metabólica", items: ["Hemograma", "Glucosa", "HbA1c", "VSG", "Perfil lipídico", "Ácido úrico"] },
+      { label: "Función hepática y renal", items: ["Perfil hepático", "Gamma GT", "Perfil renal", "Proteínas T, A/G"] },
+      { label: "Infecciones y microbiología", items: ["VDRL", "HIV", "Orina cultivo", "Sec. vaginal cultivo"] },
+      { label: "Función hormonal", items: ["TSH", "FT4", "FT3", "FSH", "LH", "Estradiol"] },
+      { label: "Marcadores oncológicos y autoinmunidad", items: ["CEA", "CA 15.3", "CA 125", "CA 19.9", "ANA HEP 2"] },
+    ],
+    orientedTo: "Mujeres que buscan un chequeo preventivo de alta gama.",
+  },
+  {
+    id: "chequeo-salud-express",
+    accent: "cyan",
+    tag: "Prevención",
+    title: "Chequeo de salud express",
+    summary: "Evaluación integral básica: los principales indicadores de tu salud, con resultados en 1 día.",
+    groups: [
+      { label: "Estudios incluidos", items: ["Hemograma", "Eritrosedimentación", "GOT", "GPT", "Colesterol total", "Triglicéridos", "Urea", "Creatinina", "Glucosa", "VDRL", "HIV", "TSH", "Orina simple"] },
+    ],
+    orientedTo: "Personas que buscan un control médico ágil, con resultados rápidos en 1 día.",
+  },
+  {
+    id: "balance-hormonal-femenino",
+    accent: "violet",
+    tag: "Hormonas",
+    title: "Balance hormonal femenino",
+    summary: "Evaluación integral del equilibrio endocrino femenino: fertilidad, ciclo, SOP y menopausia.",
+    groups: [
+      { label: "Función hormonal", items: ["Estradiol", "FSH", "LH", "Progesterona", "Prolactina", "Testosterona", "DHEA SO4", "Androstenediona"] },
+      { label: "Metabolismo asociado", items: ["Glucosa", "Insulina", "HOMA-IR"] },
+      { label: "Evaluación general", items: ["Hemograma", "VSG", "Orina simple"] },
+    ],
+    orientedTo: "Mujeres con alteraciones menstruales, acné, planificación de embarazo o control hormonal integral.",
+  },
+  {
+    id: "vitaminico-nutricional",
+    accent: "green",
+    tag: "Nutrición",
+    title: "Perfil vitamínico y nutricional",
+    summary: "Identifica deficiencias nutricionales y ayuda a mejorar tu energía.",
+    groups: [
+      { label: "Perfil mineral", items: ["Calcio", "Magnesio", "Fósforo", "Zinc"] },
+      { label: "Proteínas y reservas", items: ["Proteínas totales", "Albúmina", "Hierro", "Ferritina", "Transferrina"] },
+      { label: "Vitaminas y base hematológica", items: ["Hemograma", "Vitamina D", "Vitamina B12", "Folatos"] },
+    ],
+    orientedTo: "Ideal para operados de cirugías bariátricas, veganos y vegetarianos.",
+  },
+  {
+    id: "perfil-deportista",
+    accent: "cyan",
+    tag: "Deporte",
+    title: "Perfil deportista",
+    summary: "Evaluación integral para rendimiento físico y control metabólico.",
+    groups: [
+      { label: "Perfil vitamínico completo", items: ["Vitamina D", "B12", "Folatos", "Hierro", "Ferritina", "Transferrina", "Zinc"] },
+      { label: "Hormonas", items: ["TSH", "T4 libre", "Testosterona", "Cortisol AM"] },
+      { label: "Marcadores musculares", items: ["CK total", "LDH"] },
+      { label: "Metabolismo y hemograma", items: ["Glucosa", "HbA1c", "Hemograma completo", "Orina simple"] },
+      { label: "Función hepática y renal", items: ["GOT", "GPT", "Fosfatasa Alcalina", "GGT", "Urea", "Creatinina"] },
+      { label: "Perfil lipídico", items: ["Colesterol Total", "C-HDL", "C-LDL", "C-VLDL", "Triglicéridos", "Lípidos totales"] },
+    ],
+    orientedTo: "Deportistas profesionales y amateurs, y preparación para competencias.",
+  },
+  {
+    id: "stress-control",
+    accent: "violet",
+    tag: "Bienestar",
+    title: "Perfil Stress control",
+    summary: "Evaluación integral para el rendimiento físico y mental.",
+    groups: [
+      { label: "Estudios incluidos", items: ["Hemograma", "DHEA SO4", "Cortisol AM", "Cortisol PM", "TSH", "FT4", "Prolactina", "ACTH AM", "ACTH PM"] },
+    ],
+    orientedTo: "Personas con cansancio extremo, insomnio, ansiedad o sospecha de burnout.",
+  },
+  {
+    id: "its-basico",
+    accent: "cyan",
+    tag: "ITS",
+    title: "Perfil ITS básico",
+    summary: "Detección preventiva, rápida y confidencial de infecciones de transmisión sexual.",
+    groups: [
+      { label: "Serología infecciosa", items: ["VDRL", "FTA ABS IGG", "FTA ABS IGM", "Hepatitis B", "HIV"] },
+    ],
+    orientedTo: "Personas sexualmente activas que buscan un control preventivo, rápido y confidencial.",
+  },
+  {
+    id: "its-femenino-extendido",
+    accent: "pink",
+    tag: "ITS",
+    title: "Perfil ITS femenino extendido",
+    summary: "Evaluación integral sexual preventiva femenina, incluso en etapas asintomáticas.",
+    groups: [
+      { label: "Microbiología", items: ["Clamidia Ag", "Neisseria Gonorrhoeae", "Candida sp", "Trichomonas vaginalis", "Ureaplasma", "Mycoplasma", "Orina cultivo", "Cultivo sec. vaginal"] },
+      { label: "Serología infecciosa", items: ["VDRL", "FTA-ABS IGG", "FTA-ABS IGM", "HIV Ac", "Hepatitis B", "Hepatitis C", "Herpes Tipo 2 IGG", "Herpes Tipo 2 IGM"] },
+    ],
+    orientedTo: "Mujeres que buscan un control sexual integral y confidencial, de rutina o por síntomas.",
+  },
+  {
+    id: "its-masculino-extendido",
+    accent: "blue",
+    tag: "ITS",
+    title: "Perfil ITS masculino extendido",
+    summary: "Detección preventiva y confidencial de infecciones de transmisión sexual.",
+    groups: [
+      { label: "Serología infecciosa", items: ["VDRL", "FTA ABS IGG", "FTA ABS IGM", "HIV Ac", "Hepatitis B", "Hepatitis C", "Herpes Tipo 2 IGG", "Herpes Tipo 2 IGM"] },
+      { label: "Infecciones frecuentes", items: ["Chlamydia Ag", "Neisseria Gonorrhoeae", "Candida sp", "Trichomonas", "Ureaplasma", "Mycoplasma", "Orina cultivo", "Cultivo líq. biológicos"] },
+    ],
+    orientedTo: "Hombres que desean un chequeo integral, confidencial y preventivo para proteger su salud y la de su pareja.",
+  },
+  {
+    id: "pre-natal-completo",
+    accent: "pink",
+    tag: "Embarazo",
+    title: "Perfil pre natal completo",
+    summary: "Evaluación integral del embarazo y detección de infecciones.",
+    groups: [
+      { label: "Evaluación hematológica y metabólica", items: ["Hemograma", "Grupo sanguíneo", "Glucosa", "HbA1c", "Calcio", "Magnesio", "Perfil renal", "Perfil hepático", "Perfil lipídico", "Ácido úrico", "Vitamina D", "Folato"] },
+      { label: "Infecciones y screening prenatal", items: ["TORCH", "VDRL", "Orina simple y cultivo", "Sec. vaginal cultivo", "Clamidia", "Ureaplasma", "Mycoplasma"] },
+    ],
+    orientedTo: "Mujeres embarazadas en cualquier etapa, especialmente al inicio del control prenatal.",
+  },
+  {
+    id: "pre-quirurgico",
+    accent: "navy",
+    tag: "Prequirúrgico",
+    title: "Control pre quirúrgico",
+    summary: "Evaluación clínica previa a cirugías.",
+    groups: [
+      { label: "Evaluación hematológica y metabólica", items: ["Hemograma", "VSG", "PCR", "Glucosa", "Orina simple", "Tipificación", "Coagulograma", "Urea", "Creatinina", "GOT - GPT", "Electrolitos"] },
+    ],
+    orientedTo: "Pacientes que se preparan para cualquier tipo de cirugía.",
+  },
+];
+
+
 export const PERSONAS_SERVICES = [
   { icon: "beaker", title: "Análisis Clínicos", desc: "Hematología, bioquímica, inmunología, microbiología, orina, heces y espermograma." },
   { icon: "molecule", title: "Análisis Especializados", desc: "Biología molecular, toxicología e inmunología avanzada." },
