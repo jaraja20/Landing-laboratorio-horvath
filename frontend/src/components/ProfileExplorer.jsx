@@ -32,10 +32,6 @@ export default function ProfileExplorer() {
     <>
       <motion.div
         className="perfiles-grid"
-        variants={gridV}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, amount: 0.15 }}
         data-testid="perfiles-grid"
       >
         {visibleProfiles.map((prof) => (
@@ -45,7 +41,10 @@ export default function ProfileExplorer() {
             className={`perfil-card${prof.image ? " has-image" : ""}`}
             data-accent={prof.accent}
             style={prof.image ? { backgroundImage: `linear-gradient(180deg, rgba(11,26,58,0.35) 0%, rgba(11,26,58,0.92) 78%), url(${prof.image})` } : undefined}
-            variants={cardV}
+            initial={{ opacity: 0, y: 26 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.1 }}
+            transition={{ duration: 0.45 }}
             whileHover={{ y: -8 }}
             onClick={() => setActiveId(prof.id)}
             data-testid={`perfil-card-${prof.id}`}
