@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import PageFade from "../components/PageFade";
-import { IconArrowUpRight, IconCheck, IconWhatsApp, IconHandshake, IconMapPin, IconFileText } from "../components/icons";
+import { IconArrowUpRight, IconCheck, IconWhatsApp, IconHandshake, IconMapPin, IconFileText, IconSparkle } from "../components/icons";
 import { ICON_MAP } from "../components/iconMap";
 import { waLink, HERO_BG, LABORAL_LOGOS, MENU_PDF } from "../data";
 import { useLang } from "../i18n/LanguageContext";
@@ -77,18 +77,6 @@ export default function Empresas() {
               );
             })}
           </div>
-          <div className="benefit-highlight reveal">
-            <div className="benefit-highlight-body">
-              <p className="eyebrow">{e.porque.benefitEyebrow}</p>
-              <h3>{e.porque.benefitTitle}</h3>
-              <p>{e.porque.benefitText}</p>
-              <div className="page-hero-actions">
-                <a href={waLink(t.wa.asesor)} target="_blank" rel="noopener noreferrer" className="btn btn-cyan" data-testid="porque-asesor"><IconHandshake /> {t.cta.hablarAsesor}</a>
-                <a href={waLink(t.wa.propuesta)} target="_blank" rel="noopener noreferrer" className="btn btn-outline">{t.cta.solicitarPropuesta} <IconArrowUpRight /></a>
-              </div>
-            </div>
-            <div className="benefit-highlight-badge"><span>15%</span><small>{e.porque.benefitEyebrow}</small></div>
-          </div>
         </div>
       </section>
 
@@ -146,7 +134,7 @@ export default function Empresas() {
       <section className="cta-band empresas section-pad">
         <div className="container">
           <div className="cta-band-inner reveal">
-            <div className="cta-band-icon"><IconHandshake /></div>
+            <div className="cta-band-icon"><IconSparkle /></div>
             <h2>{e.ctaTitle}</h2>
             <p>{e.ctaText}</p>
             <div className="page-hero-actions center">

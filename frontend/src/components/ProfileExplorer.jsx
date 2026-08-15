@@ -8,8 +8,9 @@ const cardV = { hidden: { opacity: 0, y: 26 }, show: { opacity: 1, y: 0, transit
 const gridV = { show: { transition: { staggerChildren: 0.06 } } };
 
 export default function ProfileExplorer() {
-  const { t } = useLang();
+  const { t, lang } = useLang();
   const p = t.pacientes;
+  const L = (v) => (v && typeof v === "object" && !Array.isArray(v) ? (v[lang] || v.es) : v);
   const [activeId, setActiveId] = useState(null);
   const active = PATIENT_PROFILES.find((x) => x.id === activeId);
 
@@ -46,9 +47,9 @@ export default function ProfileExplorer() {
             onClick={() => setActiveId(prof.id)}
             data-testid={`perfil-card-${prof.id}`}
           >
-            <span className="perfil-tag">{prof.tag}</span>
-            <h3>{prof.title}</h3>
-            <p>{prof.summary}</p>
+            <span className="perfil-tag">{L(prof.tag)}</span>
+            <h3>{L(prof.title)}</h3>
+            <p>{L(prof.summary)}</p>
             <span className="card-cta">{p.verDetalle} <IconArrowRight /></span>
           </motion.button>
         ))}
@@ -84,17 +85,17 @@ export default function ProfileExplorer() {
                 className="perfil-modal-head"
                 style={active.image ? { backgroundImage: `linear-gradient(180deg, rgba(11,26,58,0.35) 0%, rgba(11,26,58,0.9) 85%), url(${active.image})` } : undefined}
               >
-                <span className="perfil-tag">{active.tag}</span>
-                <h3>{active.title}</h3>
-                <p>{active.summary}</p>
+                <span className="perfil-tag">{L(active.tag)}</span>
+                <h3>{L(active.title)}</h3>
+                <p>{L(active.summary)}</p>
               </div>
 
               <div className="perfil-modal-body">
                 <h4 className="perfil-body-title">{p.estudios}</h4>
                 <div className="perfil-groups">
                   {active.groups.map((g) => (
-                    <div className="perfil-group" key={g.label}>
-                      <strong>{g.label}</strong>
+                    <div className="perfil-group" key={L(g.label)}>
+                      <strong>{L(g.label)}</strong>
                       <ul>
                         {g.items.map((it) => (
                           <li key={it}><IconCheck /> {it}</li>
@@ -105,12 +106,12 @@ export default function ProfileExplorer() {
                 </div>
 
                 <div className="perfil-oriented">
-                  <strong>{p.orientadoA}</strong> {active.orientedTo}
+                  <strong>{p.orientadoA}</strong> {L(active.orientedTo)}
                 </div>
 
                 <a
                   className="btn btn-cyan perfil-cta"
-                  href={waLink(`${t.wa.servicePrefix} el perfil "${active.title}".`)}
+                  href={waLink(`${t.wa.servicePrefix} "${L(active.title)}".`)}
                   target="_blank"
                   rel="noopener noreferrer"
                   data-testid="perfil-wa"

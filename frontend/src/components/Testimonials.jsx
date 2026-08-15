@@ -10,7 +10,7 @@ function SourceBadge({ source }) {
 }
 
 export default function Testimonials() {
-  const { t } = useLang();
+  const { t, lang } = useLang();
   const set = [...TESTIMONIALS, ...TESTIMONIALS];
   return (
     <section className="testimonials section-pad" data-testid="testimonials">
@@ -29,7 +29,7 @@ export default function Testimonials() {
               <div className="tm-stars" aria-label={`${tm.rating} de 5`}>
                 {Array.from({ length: tm.rating }).map((_, s) => <IconStar key={s} />)}
               </div>
-              <p className="tm-text">{tm.text}</p>
+              <p className="tm-text">{typeof tm.text === "object" ? (tm.text[lang] || tm.text.es) : tm.text}</p>
               <div className="tm-foot">
                 <span className="tm-avatar">{tm.name.charAt(0)}</span>
                 <div>

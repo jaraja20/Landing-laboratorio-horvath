@@ -107,14 +107,11 @@ export const translations = {
         title: "Sumate a las empresas líderes que ya confían en nosotros",
         sub: "Diseñamos un programa de salud laboral a medida, con respaldo científico y un acompañamiento que le simplifica la vida a tu equipo de RRHH.",
         reasons: [
-          { icon: "handshake", title: "Un solo punto de contacto", text: "Un encargado exclusivo coordina todo: agenda, operativos y seguimiento." },
+          { icon: "user", title: "Un solo punto de contacto", text: "Un encargado exclusivo coordina todo: agenda, operativos y seguimiento." },
           { icon: "building", title: "Vamos a tu empresa", text: "Operativos in company en Asunción, Gran Asunción e interior (desde 50 personas)." },
           { icon: "filetext", title: "Resultados digitales y trazables", text: "Reportes claros y rápidos, listos para auditorías y cumplimiento normativo." },
           { icon: "flask", title: "Respaldo científico Horvath", text: "Tecnología de vanguardia y el aval del Advanced Science Hub." },
         ],
-        benefitEyebrow: "Beneficio para tu equipo",
-        benefitTitle: "Un plus que tus colaboradores valoran",
-        benefitText: "15% de descuento permanente en estudios para tus colaboradores, y tarifas preferenciales para su familia directa. Cuidar al equipo también fideliza.",
       },
       studiesTitle: "Nuestros servicios de Salud Laboral",
       studies: [
@@ -122,13 +119,6 @@ export const translations = {
         { icon: "calendar", title: "Estudios Anuales / Periódicos", desc: "Controles periódicos para el cumplimiento normativo de tu operación." },
         { icon: "utensils", title: "Manipuladores de Alimentos", desc: "Estudios y carnet sanitario para personal que manipula alimentos." },
         { icon: "shieldcheck", title: "Salud Laboral 360°", desc: "Solución integral: laboratorio completo + audiometría, ECG, Rx, espirometría y screening toxicológico." },
-      ],
-      benefitsTitle: "Mayor productividad, sin contingencias",
-      benefits: [
-        { icon: "refresh", title: "Continuidad operativa", text: "Vamos hasta tu empresa y nos adaptamos a los turnos rotativos." },
-        { icon: "clipboard", title: "Procesos ordenados para RRHH", text: "Coordinación ágil y reportes claros." },
-        { icon: "shield", title: "Reducción de costos ocultos", text: "Se previenen gastos por ausencias, retrasos y fallas normativas." },
-        { icon: "heart", title: "Mejor clima laboral", text: "15% de descuento permanente en estudios para tus colaboradores." },
       ],
       comoTitle: "¿Cómo trabajamos con tu empresa?",
       como: [
@@ -339,14 +329,11 @@ export const translations = {
         title: "Join the leading companies that already trust us",
         sub: "We design a tailored occupational health program, backed by science and support that makes your HR team's life easier.",
         reasons: [
-          { icon: "handshake", title: "A single point of contact", text: "A dedicated manager coordinates everything: scheduling, on-site visits and follow-up." },
+          { icon: "user", title: "A single point of contact", text: "A dedicated manager coordinates everything: scheduling, on-site visits and follow-up." },
           { icon: "building", title: "We come to your company", text: "On-site operations in Asunción, Greater Asunción and the interior (from 50 people)." },
           { icon: "filetext", title: "Digital, traceable results", text: "Clear, fast reports ready for audits and regulatory compliance." },
           { icon: "flask", title: "Horvath scientific backing", text: "Cutting-edge technology and the endorsement of our Advanced Science Hub." },
         ],
-        benefitEyebrow: "A perk for your team",
-        benefitTitle: "A plus your employees value",
-        benefitText: "A permanent 15% discount on tests for your employees, and preferential rates for their immediate family. Caring for your team builds loyalty.",
       },
       studiesTitle: "Our Occupational Health services",
       studies: [
@@ -354,13 +341,6 @@ export const translations = {
         { icon: "calendar", title: "Annual / Periodic exams", desc: "Periodic checkups for your operation's regulatory compliance." },
         { icon: "utensils", title: "Food Handlers", desc: "Studies and health card for staff handling food." },
         { icon: "shieldcheck", title: "Occupational Health 360°", desc: "All-in-one: full lab + audiometry, ECG, X-ray, spirometry and toxicology screening." },
-      ],
-      benefitsTitle: "More productivity, no contingencies",
-      benefits: [
-        { icon: "refresh", title: "Operational continuity", text: "We come to your company and adapt to rotating shifts." },
-        { icon: "clipboard", title: "Streamlined HR processes", text: "Agile coordination and clear reports." },
-        { icon: "shield", title: "Lower hidden costs", text: "Prevents costs from absences, delays and compliance gaps." },
-        { icon: "heart", title: "Better workplace climate", text: "15% permanent discount on tests for your employees." },
       ],
       comoTitle: "How we work with your company",
       como: [

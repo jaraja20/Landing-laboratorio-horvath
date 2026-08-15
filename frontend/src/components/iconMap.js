@@ -3,7 +3,7 @@ import {
   IconFlask, IconLayers, IconShield, IconArrowUp, IconRefresh, IconHeart,
   IconVenus, IconDroplet, IconLeaf, IconActivity, IconRun, IconClipboard,
   IconUtensils, IconHandshake, IconCard, IconCalendar, IconSearch, IconTestTube, IconSparkle,
-  IconPos, IconBank, IconCash, IconWhatsApp, IconFileText,
+  IconPos, IconBank, IconCash, IconWhatsApp, IconFileText, IconUser,
 } from "./icons";
 
 export const ICON_MAP = {
@@ -37,4 +37,5 @@ export const ICON_MAP = {
   cash: IconCash,
   whatsapp: IconWhatsApp,
   filetext: IconFileText,
+  user: IconUser,
 };
