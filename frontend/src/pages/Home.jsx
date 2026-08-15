@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import PageFade from "../components/PageFade";
-import Partners from "../components/Partners";
 import Testimonials from "../components/Testimonials";
 import { ICON_MAP } from "../components/iconMap";
 import { IconUser, IconBuilding, IconArrowRight, IconLayers, IconShield, IconSparkle, IconWhatsApp } from "../components/icons";
@@ -97,9 +96,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* CONFIANZA */}
-      <Partners />
 
       {/* OPINIONES */}
       <Testimonials />

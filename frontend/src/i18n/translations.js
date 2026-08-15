@@ -39,8 +39,8 @@ export const translations = {
     paths: {
       title: "¿Cómo podemos ayudarte hoy?",
       sub: "Elegí tu camino y encontrá exactamente lo que buscás, sin vueltas.",
-      persona: { title: "Soy paciente", desc: "Chequeos, prevención, salud femenina, ITS, tiroides, nutrición y estudios especializados.", cta: "Entrar como paciente" },
-      empresa: { title: "Soy empresa", desc: "Salud laboral, exámenes para tu equipo, convenios y capacidades científicas.", cta: "Entrar como empresa" },
+      persona: { title: "Pacientes", desc: "Chequeos, prevención, salud femenina, ITS, tiroides, nutrición y estudios especializados.", cta: "Entrar como paciente" },
+      empresa: { title: "Empresas", desc: "Salud laboral, exámenes para tu equipo, convenios y capacidades científicas.", cta: "Entrar como empresa" },
     },
     stats: [
       { count: 40, suffix: "+", label: "Años de trayectoria" },
@@ -53,8 +53,8 @@ export const translations = {
       text: "Nacimos en 1983 de la mano de la Dra. Raquel C. de Horvath, pionera en inmunología en Paraguay. Hoy, bajo la dirección de Gabriela Horvath —CEO y única propietaria— combinamos más de 40 años de legado con ciencia de vanguardia y alcance internacional.",
       cta: "Conocé nuestra historia",
     },
-    alianzas: { title: "Trabajamos junto a las instituciones en las que ya confiás", eyebrow: "Confianza" },
-    homeContact: { title: "Estamos para ayudarte", sub: "Contactanos por el canal que prefieras. Te respondemos lo antes posible." },
+    alianzas: { title: "Las coberturas y convenios con los que trabajamos", eyebrow: "Coberturas y convenios" },
+    homeContact: { title: "¿No tenés seguro médico?", sub: "También podés realizar tus estudios de forma particular. Escribinos y te ayudamos." },
     testimonials: { eyebrow: "Opiniones reales", title: "Lo que dicen nuestros pacientes", sub: "Reseñas de pacientes en Google, Instagram y WhatsApp.", more: "Ver más opiniones" },
     queHacemos: {
       eyebrow: "Qué hacemos", title: "Todo lo que necesitás, en un solo lugar",
@@ -312,8 +312,8 @@ export const translations = {
     paths: {
       title: "How can we help you today?",
       sub: "Choose your path and find exactly what you're looking for.",
-      persona: { title: "I'm a patient", desc: "Checkups, prevention, women's health, STIs, thyroid, nutrition and specialized studies.", cta: "Enter as a patient" },
-      empresa: { title: "I'm a company", desc: "Occupational health, team exams, coverage and scientific capabilities.", cta: "Enter as a company" },
+      persona: { title: "Patients", desc: "Checkups, prevention, women's health, STIs, thyroid, nutrition and specialized studies.", cta: "Enter as a patient" },
+      empresa: { title: "Companies", desc: "Occupational health, team exams, coverage and scientific capabilities.", cta: "Enter as a company" },
     },
     stats: [
       { count: 40, suffix: "+", label: "Years of experience" },
@@ -326,8 +326,8 @@ export const translations = {
       text: "Founded in 1983 by Dr. Raquel C. de Horvath, a pioneer in immunology in Paraguay. Today, led by Gabriela Horvath —CEO and sole owner— we combine 40+ years of legacy with cutting-edge science and international reach.",
       cta: "Learn our story",
     },
-    alianzas: { title: "We work alongside the institutions you already trust", eyebrow: "Trust" },
-    homeContact: { title: "We're here to help", sub: "Reach out through your preferred channel. We'll get back to you soon." },
+    alianzas: { title: "The coverage and agreements we work with", eyebrow: "Coverage & agreements" },
+    homeContact: { title: "No health insurance?", sub: "You can also get your tests done privately. Message us and we'll help you." },
     testimonials: { eyebrow: "Real reviews", title: "What our patients say", sub: "Reviews from patients on Google, Instagram and WhatsApp.", more: "See more reviews" },
     queHacemos: {
       eyebrow: "What we do", title: "Everything you need, in one place",

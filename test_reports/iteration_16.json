@@ -1,0 +1,32 @@
+{
+  "summary": "Frontend-only regression for latest client tweaks on Horvath landing (Home, Convenios, Nosotros, Empresas) in ES and EN. All 8 requested acceptance criteria pass.",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": []
+  },
+  "verification_results": {
+    "home_hero_buttons": "hero-persona='Pacientes' -> /pacientes OK; hero-empresa='Empresas' -> /empresas OK",
+    "home_partners_removed": "[data-testid=partners] is null on / OK",
+    "home_order": "hero -> que-hacemos -> why-horvath -> testimonials -> (nuestra-historia / final) OK",
+    "home_final_section": "Title '¿No tenés seguro médico?' present; 'Estamos para ayudarte' absent; home-wa-btn and home-contact-btn present OK",
+    "convenios_partners": "[data-testid=partners] present in /convenios; eyebrow 'COBERTURAS Y CONVENIOS' (uppercase-styled 'Coberturas y convenios') and title 'Las coberturas y convenios con los que trabajamos' OK; no 'Confianza' text",
+    "nosotros_partners_removed": "[data-testid=partners] null on /nosotros OK",
+    "nosotros_blocks": "origen-liderazgo, ol-origin, ol-leadership, timeline (5 .tl-item), 6 principle-card, gallery, instagram-link all present OK",
+    "aliate_removed": "'Aliate a Horvath' not present on /empresas OK",
+    "porque_aliarse": "eyebrow '¿POR QUÉ ELIGEN HORVATH?' present with 6 pilares OK",
+    "capacity_180": "'-180°C' present on Home why-horvath and on Nosotros; no '-80°C' capacity on Home OK",
+    "en_lang_toggle": "Hero shows 'Patients'/'Companies'; Home final 'No health insurance?'; Convenios eyebrow 'COVERAGE & AGREEMENTS' title 'The coverage and agreements we work with'; Empresas eyebrow 'WHY DO THEY CHOOSE HORVATH?'; no 'undefined' text on Home/Convenios/Nosotros OK"
+  },
+  "console_errors": "No errors/warnings captured across Home, Convenios, Nosotros, Empresas in ES and EN.",
+  "test_report_links": [],
+  "action_items": [],
+  "critical_code_review_comments": [],
+  "updated_files": [],
+  "success_rate": {"backend": "N/A (skipped per request)", "frontend": "100%"},
+  "seed_data_creation": "None",
+  "retest_needed": false,
+  "should_main_agent_self_test": false,
+  "context_for_next_testing_agent": "All client-requested changes verified visually and via DOM assertions in ES and EN. If further changes are made, re-run same DOM checks: hero button labels, partners presence per route, homeContact section, empresas porque-aliarse eyebrow, -180°C string."
+}

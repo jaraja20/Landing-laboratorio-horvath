@@ -1179,7 +1179,10 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 
 
 /* === Origen y liderazgo — viñeta chica + viñeta grande (v3.2) === */
-.origen-liderazgo { background: var(--white); }
+.nosotros-intro { padding-bottom: 8px; }
+.nosotros-intro .history-copy.narrow { max-width: 760px; margin: 0 auto; text-align: center; }
+.nosotros-intro blockquote { border: none; padding: 0; font-style: italic; }
+.origen-liderazgo { background: var(--white); padding-top: 36px; }
 .ol2-grid { display: grid; grid-template-columns: 0.92fr 1.28fr; gap: 26px; align-items: stretch; }
 
 /* Viñeta chica: Origen */
@@ -1189,12 +1192,16 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   border: 1px solid #e8ecf6; padding: 40px 36px; display: flex; flex-direction: column;
 }
 .ol2-origin::after {
-  content: ""; position: absolute; right: -8%; bottom: -4%; width: 52%; height: 54%;
-  background-image: var(--ol-bg); background-size: cover; background-position: center top;
-  opacity: 0.08; filter: grayscale(0.25);
-  -webkit-mask-image: linear-gradient(315deg, #000 15%, transparent 72%);
-  mask-image: linear-gradient(315deg, #000 15%, transparent 72%);
+  content: ""; position: absolute; right: 0; bottom: 0; width: 74%; height: 70%;
+  background-image: var(--ol-bg); background-size: cover; background-position: center 25%;
+  opacity: 0.42; filter: grayscale(0.1) contrast(1.02);
+  -webkit-mask-image: linear-gradient(300deg, #000 20%, rgba(0,0,0,0.55) 55%, transparent 82%);
+  mask-image: linear-gradient(300deg, #000 20%, rgba(0,0,0,0.55) 55%, transparent 82%);
   pointer-events: none;
+}
+.ol2-origin::before {
+  content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  background: linear-gradient(160deg, rgba(238,242,251,0.92) 0%, rgba(246,244,251,0.45) 52%, rgba(246,244,251,0) 100%);
 }
 .ol2-origin > * { position: relative; z-index: 1; }
 .ol2-year { display: inline-flex; align-items: center; gap: 12px; font-family: var(--font-display); font-weight: 800; font-size: 22px; color: var(--cyan); margin-bottom: 16px; }

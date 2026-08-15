@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import PageFade from "../components/PageFade";
 import Breadcrumb from "../components/Breadcrumb";
 import Gallery from "../components/Gallery";
-import Partners from "../components/Partners";
 import { IconInstagram } from "../components/icons";
 import { ICON_MAP } from "../components/iconMap";
 import { INSTAGRAM_URL, PRINCIPLE_ICONS, HERO_BG } from "../data";
@@ -35,7 +34,7 @@ export default function Nosotros() {
       <Breadcrumb current={t.nav.nosotros} />
 
       {/* Intro / misión (concisa) */}
-      <section className="about section-pad">
+      <section className="about nosotros-intro section-pad">
         <div className="container">
           <div className="history-copy narrow reveal">
             <blockquote>{n.quote}</blockquote>
@@ -141,8 +140,6 @@ export default function Nosotros() {
           <Gallery />
         </div>
       </section>
-
-      <Partners />
 
       {/* Instagram CTA */}
       <section className="ig-band section-pad">
