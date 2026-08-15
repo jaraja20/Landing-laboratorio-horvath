@@ -1,12 +1,12 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import PageFade from "../components/PageFade";
 import Breadcrumb from "../components/Breadcrumb";
 import Gallery from "../components/Gallery";
 import Partners from "../components/Partners";
-import { IconInstagram, IconWhatsApp, IconArrowUpRight } from "../components/icons";
-import { INSTAGRAM_URL, PRINCIPLE_ICONS, HERO_BG, WA_PLAIN } from "../data";
+import { IconInstagram } from "../components/icons";
+import { ICON_MAP } from "../components/iconMap";
+import { INSTAGRAM_URL, PRINCIPLE_ICONS, HERO_BG } from "../data";
 import { useLang } from "../i18n/LanguageContext";
 
 const stagger = { show: { transition: { staggerChildren: 0.1 } } };
@@ -34,49 +34,51 @@ export default function Nosotros() {
 
       <Breadcrumb current={t.nav.nosotros} />
 
-      {/* Historia */}
+      {/* Intro / misión (concisa) */}
       <section className="about section-pad">
         <div className="container">
           <div className="history-copy narrow reveal">
-            {n.history.map((para, i) => <p key={i}>{para}</p>)}
             <blockquote>{n.quote}</blockquote>
           </div>
         </div>
       </section>
 
-      {/* Origen y liderazgo (2 viñetas) */}
-      <section className="origin-leadership section-pad">
+      {/* Origen y liderazgo — viñeta chica + viñeta grande */}
+      <section className="origen-liderazgo section-pad" data-testid="origen-liderazgo">
         <div className="container">
-          <div className="section-head center reveal"><h2>{n.originLeadershipTitle}</h2></div>
-          <div className="ol-grid reveal-stagger reveal">
-            <div className="ol-card" data-testid="ol-origin">
-              <div className="ol-photo"><img src={raquel.img} alt={raquel.name} loading="lazy" /></div>
-              <div>
-                <span className="ol-eyebrow">{n.origin.eyebrow}</span>
-                <h3>{n.origin.title}</h3>
-                <p>{n.origin.text}</p>
+          <div className="ol2-grid reveal">
+            {/* Viñeta chica: Origen */}
+            <div className="ol2-origin" data-testid="ol-origin" style={{ "--ol-bg": `url(${raquel.img})` }}>
+              <span className="ol2-year">{n.origin.year}<i /></span>
+              <h3 className="ol2-title">{n.origin.title}</h3>
+              {n.origin.paras.map((p, i) => <p key={i}>{p}</p>)}
+              <div className="ol2-sign">
+                <span className="ol2-sign-name">{n.origin.signature}</span>
+                <span className="ol2-sign-role">{n.origin.signatureRole}</span>
               </div>
             </div>
-            <div className="ol-card" data-testid="ol-leadership">
-              <div className="ol-photo"><img src={gabriela.img} alt={gabriela.name} loading="lazy" /></div>
-              <div>
-                <span className="ol-eyebrow">{n.leadership.eyebrow}</span>
-                <h3>{n.leadership.title}</h3>
-                <span className="ol-role">{n.leadership.role}</span>
-                <p>{n.leadership.text}</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      {/* Una nueva etapa — Beyond Diagnostics */}
-      <section className="nueva-etapa section-pad" data-testid="nueva-etapa">
-        <div className="container">
-          <div className="nueva-etapa-inner reveal">
-            <p className="eyebrow">{n.nuevaEtapa.eyebrow}</p>
-            <h2>{n.nuevaEtapa.title}</h2>
-            <p>{n.nuevaEtapa.text}</p>
+            {/* Viñeta grande: Liderazgo */}
+            <div className="ol2-lead" data-testid="ol-leadership">
+              <div className="ol2-photo"><img src={gabriela.img} alt={n.leadership.name} loading="lazy" /></div>
+              <div className="ol2-lead-copy">
+                <span className="ol2-eyebrow">{n.leadership.eyebrow}</span>
+                <h3>{n.leadership.name}</h3>
+                <span className="ol2-role">{n.leadership.role}</span>
+                <p>{n.leadership.text}</p>
+                <ul className="ol2-creds">
+                  {n.leadership.credentials.map((c) => {
+                    const Ico = ICON_MAP[c.icon];
+                    return (
+                      <li key={c.label}>
+                        <span className="ol2-cred-ico">{Ico ? <Ico /> : null}</span>
+                        <span>{c.label}</span>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -152,21 +154,6 @@ export default function Nosotros() {
               <span>{n.igCta}</span>
             </div>
           </a>
-        </div>
-      </section>
-
-      {/* CTA final */}
-      <section className="cta-band section-pad" style={{ background: "var(--light)" }}>
-        <div className="container">
-          <div className="cta-band-inner reveal">
-            <div className="cta-band-icon"><IconWhatsApp /></div>
-            <h2>{n.ctaBanner.title}</h2>
-            <p>{n.ctaBanner.text}</p>
-            <div className="page-hero-actions center">
-              <a href={WA_PLAIN} target="_blank" rel="noopener noreferrer" className="btn btn-cyan" data-testid="nosotros-wa"><IconWhatsApp /> {t.cta.whatsapp}</a>
-              <Link to="/contacto" className="btn btn-outline" data-testid="nosotros-contacto">{t.cta.contactUs} <IconArrowUpRight /></Link>
-            </div>
-          </div>
         </div>
       </section>
     </PageFade>

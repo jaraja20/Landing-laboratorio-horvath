@@ -33,7 +33,7 @@ export const translations = {
       titleA: "Más de 40 años haciendo avanzar el diagnóstico", titleEm: ".", titleB: "",
       sub: "Ciencia, precisión y atención humana para cuidar tu salud.",
       tagline: "Beyond Diagnostics.",
-      trust: ["+40 años de trayectoria", "Peritos matriculados en la Corte Suprema de Justicia", "Tecnología de ultracongelación a -80°C"],
+      trust: ["+40 años de trayectoria", "Peritos matriculados en la Corte Suprema de Justicia", "Tecnología de ultracongelación a -180°C"],
       scroll: "Descubrí más",
     },
     paths: {
@@ -44,7 +44,7 @@ export const translations = {
     },
     stats: [
       { count: 40, suffix: "+", label: "Años de trayectoria" },
-      { count: 80, prefix: "-", suffix: "°C", label: "Ultracongelación de muestras" },
+      { count: 180, prefix: "-", suffix: "°C", label: "Capacidad de ultracongelación" },
       { count: 4, suffix: "", label: "Continentes de conexión científica" },
       { count: 15, suffix: "+", label: "Instituciones y seguros aliados" },
     ],
@@ -73,7 +73,7 @@ export const translations = {
       sub: "Cuatro razones que nos distinguen desde 1983.",
       cards: [
         { num: "+40", label: "Años de trayectoria", text: "Más de cuatro décadas cuidando la salud de Paraguay." },
-        { num: "-80°C", label: "Ultracongelación", text: "Tecnología para conservar muestras biológicas críticas." },
+        { num: "-180°C", label: "Ultracongelación", text: "Capacidad para conservar muestras biológicas críticas." },
         { num: "Fase III", label: "Ensayos clínicos", text: "Primer ensayo clínico Fase III del país, junto a Taiwán." },
         { num: "15+", label: "Aliados", text: "Instituciones y seguros que ya confían en nosotros." },
       ],
@@ -234,8 +234,27 @@ export const translations = {
       igTitle: "Seguinos en Instagram", igCta: "@laboratorioshorvath",
       nuevaEtapa: { eyebrow: "Una nueva etapa", title: "Beyond Diagnostics", text: "Horvath entra en una nueva etapa como Advanced Science Hub: más allá del diagnóstico, integramos investigación, innovación y alcance internacional para transformar la ciencia en bienestar real para las personas." },
       originLeadershipTitle: "Origen y liderazgo",
-      origin: { eyebrow: "Nuestro origen · 1983", title: "El legado de la Dra. Raquel", text: "La Dra. Raquel C. de Horvath, pionera en técnicas inmunológicas en Paraguay, fundó el laboratorio sobre la base de la precisión, la confiabilidad y el trato humano." },
-      leadership: { eyebrow: "Liderazgo", title: "Gabriela Horvath", role: "CEO y única propietaria", text: "Máster en Toxicología, especialista en Investigación Clínica y Perito Oficial de la Corte Suprema. Proyecta a Horvath como un hub científico de alcance internacional." },
+      origin: {
+        year: "1983", eyebrow: "Nuestro origen",
+        title: "Nuestro origen, un legado que inspira",
+        paras: [
+          "Laboratorios Horvath nació de la mano de la Dra. Raquel C. de Horvath, bioquímica pionera en técnicas inmunológicas en Paraguay.",
+          "Su visión, su ética y su pasión por la ciencia sentaron las bases de una institución reconocida por su precisión, confiabilidad y trato humano.",
+        ],
+        signature: "Dra. Raquel C. de Horvath", signatureRole: "Fundadora",
+      },
+      leadership: {
+        eyebrow: "Liderazgo actual", name: "Gabriela Horvath",
+        role: "CEO · Directora de Laboratorios Horvath",
+        text: "Hoy lidera una nueva etapa que integra más de cuatro décadas de trayectoria con innovación, investigación científica y una visión integral de la salud.",
+        credentials: [
+          { icon: "flask", label: "Doctora en Bioquímica" },
+          { icon: "beaker", label: "Máster en Toxicología" },
+          { icon: "layers", label: "Máster en Dirección de Proyectos" },
+          { icon: "activity", label: "Especialista en Investigación Clínica" },
+          { icon: "shieldcheck", label: "Perito de la Corte Suprema de Justicia" },
+        ],
+      },
       ctaBanner: { title: "¿Querés conocer más sobre Horvath?", text: "Escribinos o visitanos. Estamos para acompañar tu salud y la de tu empresa." },
     },
 
@@ -287,7 +306,7 @@ export const translations = {
       titleA: "40+ years advancing diagnostics", titleEm: ".", titleB: "",
       sub: "Science, precision and human care for your health.",
       tagline: "Beyond Diagnostics.",
-      trust: ["+40 years of experience", "Experts sworn before the Supreme Court of Justice", "-80°C ultra-freezing technology"],
+      trust: ["+40 years of experience", "Experts sworn before the Supreme Court of Justice", "-180°C ultra-freezing technology"],
       scroll: "Discover more",
     },
     paths: {
@@ -298,7 +317,7 @@ export const translations = {
     },
     stats: [
       { count: 40, suffix: "+", label: "Years of experience" },
-      { count: 80, prefix: "-", suffix: "°C", label: "Sample ultra-freezing" },
+      { count: 180, prefix: "-", suffix: "°C", label: "Ultra-freezing capacity" },
       { count: 4, suffix: "", label: "Continents of scientific connection" },
       { count: 15, suffix: "+", label: "Partner institutions & insurers" },
     ],
@@ -327,7 +346,7 @@ export const translations = {
       sub: "Four reasons that set us apart since 1983.",
       cards: [
         { num: "+40", label: "Years of experience", text: "Over four decades caring for Paraguay's health." },
-        { num: "-80°C", label: "Ultra-freezing", text: "Technology to preserve critical biological samples." },
+        { num: "-180°C", label: "Ultra-freezing", text: "Capacity to preserve critical biological samples." },
         { num: "Phase III", label: "Clinical trials", text: "The country's first Phase III clinical trial, with Taiwan." },
         { num: "15+", label: "Partners", text: "Institutions and insurers that already trust us." },
       ],
@@ -488,8 +507,27 @@ export const translations = {
       igTitle: "Follow us on Instagram", igCta: "@laboratorioshorvath",
       nuevaEtapa: { eyebrow: "A new chapter", title: "Beyond Diagnostics", text: "Horvath begins a new chapter as an Advanced Science Hub: beyond diagnostics, we bring together research, innovation and international reach to turn science into real well-being for people." },
       originLeadershipTitle: "Origin & leadership",
-      origin: { eyebrow: "Our origin · 1983", title: "Dr. Raquel's legacy", text: "Dr. Raquel C. de Horvath, a pioneer in immunological techniques in Paraguay, founded the lab on precision, reliability and a human touch." },
-      leadership: { eyebrow: "Leadership", title: "Gabriela Horvath", role: "CEO & sole owner", text: "Master in Toxicology, Clinical Research specialist and Official Expert of the Supreme Court. She projects Horvath as a scientific hub with international reach." },
+      origin: {
+        year: "1983", eyebrow: "Our origin",
+        title: "Our origin, a legacy that inspires",
+        paras: [
+          "Laboratorios Horvath was founded by Dr. Raquel C. de Horvath, a pioneer in immunological techniques in Paraguay.",
+          "Her vision, ethics and passion for science laid the foundations of an institution known for its precision, reliability and human touch.",
+        ],
+        signature: "Dr. Raquel C. de Horvath", signatureRole: "Founder",
+      },
+      leadership: {
+        eyebrow: "Current leadership", name: "Gabriela Horvath",
+        role: "CEO · Director of Laboratorios Horvath",
+        text: "Today she leads a new chapter that blends over four decades of experience with innovation, scientific research and a comprehensive vision of health.",
+        credentials: [
+          { icon: "flask", label: "Doctor in Biochemistry" },
+          { icon: "beaker", label: "Master in Toxicology" },
+          { icon: "layers", label: "Master in Project Management" },
+          { icon: "activity", label: "Clinical Research Specialist" },
+          { icon: "shieldcheck", label: "Expert of the Supreme Court of Justice" },
+        ],
+      },
       ctaBanner: { title: "Want to learn more about Horvath?", text: "Message us or visit us. We're here to support your health and your company's." },
     },
 
