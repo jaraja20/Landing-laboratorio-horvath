@@ -22,29 +22,27 @@ export default function Home() {
       <section className="hero" id="inicio" data-testid="hero">
         <div className="hero-photo" style={{ backgroundImage: `url(${HERO_BG.home})` }} />
         <div className="hero-blob b1" />
-        <div className="hero-blob b2" />
-        <div className="hero-grid-overlay" />
         <div className="container">
           <motion.div variants={stagger} initial="hidden" animate="show" className="hero-inner">
             <motion.p variants={item} className="hero-eyebrow">{t.hero.eyebrow}</motion.p>
-            <motion.h1 variants={item}>{t.hero.titleA}<br /> <em>{t.hero.titleEm}</em>{t.hero.titleB}</motion.h1>
-            <motion.p variants={item} className="hero-tagline">{t.hero.tagline}</motion.p>
+            <motion.h1 variants={item}>{t.hero.titleA}<em>{t.hero.titleEm}</em>{t.hero.titleB}</motion.h1>
             <motion.p variants={item} className="hero-sub">{t.hero.sub}</motion.p>
+            <motion.span variants={item} className="hero-divider" />
 
-            <motion.div variants={item} className="hero-split">
-              <Link to="/pacientes" className="split-card persona" data-testid="hero-persona">
-                <span className="split-icon"><IconUser /></span>
-                <h3>{t.paths.persona.title}</h3>
-                <p>{t.paths.persona.desc}</p>
-                <span className="card-cta">{t.cta.viewServices} <IconArrowRight /></span>
+            <motion.div variants={item} className="hero-ctas">
+              <Link to="/pacientes" className="hero-pill primary" data-testid="hero-persona">
+                <span className="hero-pill-ico"><IconUser /></span>
+                <span className="hero-pill-label">{t.paths.persona.title}</span>
+                <IconArrowRight />
               </Link>
-              <Link to="/empresas" className="split-card empresa" data-testid="hero-empresa">
-                <span className="split-icon"><IconBuilding /></span>
-                <h3>{t.paths.empresa.title}</h3>
-                <p>{t.paths.empresa.desc}</p>
-                <span className="card-cta">{t.cta.viewServices} <IconArrowRight /></span>
+              <Link to="/empresas" className="hero-pill light" data-testid="hero-empresa">
+                <span className="hero-pill-ico"><IconBuilding /></span>
+                <span className="hero-pill-label">{t.paths.empresa.title}</span>
+                <IconArrowRight />
               </Link>
             </motion.div>
+
+            <motion.p variants={item} className="hero-tagline">{t.hero.tagline}</motion.p>
 
             <motion.div variants={item} className="hero-trust">
               {t.hero.trust.map((tx, i) => (

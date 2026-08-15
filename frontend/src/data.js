@@ -35,7 +35,7 @@ export const PRINCIPLE_ICONS = {
 
 // Fondos decorativos de laboratorio por vista
 export const HERO_BG = {
-  home: "https://images.unsplash.com/photo-1630959305606-3123a081dada?crop=entropy&cs=srgb&fm=jpg&q=85&w=1600",
+  home: "/assets/img/hero-home.jpg",
   personas: "https://images.unsplash.com/photo-1582560475093-ba66accbc424?crop=entropy&cs=srgb&fm=jpg&q=85&w=1600",
   empresas: "https://images.unsplash.com/photo-1582719471384-894fbb16e074?crop=entropy&cs=srgb&fm=jpg&q=85&w=1600",
   nosotros: "https://images.unsplash.com/photo-1614308459036-779d0dfe51ff?crop=entropy&cs=srgb&fm=jpg&q=85&w=1600",

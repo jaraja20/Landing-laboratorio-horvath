@@ -1010,15 +1010,65 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
    v3.0 — Ronda de cambios de la clienta (Tekoha)
    ========================================================= */
 
-/* Hero: imagen real + fade lateral (en vez de overlay plano) */
-.page-hero .hero-photo, .hero .hero-photo {
-  opacity: 0.5;
-  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 58%, #000 100%);
-  mask-image: linear-gradient(90deg, transparent 0%, #000 58%, #000 100%);
+/* === HERO redesign v3.1 — imagen derecha + texto izquierda + fade lateral === */
+.hero {
+  background: linear-gradient(90deg, var(--navy-deep) 0%, var(--navy-deep) 40%, var(--navy) 100%);
+  min-height: 660px; display: flex; align-items: center; overflow: hidden;
 }
-.page-hero::after, .hero::after {
+.hero .hero-photo, .page-hero .hero-photo {
+  position: absolute; top: 0; right: 0; bottom: 0; left: auto; width: 62%;
+  opacity: 1; z-index: 0; background-size: cover; background-position: center right;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 44%, #000 100%);
+  mask-image: linear-gradient(90deg, transparent 0%, #000 44%, #000 100%);
+}
+.hero::after, .page-hero::after {
   content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
-  background: linear-gradient(90deg, rgba(0,14,70,0.92) 0%, rgba(0,14,70,0.72) 42%, rgba(0,14,70,0.25) 100%);
+  background: linear-gradient(90deg, rgba(0,14,70,0.6) 0%, rgba(0,14,70,0.1) 46%, rgba(0,14,70,0) 62%);
+}
+.hero .container, .hero .hero-inner { position: relative; z-index: 2; text-align: left; align-items: flex-start; }
+.hero .hero-inner { max-width: 620px; }
+.hero .hero-eyebrow, .hero h1, .hero .hero-sub { margin-left: 0; margin-right: 0; text-align: left; }
+.hero h1 { max-width: 600px; }
+.hero .hero-sub { max-width: 470px; margin-bottom: 0; }
+
+.hero-divider { display: block; width: 64px; height: 3px; border-radius: 3px; background: var(--cyan); margin: 24px 0 28px; }
+
+.hero-ctas { display: flex; flex-direction: column; gap: 14px; max-width: 430px; width: 100%; }
+.hero-pill {
+  display: flex; align-items: center; gap: 14px; padding: 15px 22px; border-radius: var(--radius-pill);
+  font-weight: 800; font-size: 16px; transition: transform .25s ease, box-shadow .25s ease;
+}
+.hero-pill .hero-pill-ico { display: inline-flex; }
+.hero-pill .hero-pill-ico svg { width: 22px; height: 22px; }
+.hero-pill .hero-pill-label { flex: 1; text-align: left; }
+.hero-pill > svg { width: 20px; height: 20px; transition: transform .25s ease; }
+.hero-pill:hover > svg { transform: translateX(4px); }
+.hero-pill.primary { background: var(--cyan); color: var(--navy-deep); box-shadow: 0 14px 30px rgba(60,203,218,0.35); }
+.hero-pill.light { background: #fff; color: var(--navy-deep); box-shadow: 0 14px 30px rgba(0,0,0,0.2); }
+.hero-pill:hover { transform: translateY(-3px); }
+
+.hero .hero-tagline { text-align: left; margin: 28px 0 0; }
+.hero .hero-trust { justify-content: flex-start; margin-top: 22px; }
+
+/* Heros internos: mismo tratamiento (imagen derecha + texto izquierda) */
+.page-hero { text-align: left; overflow: hidden; }
+.page-hero .hero-photo { background-position: center; }
+.page-hero .container { position: relative; z-index: 2; align-items: flex-start; text-align: left; }
+.page-hero .hero-eyebrow, .page-hero h1, .page-hero .hero-sub {
+  margin-left: 0; margin-right: 0; text-align: left; max-width: 620px;
+}
+.page-hero .action-cards, .page-hero .page-hero-actions { justify-content: flex-start; }
+.page-hero .coverage-note { justify-content: flex-start; }
+
+@media (max-width: 900px) {
+  .hero .hero-photo, .page-hero .hero-photo { width: 70%; }
+  .hero::after, .page-hero::after { background: linear-gradient(90deg, rgba(0,14,70,0.86) 0%, rgba(0,14,70,0.45) 55%, rgba(0,14,70,0.1) 100%); }
+}
+@media (max-width: 600px) {
+  .hero { min-height: 580px; }
+  .hero .hero-photo, .page-hero .hero-photo { width: 100%; opacity: 0.85; -webkit-mask-image: none; mask-image: none; }
+  .hero::after, .page-hero::after { background: linear-gradient(180deg, rgba(0,14,70,0.9) 0%, rgba(0,14,70,0.78) 55%, rgba(0,14,70,0.9) 100%); }
+  .hero-ctas { max-width: 100%; }
 }
 
 /* Beyond Diagnostics tagline en hero */

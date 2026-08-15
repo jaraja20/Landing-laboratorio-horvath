@@ -30,8 +30,8 @@ export const translations = {
     },
     hero: {
       eyebrow: "Laboratorios Horvath · Advanced Science Hub",
-      titleA: "40 años cuidando tu salud,", titleEm: "con la ciencia del futuro", titleB: ".",
-      sub: "Análisis clínicos, estudios especializados y salud ocupacional con tecnología de vanguardia y el trato humano que nos define desde 1983.",
+      titleA: "Más de 40 años haciendo avanzar el diagnóstico", titleEm: ".", titleB: "",
+      sub: "Ciencia, precisión y atención humana para cuidar tu salud.",
       tagline: "Beyond Diagnostics.",
       trust: ["+40 años de trayectoria", "Peritos matriculados en la Corte Suprema de Justicia", "Tecnología de ultracongelación a -80°C"],
       scroll: "Descubrí más",
@@ -284,8 +284,8 @@ export const translations = {
     },
     hero: {
       eyebrow: "Laboratorios Horvath · Advanced Science Hub",
-      titleA: "40 years caring for your health,", titleEm: "with the science of the future", titleB: ".",
-      sub: "Clinical tests, specialized studies and occupational health with cutting-edge technology and the human touch that has defined us since 1983.",
+      titleA: "40+ years advancing diagnostics", titleEm: ".", titleB: "",
+      sub: "Science, precision and human care for your health.",
       tagline: "Beyond Diagnostics.",
       trust: ["+40 years of experience", "Experts sworn before the Supreme Court of Justice", "-80°C ultra-freezing technology"],
       scroll: "Discover more",
