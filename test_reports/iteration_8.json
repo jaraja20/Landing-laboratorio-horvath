@@ -14,6 +14,6 @@
   "seed_data_creation": "One TEST_lead created via POST /api/leads for smoke test.",
   "retest_needed": false,
   "main_agent_can_self_test": true,
-  "context_for_next_testing_agent": "Preview URL: https://fe104d50-ad80-422f-a428-00c7cd34dc4e.preview.emergentagent.com. All 9 review checkpoints validated. Assets /assets/menus/menu-es.pdf, menu-en.pdf and /assets/laboral/laboral-01..26.jpg all serve 200. data-testids validated: paciente-wa-helper, pacientes-ver-menu, empresas-menu-btn, lang-toggle, whatsapp-float, back-to-top. Mobile float positions: WA float (320,774,54x54) and back-to-top (330,718,44x44) don't overlap.",
+  "context_for_next_testing_agent": "Preview URL: https://staging-site-43.preview.emergentagent.com. All 9 review checkpoints validated. Assets /assets/menus/menu-es.pdf, menu-en.pdf and /assets/laboral/laboral-01..26.jpg all serve 200. data-testids validated: paciente-wa-helper, pacientes-ver-menu, empresas-menu-btn, lang-toggle, whatsapp-float, back-to-top. Mobile float positions: WA float (320,774,54x54) and back-to-top (330,718,44x44) don't overlap.",
   "rca of the issue": "N/A - no issues found."
 }
