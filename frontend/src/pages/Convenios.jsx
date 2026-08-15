@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import PageFade from "../components/PageFade";
 import Partners from "../components/Partners";
 import { IconWhatsApp, IconCard, IconHandshake } from "../components/icons";
+import { ICON_MAP } from "../components/iconMap";
 import { waLink, HERO_BG } from "../data";
 import { useLang } from "../i18n/LanguageContext";
 
@@ -35,6 +36,24 @@ export default function Convenios() {
           <div className="cobertura-card reveal">
             <div><h2>{c.coberturaTitle}</h2><p>{c.coberturaText}</p></div>
             <a href={waLink(t.wa.cobertura)} target="_blank" rel="noopener noreferrer" className="btn btn-navy"><IconWhatsApp /> {t.cta.consultarCobertura}</a>
+          </div>
+        </div>
+      </section>
+
+      <section className="como section-pad">
+        <div className="container">
+          <div className="section-head center reveal"><h2>{c.stepsTitle}</h2></div>
+          <div className="como-flow cols-3 reveal-stagger reveal">
+            {c.steps.map((s, i) => {
+              const Ico = ICON_MAP[s.icon];
+              return (
+                <div className="como-step" key={i}>
+                  <div className="como-badge"><span className="como-icon">{Ico ? <Ico /> : null}</span><span className="como-num">{i + 1}</span></div>
+                  <h3>{s.title}</h3>
+                  <p>{s.text}</p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>

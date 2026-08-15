@@ -63,6 +63,18 @@ export const ALIANZA_LOGOS = Array.from(
 
 export const waLink = (text) =>
   `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(text)}`;
+// Enlace directo al chat de WhatsApp, sin mensaje predeterminado
+export const WA_PLAIN = `https://wa.me/${WA_NUMBER}`;
+
+// Opiniones reales de pacientes (Google, Instagram y WhatsApp)
+export const TESTIMONIALS = [
+  { name: "David Ruiz", source: "Google", rating: 5, text: "Buenísima la atención que recibí, las doctoras son muy amables." },
+  { name: "Lorena Insaurralde", source: "Google", rating: 5, text: "Buenísima atención en recepción, rápidos y el personal muy bien capacitado. Atención en niños 10 puntos y el costo bastante accesible. ¡Volveríamos siempre!" },
+  { name: "Ramona Ortigoza", source: "Google", rating: 5, text: "Me hago mis análisis hace rato en este laboratorio, siempre me quedo contenta y tiene buenos precios. El nuevo local es súper fácil de acceder y me tratan muy bien." },
+  { name: "Luis Morales", source: "Google", rating: 5, text: "Excelente atención y resultados rápidos." },
+  { name: "Paciente Horvath", source: "Instagram", rating: 5, text: "Por 1ra vez decidí hacerme análisis acá y quedé impresionada, nada que envidiar a las grandes cadenas. La limpieza, la atención y el cuidado te hacen sentir como en casa. Sin duda, mi lab favorito." },
+  { name: "Paciente Horvath", source: "WhatsApp", rating: 5, text: "Gracias por todas las atenciones en este proceso de chequeo médico: excelente coordinación y un gracias enorme a la Dra. Gabriela. ¡Todo salió muy bien!" },
+];
 
 // Perfiles y chequeos reales del sanatorio (Horvath Health Profiles)
 // accent: blue | pink | violet | cyan | green | navy

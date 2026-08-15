@@ -285,7 +285,7 @@ html.js .reveal.in { opacity: 1; transform: translateY(0); }
 .services-empresas .eyebrow::before { background: var(--pink); }
 
 .service-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
-.services-empresas .service-grid { grid-template-columns: repeat(3, 1fr); }
+.services-empresas .service-grid { grid-template-columns: repeat(4, 1fr); }
 
 .service-card { background: var(--white); border-radius: var(--radius-card); padding: 30px 24px; box-shadow: var(--shadow-card); display: flex; flex-direction: column; gap: 14px; transition: transform 0.35s ease, box-shadow 0.35s ease; }
 .service-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-card-hover); }
@@ -657,8 +657,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .principles-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 .principle-card { background: var(--white); border-radius: var(--radius-card); padding: 34px 26px 30px; text-align: center; box-shadow: var(--shadow-card); transition: transform 0.3s ease, box-shadow 0.3s ease; }
 .principle-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-card-hover); }
-.principle-icon { width: 122px; height: 122px; margin: 0 auto 14px; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: radial-gradient(circle at 50% 42%, rgba(60, 203, 218, 0.14), rgba(48, 58, 178, 0.06) 55%, transparent 72%); }
-.principle-icon img { width: 82%; height: 82%; object-fit: contain; filter: drop-shadow(0 12px 18px rgba(0, 24, 113, 0.22)); transition: transform 0.35s ease; }
+.principle-icon { width: 92px; height: 92px; margin: 0 auto 12px; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: radial-gradient(circle at 50% 42%, rgba(60, 203, 218, 0.14), rgba(48, 58, 178, 0.06) 55%, transparent 72%); }
+.principle-icon img { width: 74%; height: 74%; object-fit: contain; filter: drop-shadow(0 8px 14px rgba(0, 24, 113, 0.2)); transition: transform 0.35s ease; }
 .principle-card:hover .principle-icon img { transform: translateY(-5px) scale(1.05); }
 .principle-card h3 { font-size: 18px; margin-bottom: 8px; color: var(--navy-deep); }
 .principle-card p { color: var(--grey); font-size: 14.5px; }
@@ -890,18 +890,11 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 }
 
 
-/* ===== Hero Pacientes / Empresas — alineación a la izquierda (modelo aprobado) ===== */
-.personas-hero .container, .empresas-hero .container { align-items: flex-start; text-align: left; }
-.personas-hero .hero-eyebrow, .empresas-hero .hero-eyebrow { text-align: left; }
-.personas-hero h1, .empresas-hero h1,
-.personas-hero .hero-sub, .empresas-hero .hero-sub { margin-left: 0; margin-right: 0; max-width: 680px; }
-.personas-hero .action-cards, .empresas-hero .page-hero-actions { justify-content: flex-start; }
-@media (max-width: 760px) {
-  .personas-hero .container, .empresas-hero .container { align-items: center; text-align: center; }
-  .personas-hero .hero-eyebrow, .empresas-hero .hero-eyebrow { text-align: center; }
-  .personas-hero h1, .empresas-hero h1,
-  .personas-hero .hero-sub, .empresas-hero .hero-sub { margin-left: auto; margin-right: auto; }
-}
+/* ===== Títulos y subtítulos SIEMPRE centrados ===== */
+.page-hero .container, .hero-inner { align-items: center; text-align: center; }
+.page-hero .hero-eyebrow, .page-hero h1, .page-hero .hero-sub { margin-left: auto; margin-right: auto; }
+.page-hero .action-cards, .page-hero .page-hero-actions { justify-content: center; }
+.section-head { text-align: center; margin-left: auto; margin-right: auto; }
 
 /* ===== Perfiles del sanatorio (tarjetas expandibles a modal) ===== */
 [data-accent="blue"] { --accent: #1f6feb; }
@@ -984,4 +977,31 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 @media (max-width: 980px) { .porque-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 760px) { .benefit-highlight { grid-template-columns: 1fr; text-align: center; padding: 36px 24px; } .benefit-highlight-body p { margin-left: auto; margin-right: auto; } .benefit-highlight .page-hero-actions { justify-content: center; } .benefit-highlight-badge { margin: 4px auto 0; } }
 @media (max-width: 520px) { .porque-grid { grid-template-columns: 1fr; } }
+
+
+/* ===== Opiniones / Testimonios (carrusel uniforme) ===== */
+.testimonials { background: var(--white); }
+.tm-marquee { overflow: hidden; position: relative; -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); padding: 8px 0; }
+.tm-track { display: flex; gap: 24px; width: max-content; animation: marquee 60s linear infinite; }
+.tm-marquee:hover .tm-track { animation-play-state: paused; }
+.tm-card { flex-shrink: 0; width: 360px; background: var(--light); border: 1px solid #e6ebf5; border-radius: 22px; padding: 30px 28px; display: flex; flex-direction: column; gap: 14px; position: relative; box-shadow: var(--shadow-card); white-space: normal; }
+.tm-quote-mark { position: absolute; top: 20px; right: 24px; color: var(--cyan); opacity: .3; }
+.tm-quote-mark svg { width: 34px; height: 34px; }
+.tm-stars { display: flex; gap: 3px; color: #f5a623; }
+.tm-stars svg { width: 18px; height: 18px; }
+.tm-text { color: var(--navy-deep); font-size: 15px; line-height: 1.6; flex: 1; }
+.tm-foot { display: flex; align-items: center; gap: 12px; }
+.tm-avatar { width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg, var(--navy), var(--cyan)); color: #fff; display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-weight: 800; font-size: 18px; flex-shrink: 0; }
+.tm-foot strong { display: block; color: var(--navy-deep); font-size: 15px; }
+.tm-source { display: inline-flex; align-items: center; gap: 5px; font-size: 12px; font-weight: 700; margin-top: 2px; }
+.tm-source svg { width: 13px; height: 13px; }
+.tm-source.google { color: #4285F4; }
+.tm-source.ig { color: #E1306C; }
+.tm-source.wa { color: #25d366; }
+@media (max-width: 480px) { .tm-card { width: 300px; } }
+
+/* Cómo funciona — variante de 3 pasos (Convenios) */
+.como-flow.cols-3 { grid-template-columns: repeat(3, 1fr); max-width: 940px; margin: 0 auto; }
+@media (max-width: 900px) { .como-flow.cols-3 { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 520px) { .como-flow.cols-3 { grid-template-columns: 1fr; } }
 

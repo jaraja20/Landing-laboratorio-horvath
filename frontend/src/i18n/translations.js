@@ -54,6 +54,7 @@ export const translations = {
     },
     alianzas: { title: "Trabajamos junto a las instituciones en las que ya confiás", eyebrow: "Confianza" },
     homeContact: { title: "Estamos para ayudarte", sub: "Contactanos por el canal que prefieras. Te respondemos lo antes posible." },
+    testimonials: { eyebrow: "Opiniones reales", title: "Lo que dicen nuestros pacientes", sub: "Reseñas de pacientes en Google, Instagram y WhatsApp." },
 
     pacientes: {
       hero: { eyebrow: "Para vos y tu familia", title: "Tu salud, en las mejores manos", sub: "Encontrá lo que buscás según tu necesidad, o accedé al menú completo si ya sabés qué análisis precisás." },
@@ -131,9 +132,9 @@ export const translations = {
       ],
       comoTitle: "¿Cómo trabajamos con tu empresa?",
       como: [
-        { icon: "handshake", title: "Hablás con tu asesor", text: "Un único contacto entiende tu operación." },
-        { icon: "clipboard", title: "Diseñamos la propuesta", text: "A medida de tu equipo y turnos." },
-        { icon: "building", title: "Operativo in company", text: "Vamos a tu empresa o te atendemos en Horvath." },
+        { icon: "whatsapp", title: "Hablás con tu asesor", text: "Un único contacto entiende tu operación." },
+        { icon: "layers", title: "Diseñamos la propuesta", text: "A medida de tu equipo y turnos." },
+        { icon: "activity", title: "Operativo in company", text: "Vamos a tu empresa o te atendemos en Horvath." },
         { icon: "filetext", title: "Reportes y resultados", text: "Resultados rápidos y digitales, con seguimiento." },
       ],
       clientsTitle: "Empresas que ya confían en nosotros",
@@ -151,12 +152,25 @@ export const translations = {
         { icon: "gear", title: "Consultoría en Salud", desc: "Acompañamos el desarrollo de iniciativas en el sector.", points: ["Gestión de proyectos", "Consultoría estratégica", "Negocios de salud"] },
         { icon: "sparkle", title: "Proyectos de Salud e Innovación", desc: "Innovación diagnóstica y capacidades de vanguardia.", points: ["Ultracongelación -80°C", "Transporte criogénico -180°C", "Conexiones científicas globales"] },
       ],
+      highlightsTitle: "Capacidades que nos distinguen",
+      highlights: [
+        { num: "-80°C", label: "Ultracongelación", text: "Conservación de muestras biológicas críticas." },
+        { num: "-180°C", label: "Transporte criogénico", text: "Exportación de muestras en nitrógeno líquido." },
+        { num: "Fase III", label: "Ensayos clínicos", text: "Primer ensayo clínico Fase III del país." },
+        { num: "Global", label: "Conexiones científicas", text: "Red de instituciones e investigadores internacionales." },
+      ],
       ctaTitle: "¿Tenés un proyecto científico?", ctaText: "Conversemos sobre cómo podemos colaborar.",
     },
 
     convenios: {
       hero: { eyebrow: "Convenios y seguros", title: "Trabajamos con tu seguro y tu convenio", sub: "Consultá si tu medicina prepaga o convenio corporativo tiene cobertura en Horvath." },
       coberturaTitle: "Consultá tu cobertura", coberturaText: "Escribinos con tu seguro o convenio y verificamos tu cobertura al instante.",
+      stepsTitle: "Consultá tu cobertura en 3 pasos",
+      steps: [
+        { icon: "whatsapp", title: "Escribinos", text: "Contanos tu seguro o convenio por WhatsApp." },
+        { icon: "shieldcheck", title: "Verificamos", text: "Confirmamos tu cobertura al instante." },
+        { icon: "testtube", title: "Agendás tu estudio", text: "Coordinás tu atención sin complicaciones." },
+      ],
       segurosTitle: "Instituciones y seguros aliados",
       pagosTitle: "Medios de pago",
       pagos: ["POS Bancard", "Tarjetas de crédito y débito", "Transferencias bancarias", "Efectivo"],
@@ -272,6 +286,7 @@ export const translations = {
     },
     alianzas: { title: "We work alongside the institutions you already trust", eyebrow: "Trust" },
     homeContact: { title: "We're here to help", sub: "Reach out through your preferred channel. We'll get back to you soon." },
+    testimonials: { eyebrow: "Real reviews", title: "What our patients say", sub: "Reviews from patients on Google, Instagram and WhatsApp." },
 
     pacientes: {
       hero: { eyebrow: "For you and your family", title: "Your health, in the best hands", sub: "Find what you need by topic, or open the full menu if you already know which tests you need." },
@@ -349,9 +364,9 @@ export const translations = {
       ],
       comoTitle: "How we work with your company",
       como: [
-        { icon: "handshake", title: "Talk to your advisor", text: "A single contact who understands your operation." },
-        { icon: "clipboard", title: "We design the proposal", text: "Tailored to your team and shifts." },
-        { icon: "building", title: "In-company operations", text: "We go to your company or attend at Horvath." },
+        { icon: "whatsapp", title: "Talk to your advisor", text: "A single contact who understands your operation." },
+        { icon: "layers", title: "We design the proposal", text: "Tailored to your team and shifts." },
+        { icon: "activity", title: "In-company operations", text: "We go to your company or attend at Horvath." },
         { icon: "filetext", title: "Reports & results", text: "Fast digital results, with follow-up." },
       ],
       clientsTitle: "Companies that already trust us",
@@ -369,12 +384,25 @@ export const translations = {
         { icon: "gear", title: "Health Consulting", desc: "We support the development of initiatives in the sector.", points: ["Project management", "Strategic consulting", "Health business"] },
         { icon: "sparkle", title: "Health & Innovation Projects", desc: "Diagnostic innovation and cutting-edge capabilities.", points: ["-80°C ultra-freezing", "-180°C cryogenic transport", "Global scientific connections"] },
       ],
+      highlightsTitle: "Capabilities that set us apart",
+      highlights: [
+        { num: "-80°C", label: "Ultra-freezing", text: "Preservation of critical biological samples." },
+        { num: "-180°C", label: "Cryogenic transport", text: "Export of samples in liquid nitrogen." },
+        { num: "Phase III", label: "Clinical trials", text: "The country's first Phase III clinical trial." },
+        { num: "Global", label: "Scientific network", text: "Network of international institutions and researchers." },
+      ],
       ctaTitle: "Have a scientific project?", ctaText: "Let's talk about how we can collaborate.",
     },
 
     convenios: {
       hero: { eyebrow: "Coverage & insurance", title: "We work with your insurance and plan", sub: "Check whether your health plan or corporate agreement is covered at Horvath." },
       coberturaTitle: "Check your coverage", coberturaText: "Message us with your insurer or plan and we'll verify your coverage instantly.",
+      stepsTitle: "Check your coverage in 3 steps",
+      steps: [
+        { icon: "whatsapp", title: "Message us", text: "Tell us your insurance or plan via WhatsApp." },
+        { icon: "shieldcheck", title: "We verify", text: "We confirm your coverage instantly." },
+        { icon: "testtube", title: "Book your test", text: "Schedule your visit hassle-free." },
+      ],
       segurosTitle: "Partner institutions & insurers",
       pagosTitle: "Payment methods",
       pagos: ["Bancard POS", "Credit & debit cards", "Bank transfers", "Cash"],

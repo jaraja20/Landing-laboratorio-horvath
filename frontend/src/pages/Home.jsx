@@ -4,8 +4,9 @@ import { motion } from "framer-motion";
 import PageFade from "../components/PageFade";
 import Stats from "../components/Stats";
 import Partners from "../components/Partners";
+import Testimonials from "../components/Testimonials";
 import { IconUser, IconBuilding, IconArrowRight, IconLayers, IconShield, IconSparkle, IconPhone, IconWhatsApp, IconArrowUpRight } from "../components/icons";
-import { waLink, PHONE_TEL, PHONE_DISPLAY, MAPS_DIR, HERO_BG, HISTORY_IMG } from "../data";
+import { waLink, WA_PLAIN, PHONE_TEL, PHONE_DISPLAY, MAPS_DIR, HERO_BG, HISTORY_IMG } from "../data";
 import { useLang } from "../i18n/LanguageContext";
 
 const stagger = { show: { transition: { staggerChildren: 0.12 } } };
@@ -78,6 +79,8 @@ export default function Home() {
 
       <Partners />
 
+      <Testimonials />
+
       {/* CTA contacto */}
       <section className="home-contact section-pad">
         <div className="container">
@@ -86,7 +89,7 @@ export default function Home() {
             <p>{t.homeContact.sub}</p>
           </div>
           <div className="home-contact-actions reveal">
-            <a href={waLink(t.wa.general)} target="_blank" rel="noopener noreferrer" className="btn btn-cyan" data-testid="home-wa-btn"><IconWhatsApp /> {t.cta.whatsapp}</a>
+            <a href={WA_PLAIN} target="_blank" rel="noopener noreferrer" className="btn btn-cyan" data-testid="home-wa-btn"><IconWhatsApp /> {t.cta.whatsapp}</a>
             <Link to="/contacto" className="btn btn-ghost" data-testid="home-contact-btn">{t.cta.contactUs} <IconArrowRight /></Link>
           </div>
         </div>

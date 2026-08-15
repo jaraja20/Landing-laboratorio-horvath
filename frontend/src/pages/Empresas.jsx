@@ -34,19 +34,6 @@ export default function Empresas() {
         </div>
       </section>
 
-      {/* Diferencial: asesor único */}
-      <section className="differential section-pad">
-        <div className="container">
-          <div className="differential-card reveal">
-            <span className="differential-icon"><IconHandshake /></span>
-            <div>
-              <h2>{e.differentialTitle}</h2>
-              <p>{e.differentialText}</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Servicios de salud laboral */}
       <section className="services-empresas section-pad" id="servicios-empresas" data-testid="services-empresas">
         <div className="container">
@@ -63,25 +50,6 @@ export default function Empresas() {
                   <h3>{s.title}</h3>
                   <p>{s.desc}</p>
                   <a className="card-cta" href={waLink(t.wa.propuesta)} target="_blank" rel="noopener noreferrer">{t.cta.solicitarPropuesta} <IconArrowUpRight /></a>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* Beneficios */}
-      <section className="benefits section-pad">
-        <div className="container">
-          <div className="section-head center reveal"><h2>{e.benefitsTitle}</h2></div>
-          <div className="benefits-grid reveal-stagger reveal">
-            {e.benefits.map((b) => {
-              const Ico = ICON_MAP[b.icon];
-              return (
-                <div className="benefit-card" key={b.title}>
-                  <span className="benefit-icon"><Ico /></span>
-                  <h3>{b.title}</h3>
-                  <p>{b.text}</p>
                 </div>
               );
             })}

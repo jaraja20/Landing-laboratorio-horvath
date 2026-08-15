@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink, Link } from "react-router-dom";
 import { IconPhone, IconWhatsApp, IconMenu, IconGlobe, IconChevronDown } from "./icons";
-import { PHONE_TEL, PHONE_DISPLAY, waLink } from "../data";
+import { PHONE_TEL, PHONE_DISPLAY, WA_PLAIN } from "../data";
 import { useLang } from "../i18n/LanguageContext";
 
 export default function Header({ onOpenMenu }) {
@@ -54,10 +54,7 @@ export default function Header({ onOpenMenu }) {
             <span className="sep">/</span>
             <span className={lang === "en" ? "on" : ""}>EN</span>
           </button>
-          <a href={`tel:${PHONE_TEL}`} className="icon-link" aria-label={`${t.cta.call} ${PHONE_DISPLAY}`} data-testid="header-call">
-            <IconPhone />
-          </a>
-          <a href={waLink(t.wa.general)} target="_blank" rel="noopener noreferrer" className="header-whatsapp" data-testid="header-whatsapp">
+          <a href={WA_PLAIN} target="_blank" rel="noopener noreferrer" className="header-whatsapp" data-testid="header-whatsapp">
             <IconWhatsApp /><span>{t.cta.whatsapp}</span>
           </a>
           <button className="menu-toggle" aria-label="Abrir menú" aria-expanded="false" onClick={onOpenMenu} data-testid="menu-toggle">

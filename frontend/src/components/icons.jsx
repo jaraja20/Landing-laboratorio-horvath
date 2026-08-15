@@ -151,3 +151,9 @@ export const IconCash = (p) => (
   <S {...p}><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/><line x1="6" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="18" y2="12"/></S>
 );
 
+export const IconStar = (p) => (
+  <S fill="currentColor" stroke="none" {...p}><path d="M12 2.5l2.9 5.9 6.5.95-4.7 4.58 1.11 6.47L12 17.9l-5.81 3.06 1.11-6.47L2.6 9.9l6.5-.95L12 2.5z"/></S>
+);
+export const IconQuote = (p) => (
+  <S fill="currentColor" stroke="none" {...p}><path d="M7.5 6C5 6 3 8 3 10.5V18h7v-7.5H6.5C6.5 9 7 8.2 8 7.8L7.5 6zm9 0C14 6 12 8 12 10.5V18h7v-7.5h-3.5C15.5 9 16 8.2 17 7.8L16.5 6z"/></S>
+);
