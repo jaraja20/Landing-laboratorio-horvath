@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import PageFade from "../components/PageFade";
+import Breadcrumb from "../components/Breadcrumb";
 import { IconArrowUpRight, IconCheck, IconWhatsApp, IconHandshake, IconMapPin, IconFileText, IconSparkle } from "../components/icons";
 import { ICON_MAP } from "../components/iconMap";
 import { waLink, HERO_BG, LABORAL_LOGOS, MENU_PDF } from "../data";
@@ -34,6 +35,8 @@ export default function Empresas() {
         </div>
       </section>
 
+      <Breadcrumb current={t.nav.empresas} />
+
       {/* Servicios de salud laboral */}
       <section className="services-empresas section-pad" id="servicios-empresas" data-testid="services-empresas">
         <div className="container">
@@ -49,7 +52,7 @@ export default function Empresas() {
                   <span className="service-icon"><Ico /></span>
                   <h3>{s.title}</h3>
                   <p>{s.desc}</p>
-                  <a className="card-cta" href={waLink(t.wa.propuesta)} target="_blank" rel="noopener noreferrer">{t.cta.solicitarPropuesta} <IconArrowUpRight /></a>
+                  <a className="card-cta" href={waLink(t.wa.propuesta)} target="_blank" rel="noopener noreferrer">{t.cta.masInfo} <IconArrowUpRight /></a>
                 </div>
               );
             })}
@@ -118,18 +121,7 @@ export default function Empresas() {
         </div>
       </section>
 
-      {/* Menú de estudios */}
-      <section className="menu-block section-pad">
-        <div className="container">
-          <div className="menu-card reveal">
-            <div>
-              <p className="eyebrow">{e.menuTitle}</p>
-              <h2>{e.menuDesc}</h2>
-            </div>
-            <a href={MENU_PDF[lang]} target="_blank" rel="noopener noreferrer" className="btn btn-navy" data-testid="empresas-menu-btn"><IconFileText /> {t.cta.viewMenu}</a>
-          </div>
-        </div>
-      </section>
+      {/* Menú de estudios — removido por pedido de la clienta (no aplica en Empresas) */}
 
       <section className="cta-band empresas section-pad">
         <div className="container">

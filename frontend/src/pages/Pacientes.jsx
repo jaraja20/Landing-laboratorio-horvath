@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import PageFade from "../components/PageFade";
+import Breadcrumb from "../components/Breadcrumb";
 import ProfileExplorer from "../components/ProfileExplorer";
 import { IconArrowRight, IconArrowUpRight, IconWhatsApp, IconFileText, IconCalendar, IconCard, IconCheck } from "../components/icons";
 import { ICON_MAP } from "../components/iconMap";
@@ -45,6 +46,8 @@ export default function Pacientes() {
           </motion.div>
         </div>
       </section>
+
+      <Breadcrumb current={t.nav.pacientes} />
 
       {/* Perfiles por necesidad */}
       <section className="services-personas section-pad" id="perfiles" data-testid="perfiles">

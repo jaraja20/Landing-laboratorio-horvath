@@ -2,11 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import PageFade from "../components/PageFade";
-import Stats from "../components/Stats";
 import Partners from "../components/Partners";
 import Testimonials from "../components/Testimonials";
-import { IconUser, IconBuilding, IconArrowRight, IconLayers, IconShield, IconSparkle, IconPhone, IconWhatsApp, IconArrowUpRight } from "../components/icons";
-import { waLink, WA_PLAIN, PHONE_TEL, PHONE_DISPLAY, MAPS_DIR, HERO_BG, HISTORY_IMG } from "../data";
+import { ICON_MAP } from "../components/iconMap";
+import { IconUser, IconBuilding, IconArrowRight, IconLayers, IconShield, IconSparkle, IconWhatsApp } from "../components/icons";
+import { WA_PLAIN, HERO_BG, HISTORY_IMG } from "../data";
 import { useLang } from "../i18n/LanguageContext";
 
 const stagger = { show: { transition: { staggerChildren: 0.12 } } };
@@ -18,6 +18,7 @@ export default function Home() {
 
   return (
     <PageFade>
+      {/* HERO */}
       <section className="hero" id="inicio" data-testid="hero">
         <div className="hero-photo" style={{ backgroundImage: `url(${HERO_BG.home})` }} />
         <div className="hero-blob b1" />
@@ -27,6 +28,7 @@ export default function Home() {
           <motion.div variants={stagger} initial="hidden" animate="show" className="hero-inner">
             <motion.p variants={item} className="hero-eyebrow">{t.hero.eyebrow}</motion.p>
             <motion.h1 variants={item}>{t.hero.titleA}<br /> <em>{t.hero.titleEm}</em>{t.hero.titleB}</motion.h1>
+            <motion.p variants={item} className="hero-tagline">{t.hero.tagline}</motion.p>
             <motion.p variants={item} className="hero-sub">{t.hero.sub}</motion.p>
 
             <motion.div variants={item} className="hero-split">
@@ -54,9 +56,57 @@ export default function Home() {
         <div className="scroll-cue"><span>{t.hero.scroll}</span><span className="dot-track" /></div>
       </section>
 
-      <Stats />
+      {/* ¿QUÉ HACEMOS? */}
+      <section className="que-hacemos section-pad" data-testid="que-hacemos">
+        <div className="container">
+          <div className="section-head center reveal">
+            <p className="eyebrow">{t.queHacemos.eyebrow}</p>
+            <h2>{t.queHacemos.title}</h2>
+            <p>{t.queHacemos.sub}</p>
+          </div>
+          <div className="qh-grid reveal-stagger reveal">
+            {t.queHacemos.items.map((it) => {
+              const Ico = ICON_MAP[it.icon];
+              return (
+                <Link to={it.to} className="qh-card" key={it.title} data-testid={`qh-${it.icon}`}>
+                  <span className="qh-icon">{Ico ? <Ico /> : null}</span>
+                  <h3>{it.title}</h3>
+                  <p>{it.text}</p>
+                  <span className="card-cta">{t.cta.knowMore} <IconArrowRight /></span>
+                </Link>
+              );
+            })}
+          </div>
+        </div>
+      </section>
 
-      {/* Resumen historia */}
+      {/* ¿POR QUÉ HORVATH? */}
+      <section className="why-horvath section-pad" data-testid="why-horvath">
+        <div className="container">
+          <div className="section-head center reveal">
+            <p className="eyebrow">{t.porQue.eyebrow}</p>
+            <h2>{t.porQue.title}</h2>
+            <p>{t.porQue.sub}</p>
+          </div>
+          <div className="why-grid reveal-stagger reveal">
+            {t.porQue.cards.map((c) => (
+              <div className="why-card" key={c.label}>
+                <span className="why-num">{c.num}</span>
+                <strong>{c.label}</strong>
+                <p>{c.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CONFIANZA */}
+      <Partners />
+
+      {/* OPINIONES */}
+      <Testimonials />
+
+      {/* NUESTRA HISTORIA (breve) */}
       <section className="about section-pad">
         <div className="container">
           <div className="about-grid">
@@ -77,20 +127,16 @@ export default function Home() {
         </div>
       </section>
 
-      <Partners />
-
-      <Testimonials />
-
-      {/* CTA contacto */}
+      {/* CTA FINAL */}
       <section className="home-contact section-pad">
         <div className="container">
           <div className="section-head center reveal">
             <h2>{t.homeContact.title}</h2>
             <p>{t.homeContact.sub}</p>
           </div>
-          <div className="home-contact-actions reveal">
+          <div className="home-contact-actions reveal" style={{ flexDirection: "column", alignItems: "center", gap: "14px" }}>
             <a href={WA_PLAIN} target="_blank" rel="noopener noreferrer" className="btn btn-cyan" data-testid="home-wa-btn"><IconWhatsApp /> {t.cta.whatsapp}</a>
-            <Link to="/contacto" className="btn btn-ghost" data-testid="home-contact-btn">{t.cta.contactUs} <IconArrowRight /></Link>
+            <Link to="/contacto" className="segment-link" data-testid="home-contact-btn">{t.cta.contactUs}</Link>
           </div>
         </div>
       </section>

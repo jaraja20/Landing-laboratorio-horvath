@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { IconFacebook, IconInstagram } from "./icons";
-import { PHONE_TEL, PHONE_DISPLAY, WHATSAPP_DISPLAY, WA_NUMBER, FACEBOOK_URL, INSTAGRAM_URL } from "../data";
+import { IconFacebook, IconInstagram, IconLinkedin, IconAward } from "./icons";
+import { PHONE_TEL, PHONE_DISPLAY, WHATSAPP_DISPLAY, WA_NUMBER, FACEBOOK_URL, INSTAGRAM_URL, LINKEDIN_URL } from "../data";
 import { useLang } from "../i18n/LanguageContext";
 
 export default function Footer() {
@@ -28,8 +28,16 @@ export default function Footer() {
             </span>
             <p>{t.footer.brandDesc}</p>
             <div className="footer-social">
-              <a href={FACEBOOK_URL} target="_blank" rel="noopener noreferrer" aria-label="Facebook"><IconFacebook /></a>
-              <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" aria-label="Instagram"><IconInstagram /></a>
+              <a href={FACEBOOK_URL} target="_blank" rel="noopener noreferrer" aria-label="Facebook" data-testid="footer-facebook"><IconFacebook /></a>
+              <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" aria-label="Instagram" data-testid="footer-instagram"><IconInstagram /></a>
+              <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" data-testid="footer-linkedin"><IconLinkedin /></a>
+            </div>
+            <div className="footer-iso" data-testid="footer-iso">
+              <IconAward />
+              <div>
+                <strong>{t.footer.iso}</strong>
+                <span>{t.footer.isoNote}</span>
+              </div>
             </div>
           </div>
 

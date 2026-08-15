@@ -12,7 +12,10 @@ export default function ProfileExplorer() {
   const p = t.pacientes;
   const L = (v) => (v && typeof v === "object" && !Array.isArray(v) ? (v[lang] || v.es) : v);
   const [activeId, setActiveId] = useState(null);
+  const [showAll, setShowAll] = useState(false);
   const active = PATIENT_PROFILES.find((x) => x.id === activeId);
+  const visibleProfiles = showAll ? PATIENT_PROFILES : PATIENT_PROFILES.slice(0, 6);
+  const remaining = PATIENT_PROFILES.length - 6;
 
   useEffect(() => {
     document.body.style.overflow = activeId ? "hidden" : "";
@@ -35,7 +38,7 @@ export default function ProfileExplorer() {
         viewport={{ once: true, amount: 0.15 }}
         data-testid="perfiles-grid"
       >
-        {PATIENT_PROFILES.map((prof) => (
+        {visibleProfiles.map((prof) => (
           <motion.button
             key={prof.id}
             type="button"
@@ -54,6 +57,14 @@ export default function ProfileExplorer() {
           </motion.button>
         ))}
       </motion.div>
+
+      {!showAll && remaining > 0 && (
+        <div className="ver-mas-wrap">
+          <button type="button" className="btn btn-navy" onClick={() => setShowAll(true)} data-testid="perfiles-ver-mas">
+            {t.cta.verMas} (+{remaining}) <IconArrowRight />
+          </button>
+        </div>
+      )}
 
       <AnimatePresence>
         {active && (

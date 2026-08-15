@@ -16,7 +16,7 @@ export const translations = {
       sendWa: "Enviar por WhatsApp", sendMail: "Enviar por correo", contactUs: "Contactanos",
       hablarAsesor: "Hablar con un asesor", solicitarPropuesta: "Solicitar una propuesta",
       consultarCobertura: "Consultar cobertura", verPerfiles: "Ver perfiles y chequeos",
-      solicitarPresupuesto: "Solicitar presupuesto", verTodos: "Ver todo", verMas: "Ver más",
+      solicitarPresupuesto: "Solicitar presupuesto", verTodos: "Ver todo", verMas: "Ver más", masInfo: "Más información",
     },
     wa: {
       general: "Hola, quiero más información sobre los servicios de Laboratorios Horvath.",
@@ -32,6 +32,7 @@ export const translations = {
       eyebrow: "Laboratorios Horvath · Advanced Science Hub",
       titleA: "40 años cuidando tu salud,", titleEm: "con la ciencia del futuro", titleB: ".",
       sub: "Análisis clínicos, estudios especializados y salud ocupacional con tecnología de vanguardia y el trato humano que nos define desde 1983.",
+      tagline: "Beyond Diagnostics.",
       trust: ["+40 años de trayectoria", "Peritos matriculados en la Corte Suprema de Justicia", "Tecnología de ultracongelación a -80°C"],
       scroll: "Descubrí más",
     },
@@ -54,7 +55,29 @@ export const translations = {
     },
     alianzas: { title: "Trabajamos junto a las instituciones en las que ya confiás", eyebrow: "Confianza" },
     homeContact: { title: "Estamos para ayudarte", sub: "Contactanos por el canal que prefieras. Te respondemos lo antes posible." },
-    testimonials: { eyebrow: "Opiniones reales", title: "Lo que dicen nuestros pacientes", sub: "Reseñas de pacientes en Google, Instagram y WhatsApp." },
+    testimonials: { eyebrow: "Opiniones reales", title: "Lo que dicen nuestros pacientes", sub: "Reseñas de pacientes en Google, Instagram y WhatsApp.", more: "Ver más opiniones" },
+    queHacemos: {
+      eyebrow: "Qué hacemos", title: "Todo lo que necesitás, en un solo lugar",
+      sub: "Análisis, estudios y salud ocupacional con respaldo científico. Elegí por dónde empezar.",
+      items: [
+        { icon: "beaker", title: "Análisis clínicos", text: "Hematología, bioquímica, microbiología y más.", to: "/pacientes" },
+        { icon: "dna", title: "Estudios especializados y ADN", text: "Biología molecular, genética y pruebas de parentesco.", to: "/pacientes" },
+        { icon: "shieldcheck", title: "Perfiles y chequeos", text: "Perfiles preventivos pensados para cada necesidad.", to: "/pacientes#perfiles" },
+        { icon: "building", title: "Salud Laboral", text: "Exámenes ocupacionales y operativos in company.", to: "/empresas" },
+        { icon: "handshake", title: "Convenios y seguros", text: "Trabajamos con las principales prepagas del país.", to: "/convenios" },
+        { icon: "flask", title: "Advanced Science Hub", text: "Investigación, consultoría e innovación diagnóstica.", to: "/advanced-science-hub" },
+      ],
+    },
+    porQue: {
+      eyebrow: "Por qué Horvath", title: "Ciencia, experiencia y confianza",
+      sub: "Cuatro razones que nos distinguen desde 1983.",
+      cards: [
+        { num: "+40", label: "Años de trayectoria", text: "Más de cuatro décadas cuidando la salud de Paraguay." },
+        { num: "-80°C", label: "Ultracongelación", text: "Tecnología para conservar muestras biológicas críticas." },
+        { num: "Fase III", label: "Ensayos clínicos", text: "Primer ensayo clínico Fase III del país, junto a Taiwán." },
+        { num: "15+", label: "Aliados", text: "Instituciones y seguros que ya confían en nosotros." },
+      ],
+    },
 
     pacientes: {
       hero: { eyebrow: "Para vos y tu familia", title: "Tu salud, en las mejores manos", sub: "Encontrá lo que buscás según tu necesidad, o accedé al menú completo si ya sabés qué análisis precisás." },
@@ -103,17 +126,19 @@ export const translations = {
       differentialTitle: "Un encargado exclusivo para tu empresa",
       differentialText: "Cada empresa cuenta con un encargado específico de Horvath como único punto de contacto, para centralizar la coordinación y el seguimiento. Acompañamiento clínico real y respuestas rápidas.",
       porque: {
-        eyebrow: "Aliate a Horvath",
+        eyebrow: "¿Por qué eligen Horvath?",
         title: "Sumate a las empresas líderes que ya confían en nosotros",
         sub: "Diseñamos un programa de salud laboral a medida, con respaldo científico y un acompañamiento que le simplifica la vida a tu equipo de RRHH.",
         reasons: [
           { icon: "user", title: "Un solo punto de contacto", text: "Un encargado exclusivo coordina todo: agenda, operativos y seguimiento." },
           { icon: "building", title: "Vamos a tu empresa", text: "Operativos in company en Asunción, Gran Asunción e interior (desde 50 personas)." },
           { icon: "filetext", title: "Resultados digitales y trazables", text: "Reportes claros y rápidos, listos para auditorías y cumplimiento normativo." },
+          { icon: "layers", title: "Gestión centralizada", text: "Agenda, operativos y seguimiento coordinados en un solo lugar." },
+          { icon: "shieldcheck", title: "Cumplimiento normativo", text: "Estudios y certificados alineados a la normativa laboral vigente." },
           { icon: "flask", title: "Respaldo científico Horvath", text: "Tecnología de vanguardia y el aval del Advanced Science Hub." },
         ],
       },
-      studiesTitle: "Nuestros servicios de Salud Laboral",
+      studiesTitle: "Soluciones de Salud Laboral",
       studies: [
         { icon: "clipboard", title: "Estudios Admisionales", desc: "Evaluación completa de ingreso con certificado de apto por médico laboral." },
         { icon: "calendar", title: "Estudios Anuales / Periódicos", desc: "Controles periódicos para el cumplimiento normativo de tu operación." },
@@ -130,7 +155,7 @@ export const translations = {
       clientsTitle: "Empresas que ya confían en nosotros",
       clientsSub: "Empresas líderes de distintos rubros que confían su salud laboral en Horvath.",
       menuTitle: "Menú de estudios", menuDesc: "Consultá el catálogo completo de análisis y estudios disponibles.",
-      ctaTitle: "¿Listos para diseñar una propuesta a medida?",
+      ctaTitle: "¿Necesitás organizar la salud laboral de tu equipo?",
       ctaText: "Contanos el tamaño de tu equipo y qué necesitás. Un asesor te acompaña de principio a fin.",
     },
 
@@ -187,6 +212,7 @@ export const translations = {
         { title: "Ensayos clínicos Fase III", text: "Participamos en el primer ensayo clínico de Fase III en Paraguay, en colaboración con Taiwán." },
         { title: "Exportación de muestras", text: "Pioneros en la exportación de muestras biológicas en tanques de nitrógeno líquido." },
         { title: "Peritos oficiales", text: "Bioquímicos matriculados como peritos en la Corte Suprema de Justicia." },
+        { title: "Advanced Science Hub", text: "Evolución a un hub científico con alcance internacional y estándares de calidad globales." },
       ],
       valuesTitle: "Nuestros principios",
       values: [
@@ -206,6 +232,11 @@ export const translations = {
       gallerySub: "Un recorrido por nuestras instalaciones, nuestro trabajo frente al Covid-19 y nuestros programas de salud laboral.",
       galleryTabs: { all: "Todas", instalaciones: "Nuestras Instalaciones", covid: "Lucha contra el Covid-19", laboral: "Salud Laboral" },
       igTitle: "Seguinos en Instagram", igCta: "@laboratorioshorvath",
+      nuevaEtapa: { eyebrow: "Una nueva etapa", title: "Beyond Diagnostics", text: "Horvath entra en una nueva etapa como Advanced Science Hub: más allá del diagnóstico, integramos investigación, innovación y alcance internacional para transformar la ciencia en bienestar real para las personas." },
+      originLeadershipTitle: "Origen y liderazgo",
+      origin: { eyebrow: "Nuestro origen · 1983", title: "El legado de la Dra. Raquel", text: "La Dra. Raquel C. de Horvath, pionera en técnicas inmunológicas en Paraguay, fundó el laboratorio sobre la base de la precisión, la confiabilidad y el trato humano." },
+      leadership: { eyebrow: "Liderazgo", title: "Gabriela Horvath", role: "CEO y única propietaria", text: "Máster en Toxicología, especialista en Investigación Clínica y Perito Oficial de la Corte Suprema. Proyecta a Horvath como un hub científico de alcance internacional." },
+      ctaBanner: { title: "¿Querés conocer más sobre Horvath?", text: "Escribinos o visitanos. Estamos para acompañar tu salud y la de tu empresa." },
     },
 
     contacto: {
@@ -224,6 +255,7 @@ export const translations = {
     footer: {
       brandDesc: "Más de 40 años acompañando la salud de personas y empresas en Paraguay, con ciencia de vanguardia y trato humano.",
       navTitle: "Navegación", contactTitle: "Contacto",
+      iso: "ISO 15189", isoNote: "Calidad en laboratorios clínicos",
       rights: "Todos los derechos reservados.", credit: "Diseño y desarrollo — Tekoha Systems",
     },
   },
@@ -238,7 +270,7 @@ export const translations = {
       sendWa: "Send via WhatsApp", sendMail: "Send via email", contactUs: "Contact us",
       hablarAsesor: "Talk to an advisor", solicitarPropuesta: "Request a proposal",
       consultarCobertura: "Check coverage", verPerfiles: "View profiles & checkups",
-      solicitarPresupuesto: "Request a quote", verTodos: "View all", verMas: "View more",
+      solicitarPresupuesto: "Request a quote", verTodos: "View all", verMas: "View more", masInfo: "More information",
     },
     wa: {
       general: "Hello, I'd like more information about Laboratorios Horvath's services.",
@@ -254,6 +286,7 @@ export const translations = {
       eyebrow: "Laboratorios Horvath · Advanced Science Hub",
       titleA: "40 years caring for your health,", titleEm: "with the science of the future", titleB: ".",
       sub: "Clinical tests, specialized studies and occupational health with cutting-edge technology and the human touch that has defined us since 1983.",
+      tagline: "Beyond Diagnostics.",
       trust: ["+40 years of experience", "Experts sworn before the Supreme Court of Justice", "-80°C ultra-freezing technology"],
       scroll: "Discover more",
     },
@@ -276,7 +309,29 @@ export const translations = {
     },
     alianzas: { title: "We work alongside the institutions you already trust", eyebrow: "Trust" },
     homeContact: { title: "We're here to help", sub: "Reach out through your preferred channel. We'll get back to you soon." },
-    testimonials: { eyebrow: "Real reviews", title: "What our patients say", sub: "Reviews from patients on Google, Instagram and WhatsApp." },
+    testimonials: { eyebrow: "Real reviews", title: "What our patients say", sub: "Reviews from patients on Google, Instagram and WhatsApp.", more: "See more reviews" },
+    queHacemos: {
+      eyebrow: "What we do", title: "Everything you need, in one place",
+      sub: "Tests, studies and occupational health backed by science. Choose where to start.",
+      items: [
+        { icon: "beaker", title: "Clinical tests", text: "Hematology, biochemistry, microbiology and more.", to: "/pacientes" },
+        { icon: "dna", title: "Specialized & DNA studies", text: "Molecular biology, genetics and paternity testing.", to: "/pacientes" },
+        { icon: "shieldcheck", title: "Profiles & checkups", text: "Preventive profiles designed for every need.", to: "/pacientes#perfiles" },
+        { icon: "building", title: "Occupational Health", text: "Workplace exams and on-site operations.", to: "/empresas" },
+        { icon: "handshake", title: "Coverage & insurance", text: "We work with the country's leading health plans.", to: "/convenios" },
+        { icon: "flask", title: "Advanced Science Hub", text: "Research, consulting and diagnostic innovation.", to: "/advanced-science-hub" },
+      ],
+    },
+    porQue: {
+      eyebrow: "Why Horvath", title: "Science, experience and trust",
+      sub: "Four reasons that set us apart since 1983.",
+      cards: [
+        { num: "+40", label: "Years of experience", text: "Over four decades caring for Paraguay's health." },
+        { num: "-80°C", label: "Ultra-freezing", text: "Technology to preserve critical biological samples." },
+        { num: "Phase III", label: "Clinical trials", text: "The country's first Phase III clinical trial, with Taiwan." },
+        { num: "15+", label: "Partners", text: "Institutions and insurers that already trust us." },
+      ],
+    },
 
     pacientes: {
       hero: { eyebrow: "For you and your family", title: "Your health, in the best hands", sub: "Find what you need by topic, or open the full menu if you already know which tests you need." },
@@ -325,17 +380,19 @@ export const translations = {
       differentialTitle: "A dedicated manager for your company",
       differentialText: "Every company gets a specific Horvath manager as the single point of contact, centralizing coordination and follow-up. Real clinical support and fast responses.",
       porque: {
-        eyebrow: "Partner with Horvath",
+        eyebrow: "Why do they choose Horvath?",
         title: "Join the leading companies that already trust us",
         sub: "We design a tailored occupational health program, backed by science and support that makes your HR team's life easier.",
         reasons: [
           { icon: "user", title: "A single point of contact", text: "A dedicated manager coordinates everything: scheduling, on-site visits and follow-up." },
           { icon: "building", title: "We come to your company", text: "On-site operations in Asunción, Greater Asunción and the interior (from 50 people)." },
           { icon: "filetext", title: "Digital, traceable results", text: "Clear, fast reports ready for audits and regulatory compliance." },
+          { icon: "layers", title: "Centralized management", text: "Scheduling, on-site operations and follow-up coordinated in one place." },
+          { icon: "shieldcheck", title: "Regulatory compliance", text: "Studies and certificates aligned with current labor regulations." },
           { icon: "flask", title: "Horvath scientific backing", text: "Cutting-edge technology and the endorsement of our Advanced Science Hub." },
         ],
       },
-      studiesTitle: "Our Occupational Health services",
+      studiesTitle: "Occupational Health Solutions",
       studies: [
         { icon: "clipboard", title: "Pre-employment exams", desc: "Complete onboarding assessment with medical fitness certificate." },
         { icon: "calendar", title: "Annual / Periodic exams", desc: "Periodic checkups for your operation's regulatory compliance." },
@@ -409,6 +466,7 @@ export const translations = {
         { title: "Phase III clinical trials", text: "We took part in Paraguay's first Phase III clinical trial, in collaboration with Taiwan." },
         { title: "Sample export", text: "Pioneers in exporting biological samples in liquid-nitrogen tanks." },
         { title: "Official experts", text: "Biochemists sworn as experts before the Supreme Court of Justice." },
+        { title: "Advanced Science Hub", text: "Evolution into a scientific hub with international reach and global quality standards." },
       ],
       valuesTitle: "Our principles",
       values: [
@@ -428,6 +486,11 @@ export const translations = {
       gallerySub: "A tour through our facilities, our work against Covid-19 and our occupational health programs.",
       galleryTabs: { all: "All", instalaciones: "Our Facilities", covid: "Fight against Covid-19", laboral: "Occupational Health" },
       igTitle: "Follow us on Instagram", igCta: "@laboratorioshorvath",
+      nuevaEtapa: { eyebrow: "A new chapter", title: "Beyond Diagnostics", text: "Horvath begins a new chapter as an Advanced Science Hub: beyond diagnostics, we bring together research, innovation and international reach to turn science into real well-being for people." },
+      originLeadershipTitle: "Origin & leadership",
+      origin: { eyebrow: "Our origin · 1983", title: "Dr. Raquel's legacy", text: "Dr. Raquel C. de Horvath, a pioneer in immunological techniques in Paraguay, founded the lab on precision, reliability and a human touch." },
+      leadership: { eyebrow: "Leadership", title: "Gabriela Horvath", role: "CEO & sole owner", text: "Master in Toxicology, Clinical Research specialist and Official Expert of the Supreme Court. She projects Horvath as a scientific hub with international reach." },
+      ctaBanner: { title: "Want to learn more about Horvath?", text: "Message us or visit us. We're here to support your health and your company's." },
     },
 
     contacto: {
@@ -446,6 +509,7 @@ export const translations = {
     footer: {
       brandDesc: "Over 40 years caring for the health of individuals and companies in Paraguay, with cutting-edge science and a human touch.",
       navTitle: "Navigation", contactTitle: "Contact",
+      iso: "ISO 15189", isoNote: "Clinical laboratory quality",
       rights: "All rights reserved.", credit: "Design & development — Tekoha Systems",
     },
   },

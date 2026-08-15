@@ -1,11 +1,12 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import PageFade from "../components/PageFade";
-import Stats from "../components/Stats";
+import Breadcrumb from "../components/Breadcrumb";
 import Gallery from "../components/Gallery";
 import Partners from "../components/Partners";
-import { IconInstagram } from "../components/icons";
-import { INSTAGRAM_URL, PRINCIPLE_ICONS, HERO_BG } from "../data";
+import { IconInstagram, IconWhatsApp, IconArrowUpRight } from "../components/icons";
+import { INSTAGRAM_URL, PRINCIPLE_ICONS, HERO_BG, WA_PLAIN } from "../data";
 import { useLang } from "../i18n/LanguageContext";
 
 const stagger = { show: { transition: { staggerChildren: 0.1 } } };
@@ -14,6 +15,8 @@ const item = { hidden: { opacity: 0, y: 26 }, show: { opacity: 1, y: 0, transiti
 export default function Nosotros() {
   const { t } = useLang();
   const n = t.nosotros;
+  const gabriela = n.team[0];
+  const raquel = n.team[1];
 
   return (
     <PageFade>
@@ -29,6 +32,8 @@ export default function Nosotros() {
         </div>
       </section>
 
+      <Breadcrumb current={t.nav.nosotros} />
+
       {/* Historia */}
       <section className="about section-pad">
         <div className="container">
@@ -39,25 +44,44 @@ export default function Nosotros() {
         </div>
       </section>
 
-      {/* Dirección científica */}
-      <section className="team-section section-pad">
+      {/* Origen y liderazgo (2 viñetas) */}
+      <section className="origin-leadership section-pad">
         <div className="container">
-          <div className="section-head center reveal"><h2>{n.teamTitle}</h2></div>
-          <div className="team-grid reveal-stagger reveal">
-            {n.team.map((m) => (
-              <figure className="team-card" key={m.name}>
-                <div className="team-photo"><img src={m.img} alt={m.name} loading="lazy" /></div>
-                <figcaption>
-                  <strong>{m.name}</strong>
-                  <span>{m.role}</span>
-                </figcaption>
-              </figure>
-            ))}
+          <div className="section-head center reveal"><h2>{n.originLeadershipTitle}</h2></div>
+          <div className="ol-grid reveal-stagger reveal">
+            <div className="ol-card" data-testid="ol-origin">
+              <div className="ol-photo"><img src={raquel.img} alt={raquel.name} loading="lazy" /></div>
+              <div>
+                <span className="ol-eyebrow">{n.origin.eyebrow}</span>
+                <h3>{n.origin.title}</h3>
+                <p>{n.origin.text}</p>
+              </div>
+            </div>
+            <div className="ol-card" data-testid="ol-leadership">
+              <div className="ol-photo"><img src={gabriela.img} alt={gabriela.name} loading="lazy" /></div>
+              <div>
+                <span className="ol-eyebrow">{n.leadership.eyebrow}</span>
+                <h3>{n.leadership.title}</h3>
+                <span className="ol-role">{n.leadership.role}</span>
+                <p>{n.leadership.text}</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Experiencia */}
+      {/* Una nueva etapa — Beyond Diagnostics */}
+      <section className="nueva-etapa section-pad" data-testid="nueva-etapa">
+        <div className="container">
+          <div className="nueva-etapa-inner reveal">
+            <p className="eyebrow">{n.nuevaEtapa.eyebrow}</p>
+            <h2>{n.nuevaEtapa.title}</h2>
+            <p>{n.nuevaEtapa.text}</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Experiencia (números) */}
       <section className="exp-section section-pad">
         <div className="container">
           <div className="section-head center reveal"><h2>{n.experienceTitle}</h2></div>
@@ -73,14 +97,14 @@ export default function Nosotros() {
         </div>
       </section>
 
-      {/* Hitos e innovación */}
+      {/* Hitos e innovación — timeline horizontal (5) */}
       <section className="milestones-section section-pad">
         <div className="container">
           <div className="section-head center reveal"><h2>{n.milestonesTitle}</h2></div>
-          <div className="milestones-grid reveal-stagger reveal">
+          <div className="timeline reveal-stagger reveal" data-testid="timeline">
             {n.milestones.map((m, i) => (
-              <div className="milestone-card" key={i}>
-                <span className="milestone-index">{String(i + 1).padStart(2, "0")}</span>
+              <div className="tl-item" key={i}>
+                <span className="tl-dot">{String(i + 1).padStart(2, "0")}</span>
                 <h3>{m.title}</h3>
                 <p>{m.text}</p>
               </div>
@@ -105,8 +129,6 @@ export default function Nosotros() {
         </div>
       </section>
 
-      <Stats />
-
       {/* Galería */}
       <section className="gallery section-pad" id="galeria" data-testid="gallery">
         <div className="container">
@@ -130,6 +152,21 @@ export default function Nosotros() {
               <span>{n.igCta}</span>
             </div>
           </a>
+        </div>
+      </section>
+
+      {/* CTA final */}
+      <section className="cta-band section-pad" style={{ background: "var(--light)" }}>
+        <div className="container">
+          <div className="cta-band-inner reveal">
+            <div className="cta-band-icon"><IconWhatsApp /></div>
+            <h2>{n.ctaBanner.title}</h2>
+            <p>{n.ctaBanner.text}</p>
+            <div className="page-hero-actions center">
+              <a href={WA_PLAIN} target="_blank" rel="noopener noreferrer" className="btn btn-cyan" data-testid="nosotros-wa"><IconWhatsApp /> {t.cta.whatsapp}</a>
+              <Link to="/contacto" className="btn btn-outline" data-testid="nosotros-contacto">{t.cta.contactUs} <IconArrowUpRight /></Link>
+            </div>
+          </div>
         </div>
       </section>
     </PageFade>

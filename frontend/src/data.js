@@ -15,6 +15,10 @@ export const MAPS_DIR =
 export const MENU_PDF = { es: "/assets/menus/menu-es.pdf", en: "/assets/menus/menu-en.pdf" };
 export const INSTAGRAM_URL = "https://www.instagram.com/laboratorioshorvath/";
 export const FACEBOOK_URL = "https://www.facebook.com/laboratorioshorvath";
+// LinkedIn: enlace provisional hasta confirmar el perfil oficial del laboratorio
+export const LINKEDIN_URL = "https://www.linkedin.com/company/laboratorios-horvath/";
+// Opiniones (provisional) — Google reviews del laboratorio
+export const GOOGLE_REVIEWS_URL = "https://www.google.com/search?q=Laboratorios+Horvath+opiniones";
 
 // Imagen de la fachada (instalaciones) para el bloque "Nuestra historia"
 export const HISTORY_IMG = "https://laboratoriohorvath.com/wp-content/uploads/2026/03/WhatsApp-Image-2026-02-14-at-12.19.36-1.jpeg";
@@ -79,6 +83,82 @@ export const TESTIMONIALS = [
 // Perfiles y chequeos reales del sanatorio (Horvath Health Profiles)
 // accent: blue | pink | violet | cyan | green | navy
 export const PATIENT_PROFILES = [
+  {
+    id: "perfil-tiroideo",
+    image: "https://images.unsplash.com/photo-1767972463825-96eaa9e0766b?crop=entropy&cs=srgb&fm=jpg&q=85&w=1200",
+    accent: "cyan",
+    tag: { es: "Tiroides", en: "Thyroid" },
+    title: { es: "Perfil tiroideo", en: "Thyroid profile" },
+    summary: { es: "Evaluación completa de la salud de tu tiroides.", en: "Complete evaluation of your thyroid health." },
+    groups: [
+      { label: { es: "Funciones tiroideas", en: "Thyroid function" }, items: ["TSH ultrasensible", "T4 libre", "T3 libre", "T4 total", "T3 total"] },
+      { label: { es: "Autoinmunidad tiroidea", en: "Thyroid autoimmunity" }, items: ["Anti-TPO", "Anti-TG", "TRAB"] },
+    ],
+    orientedTo: { es: "Detección de alteraciones tiroideas, seguimiento de tratamientos y evaluación integral de la función tiroidea.", en: "Detection of thyroid disorders, treatment follow-up and comprehensive assessment of thyroid function." },
+  },
+  {
+    id: "tipificacion-grupo-sanguineo",
+    image: "https://images.unsplash.com/photo-1606206591513-adbfbdd7a177?crop=entropy&cs=srgb&fm=jpg&q=85&w=1200",
+    accent: "navy",
+    tag: { es: "Grupo sanguíneo", en: "Blood type" },
+    title: { es: "Tipificación grupo sanguíneo", en: "Blood type test" },
+    summary: { es: "Conocé tu grupo sanguíneo y Factor Rh de manera rápida y confiable.", en: "Find out your blood type and Rh factor quickly and reliably." },
+    groups: [
+      { label: { es: "¿Qué determina?", en: "What it determines" }, items: ["Grupo sanguíneo ABO", "Factor Rh (positivo o negativo)"] },
+      { label: { es: "Beneficios", en: "Benefits" }, items: ["Resultados en el día", "Tecnología de alto estándar", "Personal especializado"] },
+    ],
+    orientedTo: { es: "Importante para cirugías, embarazos, donación de sangre y tu información médica personal.", en: "Important for surgeries, pregnancies, blood donation and your personal medical record." },
+  },
+  {
+    id: "perfil-reumatoideo",
+    image: "https://images.unsplash.com/photo-1739932885175-5fdaa1bd5989?crop=entropy&cs=srgb&fm=jpg&q=85&w=1200",
+    accent: "violet",
+    tag: { es: "Reumatología", en: "Rheumatology" },
+    title: { es: "Perfil reumatoideo", en: "Rheumatoid profile" },
+    summary: { es: "Evaluación integral para el diagnóstico y seguimiento de enfermedades reumáticas.", en: "Comprehensive evaluation for diagnosis and follow-up of rheumatic diseases." },
+    groups: [
+      { label: { es: "Marcadores inflamatorios", en: "Inflammatory markers" }, items: ["Artritest látex", "PCR", "Ácido úrico", "ASTO", "VES"] },
+      { label: { es: "Autoanticuerpos específicos", en: "Specific autoantibodies" }, items: ["ANA", "AC CCP"] },
+    ],
+    orientedTo: { es: "Personas con síntomas articulares (dolor, inflamación, rigidez), para diagnóstico temprano y control de tratamiento.", en: "People with joint symptoms (pain, swelling, stiffness), for early diagnosis and treatment control." },
+  },
+  {
+    id: "test-embarazo",
+    image: "https://images.unsplash.com/photo-1710897869539-a48e3d69a8d7?crop=entropy&cs=srgb&fm=jpg&q=85&w=1200",
+    accent: "pink",
+    tag: { es: "Embarazo", en: "Pregnancy" },
+    title: { es: "Test de embarazo (BhCG)", en: "Pregnancy test (BhCG)" },
+    summary: { es: "Detecta la hormona del embarazo (BhCG) en sangre de forma rápida, segura y confiable.", en: "Detects the pregnancy hormone (BhCG) in blood quickly, safely and reliably." },
+    groups: [
+      { label: { es: "Estudio · muestra de sangre", en: "Test · blood sample" }, items: ["BhCG cualitativo", "Alta sensibilidad y precisión", "Detección temprana"] },
+    ],
+    orientedTo: { es: "Mujeres que desean confirmar un posible embarazo desde los primeros días de retraso menstrual o según indicación médica.", en: "Women who want to confirm a possible pregnancy from the first days of a missed period or as medically indicated." },
+  },
+  {
+    id: "panel-respiratorio",
+    image: "https://images.unsplash.com/photo-1640622302099-f10b18de7b16?crop=entropy&cs=srgb&fm=jpg&q=85&w=1200",
+    accent: "cyan",
+    tag: { es: "Respiratorio", en: "Respiratory" },
+    title: { es: "Panel respiratorio", en: "Respiratory panel" },
+    summary: { es: "Detecta de forma rápida los virus más frecuentes que causan infecciones respiratorias.", en: "Quickly detects the most common viruses that cause respiratory infections." },
+    groups: [
+      { label: { es: "Virus detectados · hisopado nasofaríngeo", en: "Detected viruses · nasopharyngeal swab" }, items: ["Influenza A", "Influenza B", "VSR (Virus Sincitial Respiratorio)", "COVID-19 (SARS-CoV-2)"] },
+      { label: { es: "Ventajas", en: "Advantages" }, items: ["Resultados el mismo día", "Ideal para niños y adultos", "Procedimiento mínimamente invasivo"] },
+    ],
+    orientedTo: { es: "Personas con síntomas respiratorios como fiebre, tos, dolor de garganta o congestión, para un diagnóstico oportuno.", en: "People with respiratory symptoms such as fever, cough, sore throat or congestion, for timely diagnosis." },
+  },
+  {
+    id: "perfil-autoinmune",
+    image: "https://images.unsplash.com/photo-1614308459036-779d0dfe51ff?crop=entropy&cs=srgb&fm=jpg&q=85&w=1200",
+    accent: "blue",
+    tag: { es: "Autoinmunidad", en: "Autoimmunity" },
+    title: { es: "Perfil autoinmune", en: "Autoimmune profile" },
+    summary: { es: "Diagnóstico preciso para entender tu salud desde la raíz.", en: "Precise diagnosis to understand your health from the ground up." },
+    groups: [
+      { label: { es: "Evaluación integral de autoinmunidad", en: "Comprehensive autoimmunity panel" }, items: ["ANA por IFI (Hep-2)", "Anti-DNA (dsDNA)", "ENA (Ro/SSA, La/SSB, Sm, RNP)", "Factor Reumatoideo (FR)", "Anti-CCP", "Anti-TPO", "Anti-Tiroglobulina (Anti-Tg)", "Complemento C3 y C4", "VSG - PCR", "Orina completa"] },
+    ],
+    orientedTo: { es: "Personas con síntomas compatibles con enfermedades autoinmunes.", en: "People with symptoms compatible with autoimmune diseases." },
+  },
   {
     id: "bienestar-masculino-elite",
     image: "/assets/perfiles/bienestar-masculino.jpg",

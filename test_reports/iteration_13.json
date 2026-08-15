@@ -1,0 +1,27 @@
+{
+  "summary": "Frontend-only validation of Tekoha round of changes across Home, Pacientes, Empresas, Nosotros. All 7 review items PASS. 100% of data-testids verified. No console errors, no 'undefined' after language toggle.",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": []
+  },
+  "verified_items": {
+    "home": "Tagline 'Beyond Diagnostics.' visible, hero-persona/hero-empresa present, ¿Qué hacemos? with 6 icon links (qh-beaker,qh-dna,qh-shieldcheck,qh-building,qh-handshake,qh-flask) all present; qh-building navigates to /empresas correctly. why-horvath, home-wa-btn, home-contact-btn present.",
+    "breadcrumb": "Present on /pacientes, /empresas, /nosotros with breadcrumb-home link to /.",
+    "pacientes": "perfiles-grid renders initially 6 NEW profiles (perfil-tiroideo, tipificacion-grupo-sanguineo, perfil-reumatoideo, test-embarazo, panel-respiratorio, perfil-autoinmune). 'Ver más' expands to 18 total. Modal opens with perfil-wa, closes via Escape and via overlay click (verified with 1.5s wait for AnimatePresence).",
+    "empresas": "Title 'Soluciones de Salud Laboral' present, 'Más información' CTAs present, porque-aliarse present, empresas-menu-btn correctly ABSENT, final CTA '¿Necesitás organizar la salud laboral...' present.",
+    "nosotros": "ol-origin, ol-leadership, nueva-etapa (Beyond Diagnostics), timeline with 5 .tl-item, nosotros-wa, nosotros-contacto all present.",
+    "footer": "footer-facebook, footer-instagram, footer-linkedin (new), footer-iso all present.",
+    "i18n": "lang-toggle switches to English: 'What we do' appears, 'Beyond Diagnostics' maintained, breadcrumb-home shows 'Home', ver-mas shows 'View more (+12)'. No 'undefined' in DOM."
+  },
+  "test_report_links": [],
+  "action_items": [],
+  "critical_code_review_comments": [],
+  "updated_files": [],
+  "success_rate": {"backend": "N/A (skipped per request)", "frontend": "100%"},
+  "seed_data_creation": "None",
+  "retest_needed": false,
+  "should_main_agent_self_test": false,
+  "context_for_next_testing_agent": "All Tekoha-round UI changes verified end-to-end. Modal close via Escape/overlay works but requires >=1s wait due to framer-motion AnimatePresence exit animation."
+}
