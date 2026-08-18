@@ -14,8 +14,9 @@ export default function ProfileExplorer() {
   const [activeId, setActiveId] = useState(null);
   const [showAll, setShowAll] = useState(false);
   const active = PATIENT_PROFILES.find((x) => x.id === activeId);
-  const visibleProfiles = showAll ? PATIENT_PROFILES : PATIENT_PROFILES.slice(0, 6);
-  const remaining = PATIENT_PROFILES.length - 6;
+  const INITIAL_COUNT = 8;
+  const visibleProfiles = showAll ? PATIENT_PROFILES : PATIENT_PROFILES.slice(0, INITIAL_COUNT);
+  const remaining = PATIENT_PROFILES.length - INITIAL_COUNT;
 
   useEffect(() => {
     document.body.style.overflow = activeId ? "hidden" : "";

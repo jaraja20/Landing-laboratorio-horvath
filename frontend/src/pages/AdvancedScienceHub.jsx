@@ -48,17 +48,21 @@ export default function AdvancedScienceHub() {
         </div>
       </section>
 
-      <section className="ash-highlights section-pad" style={{ background: "var(--light)" }}>
+      <section className="ash-highlights section-pad" style={{ background: "var(--white)" }}>
         <div className="container">
           <div className="section-head center reveal"><h2>{a.highlightsTitle}</h2></div>
           <div className="exp-grid reveal-stagger reveal">
-            {a.highlights.map((h, i) => (
-              <div className="exp-card" key={i}>
-                <span className="exp-num">{h.num}</span>
-                <strong>{h.label}</strong>
-                <p>{h.text}</p>
-              </div>
-            ))}
+            {a.highlights.map((h, i) => {
+              const Ico = ICON_MAP[h.icon];
+              return (
+                <div className="exp-card" key={i}>
+                  {Ico && <span className="exp-icon"><Ico /></span>}
+                  <span className="exp-num">{h.num}</span>
+                  <strong>{h.label}</strong>
+                  <p>{h.text}</p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>

@@ -99,25 +99,6 @@ export default function Pacientes() {
         </div>
       </section>
 
-      {/* Medios de pago + Convenios */}
-      <section className="pagos section-pad">
-        <div className="container pagos-wrap">
-          <div className="pagos-box reveal">
-            <p className="eyebrow"><IconCard /> {p.pagosTitle}</p>
-            <p className="pagos-sub">{p.pagosSub}</p>
-            <div className="pagos-chips">{p.pagos.map((x) => <span key={x} className="chip">{x}</span>)}</div>
-          </div>
-          <div className="convenios-teaser reveal">
-            <h3>{p.conveniosTeaser.title}</h3>
-            <p>{p.conveniosTeaser.text}</p>
-            <div className="teaser-actions">
-              <a href={waLink(t.wa.cobertura)} target="_blank" rel="noopener noreferrer" className="btn btn-cyan"><IconWhatsApp /> {p.conveniosTeaser.btn}</a>
-              <Link to="/convenios" className="btn btn-ghost">{t.cta.verMas} <IconArrowUpRight /></Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Categorías técnicas */}
       <section className="services-personas section-pad" style={{ background: "var(--white)" }}>
         <div className="container">
@@ -139,13 +120,26 @@ export default function Pacientes() {
 
       <section className="cta-band personas section-pad">
         <div className="container">
-          <div className="cta-band-inner reveal">
-            <div className="cta-band-icon"><IconCalendar /></div>
-            <h2>{p.comoTitle}</h2>
-            <p>{p.hero.sub}</p>
-            <div className="page-hero-actions center">
-              <a href={waLink(t.wa.agendar)} target="_blank" rel="noopener noreferrer" className="btn btn-cyan"><IconWhatsApp /> {t.cta.start}</a>
-              <Link to="/contacto" className="btn btn-outline">{t.cta.contactUs} <IconArrowUpRight /></Link>
+          <div className="cta-pagos-grid reveal">
+            <div className="pagos-card">
+              <span className="pagos-card-icon"><IconCard /></span>
+              <h3>{p.pagosTitle}</h3>
+              <p>{p.pagosSub}</p>
+              <div className="pagos-chips">
+                {p.pagos.map((x) => (
+                  <span key={x} className="chip"><IconCheck /> {x}</span>
+                ))}
+              </div>
+            </div>
+
+            <div className="cta-band-inner">
+              <div className="cta-band-icon"><IconCalendar /></div>
+              <h2>{p.comoTitle}</h2>
+              <p>{p.hero.sub}</p>
+              <div className="page-hero-actions center">
+                <a href={waLink(t.wa.agendar)} target="_blank" rel="noopener noreferrer" className="btn btn-cyan"><IconWhatsApp /> {t.cta.start}</a>
+                <Link to="/contacto" className="btn btn-outline">{t.cta.contactUs} <IconArrowUpRight /></Link>
+              </div>
             </div>
           </div>
         </div>

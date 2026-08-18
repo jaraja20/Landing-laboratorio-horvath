@@ -13,6 +13,21 @@ export const MAPS_DIR =
   "https://www.google.com/maps/dir/?api=1&destination=Av.+Aviadores+del+Chaco+2530,+Asunci%C3%B3n,+Paraguay";
 
 export const MENU_PDF = { es: "/assets/menus/menu-es.pdf", en: "/assets/menus/menu-en.pdf" };
+
+// Fuente única de las rutas del sitio: Header, Footer y MobileMenu arman su
+// menú a partir de esta lista (usando t.nav[key] para el texto traducido)
+// en vez de definir cada uno su propio array por separado.
+// `primary: false` marca los links que en el Header de escritorio van
+// agrupados bajo el desplegable "Más" en vez de mostrarse sueltos.
+export const NAV_LINKS = [
+  { to: "/", key: "inicio", primary: true },
+  { to: "/pacientes", key: "pacientes", primary: true },
+  { to: "/empresas", key: "empresas", primary: true },
+  { to: "/advanced-science-hub", key: "ash", primary: false },
+  { to: "/convenios", key: "convenios", primary: false },
+  { to: "/nosotros", key: "nosotros", primary: true },
+  { to: "/contacto", key: "contacto", primary: true },
+];
 export const INSTAGRAM_URL = "https://www.instagram.com/laboratorioshorvath/";
 export const FACEBOOK_URL = "https://www.facebook.com/laboratorioshorvath";
 // LinkedIn: enlace provisional hasta confirmar el perfil oficial del laboratorio
