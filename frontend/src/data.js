@@ -21,7 +21,7 @@ export const LINKEDIN_URL = "https://www.linkedin.com/company/laboratorios-horva
 export const GOOGLE_REVIEWS_URL = "https://www.google.com/search?q=Laboratorios+Horvath+opiniones";
 
 // Imagen de la fachada (instalaciones) para el bloque "Nuestra historia"
-export const HISTORY_IMG = "https://laboratoriohorvath.com/wp-content/uploads/2026/03/WhatsApp-Image-2026-02-14-at-12.19.36-1.jpeg";
+export const HISTORY_IMG = "/assets/img/horvath-health-center.jpg";
 
 // Íconos 3D de principios (PNG transparente, auto-alojados)
 export const PRINCIPLE_ICONS = {
