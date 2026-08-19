@@ -25,12 +25,12 @@ export const HISTORY_IMG = "/assets/img/horvath-health-center.jpg";
 
 // Íconos 3D de principios (PNG transparente, auto-alojados)
 export const PRINCIPLE_ICONS = {
-  layers: "/assets/icons3d/dignidad.png",
-  shield: "/assets/icons3d/integridad.png",
-  arrowup: "/assets/icons3d/proactividad.png",
-  refresh: "/assets/icons3d/mejora.png",
-  heart: "/assets/icons3d/responsabilidad.png",
-  flask: "/assets/icons3d/pasion.png",
+  layers: "/assets/icons3d/dignidad.svg",
+  shield: "/assets/icons3d/integridad.svg",
+  arrowup: "/assets/icons3d/proactividad.svg",
+  refresh: "/assets/icons3d/mejora.svg",
+  heart: "/assets/icons3d/responsabilidad.svg",
+  flask: "/assets/icons3d/pasion.svg",
 };
 
 // Fondos decorativos de laboratorio por vista
