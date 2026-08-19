@@ -1,20 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { IconFacebook, IconInstagram } from "./icons";
-import { PHONE_TEL, PHONE_DISPLAY, WHATSAPP_DISPLAY, WA_NUMBER, FACEBOOK_URL, INSTAGRAM_URL } from "../data";
+import Logo from "./Logo";
+import { PHONE_TEL, PHONE_DISPLAY, WHATSAPP_DISPLAY, WA_NUMBER, FACEBOOK_URL, INSTAGRAM_URL, ADDRESS, NAV_LINKS } from "../data";
 import { useLang } from "../i18n/LanguageContext";
 
 export default function Footer() {
   const { t } = useLang();
-  const nav = [
-    ["/", t.nav.inicio],
-    ["/pacientes", t.nav.pacientes],
-    ["/empresas", t.nav.empresas],
-    ["/advanced-science-hub", t.nav.ash],
-    ["/convenios", t.nav.convenios],
-    ["/nosotros", t.nav.nosotros],
-    ["/contacto", t.nav.contacto],
-  ];
+  const nav = NAV_LINKS.map((l) => [l.to, t.nav[l.key]]);
+  const hoursLine = t.contacto.hours.map(([d, h]) => `${d}: ${h}`).join(" · ");
 
   return (
     <footer className="site-footer" data-testid="footer">
@@ -22,9 +16,7 @@ export default function Footer() {
         <div className="footer-grid">
           <div className="footer-brand">
             <span className="logo">
-              <span className="logo-top">Laboratorios</span>
-              <span className="logo-main">HORVATH</span>
-              <span className="logo-sub">Advanced Science Hub</span>
+              <Logo />
             </span>
             <p>{t.footer.brandDesc}</p>
             <div className="footer-social">
@@ -41,10 +33,10 @@ export default function Footer() {
           <div className="footer-col">
             <h4>{t.footer.contactTitle}</h4>
             <ul>
-              <li><p>Av. Aviadores del Chaco N° 2530, Asunción</p></li>
+              <li><p>{ADDRESS}</p></li>
               <li><a href={`tel:${PHONE_TEL}`}>{PHONE_DISPLAY}</a></li>
               <li><a href={`https://wa.me/${WA_NUMBER}`} target="_blank" rel="noopener noreferrer">{WHATSAPP_DISPLAY}</a></li>
-              <li><p>Lun–Vie 6:30–18:00 · Sáb 6:30–13:00</p></li>
+              <li><p>{hoursLine}</p></li>
             </ul>
           </div>
         </div>

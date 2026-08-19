@@ -1,30 +1,20 @@
 import React from "react";
 import { NavLink, Link } from "react-router-dom";
 import { IconPhone, IconWhatsApp, IconMenu, IconGlobe, IconChevronDown } from "./icons";
-import { PHONE_TEL, PHONE_DISPLAY, WA_PLAIN } from "../data";
+import Logo from "./Logo";
+import { PHONE_TEL, PHONE_DISPLAY, WA_PLAIN, NAV_LINKS } from "../data";
 import { useLang } from "../i18n/LanguageContext";
 
 export default function Header({ onOpenMenu }) {
   const { t, lang, toggle } = useLang();
-  const links = [
-    ["/", t.nav.inicio],
-    ["/pacientes", t.nav.pacientes],
-    ["/empresas", t.nav.empresas],
-    ["/nosotros", t.nav.nosotros],
-    ["/contacto", t.nav.contacto],
-  ];
-  const moreLinks = [
-    ["/advanced-science-hub", t.nav.ash],
-    ["/convenios", t.nav.convenios],
-  ];
+  const links = NAV_LINKS.filter((l) => l.primary).map((l) => [l.to, t.nav[l.key]]);
+  const moreLinks = NAV_LINKS.filter((l) => !l.primary).map((l) => [l.to, t.nav[l.key]]);
 
   return (
     <header className="site-header" id="site-header" data-testid="site-header">
       <div className="container">
         <Link to="/" className="logo" aria-label="Laboratorios Horvath, inicio" data-testid="logo-link">
-          <span className="logo-top">Laboratorios</span>
-          <span className="logo-main">HORVATH</span>
-          <span className="logo-sub">Advanced Science Hub</span>
+          <Logo />
         </Link>
 
         <nav className="main-nav" aria-label="Navegación principal">

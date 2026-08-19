@@ -4,6 +4,7 @@ import {
   IconVenus, IconDroplet, IconLeaf, IconActivity, IconRun, IconClipboard,
   IconUtensils, IconHandshake, IconCard, IconCalendar, IconSearch, IconTestTube, IconSparkle,
   IconPos, IconBank, IconCash, IconWhatsApp, IconFileText, IconUser,
+  IconSnowflake, IconGlobe, IconAward,
 } from "./icons";
 
 export const ICON_MAP = {
@@ -38,4 +39,7 @@ export const ICON_MAP = {
   whatsapp: IconWhatsApp,
   filetext: IconFileText,
   user: IconUser,
+  snowflake: IconSnowflake,
+  globe: IconGlobe,
+  award: IconAward,
 };

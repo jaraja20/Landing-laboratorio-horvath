@@ -75,7 +75,7 @@ export default function Contacto() {
               </a>
               <a href={MAPS_DIR} target="_blank" rel="noopener noreferrer" className="contact-action map" data-testid="contact-map">
                 <span className="ca-icon"><IconMapPin /></span>
-                <div><strong>{c.mapLabel}</strong><span>Av. Aviadores del Chaco N° 2530</span></div>
+                <div><strong>{c.mapLabel}</strong><span>{ADDRESS}</span></div>
               </a>
 
               <div className="contact-hours">

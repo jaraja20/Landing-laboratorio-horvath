@@ -5,7 +5,7 @@ import PageFade from "../components/PageFade";
 import Testimonials from "../components/Testimonials";
 import { ICON_MAP } from "../components/iconMap";
 import { IconUser, IconBuilding, IconArrowRight, IconLayers, IconShield, IconSparkle, IconWhatsApp } from "../components/icons";
-import { WA_PLAIN, HERO_BG, HISTORY_IMG } from "../data";
+import { WA_PLAIN, HERO_BG, HISTORY_IMG, ADDRESS } from "../data";
 import { useLang } from "../i18n/LanguageContext";
 
 const stagger = { show: { transition: { staggerChildren: 0.12 } } };
@@ -86,13 +86,17 @@ export default function Home() {
             <p>{t.porQue.sub}</p>
           </div>
           <div className="why-grid reveal-stagger reveal">
-            {t.porQue.cards.map((c) => (
-              <div className="why-card" key={c.label}>
-                <span className="why-num">{c.num}</span>
-                <strong>{c.label}</strong>
-                <p>{c.text}</p>
-              </div>
-            ))}
+            {t.porQue.cards.map((c) => {
+              const Ico = ICON_MAP[c.icon];
+              return (
+                <div className="why-card" key={c.label}>
+                  {Ico && <span className="why-icon"><Ico /></span>}
+                  <span className="why-num">{c.num}</span>
+                  <strong>{c.label}</strong>
+                  <p>{c.text}</p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -114,7 +118,7 @@ export default function Home() {
               <img src={HISTORY_IMG} alt="Fachada de Laboratorios Horvath" loading="lazy" />
               <div className="caption">
                 <strong>Laboratorio Horvath</strong>
-                <span>Av. Aviadores del Chaco N° 2530 · Asunción</span>
+                <span>{ADDRESS}</span>
               </div>
             </div>
           </div>

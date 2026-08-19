@@ -1,8 +1,8 @@
 // Sistema de idiomas ES / EN — Laboratorios Horvath
 
 const TEAM_IMG = {
-  raquel: "https://laboratoriohorvath.com/wp-content/uploads/2026/03/WhatsApp-Image-2026-02-25-at-20.16.20.jpeg",
-  gabriela: "https://laboratoriohorvath.com/wp-content/uploads/2026/03/WhatsApp-Image-2026-02-16-at-20.17.08-3.jpeg",
+  raquel: "/assets/team/raquel.jpg",
+  gabriela: "/assets/team/gabriela.jpg",
 };
 
 export const translations = {
@@ -72,10 +72,10 @@ export const translations = {
       eyebrow: "Por qué Horvath", title: "Ciencia, experiencia y confianza",
       sub: "Cuatro razones que nos distinguen desde 1983.",
       cards: [
-        { num: "+40", label: "Años de trayectoria", text: "Más de cuatro décadas cuidando la salud de Paraguay." },
-        { num: "-180°C", label: "Ultracongelación", text: "Capacidad para conservar muestras biológicas críticas." },
-        { num: "Fase III", label: "Ensayos clínicos", text: "Primer ensayo clínico Fase III del país, junto a Taiwán." },
-        { num: "15+", label: "Aliados", text: "Instituciones y seguros que ya confían en nosotros." },
+        { num: "+40", label: "Años de trayectoria", text: "Más de cuatro décadas cuidando la salud de Paraguay.", icon: "award" },
+        { num: "-180°C", label: "Ultracongelación", text: "Capacidad para conservar muestras biológicas críticas.", icon: "snowflake" },
+        { num: "Fase III", label: "Ensayos clínicos", text: "Primer ensayo clínico Fase III del país, junto a Taiwán.", icon: "flask" },
+        { num: "15+", label: "Aliados", text: "Instituciones y seguros que ya confían en nosotros.", icon: "handshake" },
       ],
     },
 
@@ -169,10 +169,10 @@ export const translations = {
       ],
       highlightsTitle: "Capacidades que nos distinguen",
       highlights: [
-        { num: "-80°C", label: "Ultracongelación", text: "Conservación de muestras biológicas críticas." },
-        { num: "-180°C", label: "Transporte criogénico", text: "Exportación de muestras en nitrógeno líquido." },
-        { num: "Fase III", label: "Ensayos clínicos", text: "Primer ensayo clínico Fase III del país." },
-        { num: "Global", label: "Conexiones científicas", text: "Red de instituciones e investigadores internacionales." },
+        { num: "-80°C", label: "Ultracongelación", text: "Conservación de muestras biológicas críticas.", icon: "testtube" },
+        { num: "-180°C", label: "Transporte criogénico", text: "Exportación de muestras en nitrógeno líquido.", icon: "snowflake" },
+        { num: "Fase III", label: "Ensayos clínicos", text: "Primer ensayo clínico Fase III del país.", icon: "flask" },
+        { num: "Global", label: "Conexiones científicas", text: "Red de instituciones e investigadores internacionales.", icon: "globe" },
       ],
       ctaTitle: "¿Tenés un proyecto científico?", ctaText: "Conversemos sobre cómo podemos colaborar.",
     },
@@ -345,10 +345,10 @@ export const translations = {
       eyebrow: "Why Horvath", title: "Science, experience and trust",
       sub: "Four reasons that set us apart since 1983.",
       cards: [
-        { num: "+40", label: "Years of experience", text: "Over four decades caring for Paraguay's health." },
-        { num: "-180°C", label: "Ultra-freezing", text: "Capacity to preserve critical biological samples." },
-        { num: "Phase III", label: "Clinical trials", text: "The country's first Phase III clinical trial, with Taiwan." },
-        { num: "15+", label: "Partners", text: "Institutions and insurers that already trust us." },
+        { num: "+40", label: "Years of experience", text: "Over four decades caring for Paraguay's health.", icon: "award" },
+        { num: "-180°C", label: "Ultra-freezing", text: "Capacity to preserve critical biological samples.", icon: "snowflake" },
+        { num: "Phase III", label: "Clinical trials", text: "The country's first Phase III clinical trial, with Taiwan.", icon: "flask" },
+        { num: "15+", label: "Partners", text: "Institutions and insurers that already trust us.", icon: "handshake" },
       ],
     },
 
@@ -442,10 +442,10 @@ export const translations = {
       ],
       highlightsTitle: "Capabilities that set us apart",
       highlights: [
-        { num: "-80°C", label: "Ultra-freezing", text: "Preservation of critical biological samples." },
-        { num: "-180°C", label: "Cryogenic transport", text: "Export of samples in liquid nitrogen." },
-        { num: "Phase III", label: "Clinical trials", text: "The country's first Phase III clinical trial." },
-        { num: "Global", label: "Scientific network", text: "Network of international institutions and researchers." },
+        { num: "-80°C", label: "Ultra-freezing", text: "Preservation of critical biological samples.", icon: "testtube" },
+        { num: "-180°C", label: "Cryogenic transport", text: "Export of samples in liquid nitrogen.", icon: "snowflake" },
+        { num: "Phase III", label: "Clinical trials", text: "The country's first Phase III clinical trial.", icon: "flask" },
+        { num: "Global", label: "Scientific network", text: "Network of international institutions and researchers.", icon: "globe" },
       ],
       ctaTitle: "Have a scientific project?", ctaText: "Let's talk about how we can collaborate.",
     },

@@ -1,28 +1,19 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { IconClose, IconGlobe } from "./icons";
-import { PHONE_TEL, PHONE_DISPLAY, waLink } from "../data";
+import Logo from "./Logo";
+import { PHONE_TEL, PHONE_DISPLAY, waLink, NAV_LINKS } from "../data";
 import { useLang } from "../i18n/LanguageContext";
 
 export default function MobileMenu({ open, onClose }) {
   const { t, lang, toggle } = useLang();
-  const links = [
-    ["/", t.nav.inicio],
-    ["/pacientes", t.nav.pacientes],
-    ["/empresas", t.nav.empresas],
-    ["/advanced-science-hub", t.nav.ash],
-    ["/convenios", t.nav.convenios],
-    ["/nosotros", t.nav.nosotros],
-    ["/contacto", t.nav.contacto],
-  ];
+  const links = NAV_LINKS.map((l) => [l.to, t.nav[l.key]]);
 
   return (
     <div className={`mobile-menu${open ? " open" : ""}`} aria-hidden={!open} data-testid="mobile-menu">
       <div className="mobile-menu-top">
         <span className="logo">
-          <span className="logo-top">Laboratorios</span>
-          <span className="logo-main">HORVATH</span>
-          <span className="logo-sub">Advanced Science Hub</span>
+          <Logo />
         </span>
         <button className="menu-toggle mobile-menu-close" aria-label="Cerrar menú" onClick={onClose} data-testid="mobile-menu-close">
           <IconClose />
